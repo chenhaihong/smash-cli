@@ -1,10 +1,14 @@
 /**
- * 任务绑定器
+ * 任务查找器
  */
 
 const ParseYaml = require('../helper/ParseYaml');
 
 class TaskFinder {
+    /**
+     * 构造器
+     * @param {String} customedTasksYmlUrl 
+     */
     constructor(customedTasksYmlUrl) {
         this.customedTasksYmlUrl = customedTasksYmlUrl;
     }
@@ -22,6 +26,10 @@ class TaskFinder {
     }
 }
 
+/**
+ * 构造器
+ * @param {String} customedTasksYmlUrl 
+ */
 module.exports = (customedTasksYmlUrl) => {
     return new TaskFinder(customedTasksYmlUrl);
 }; 
