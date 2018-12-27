@@ -1,25 +1,18 @@
-// 执行 `smash init` 时，需要用到的包
-const TaskConfigCreator = require('smash-task-configure-creator');
-
-const Config = require('./config');
 const CommandRegister = require('./core/CommandRegister');
 
+const init = require('smash-init');
+const install = require('smash-install');
+
+
+const Config = require('./config');
 // 执行 `smash run <task>` 时，需要用到的3个类
 const TaskFinder = require('./core/TaskFinder')(Config.CustomedTasksYmlUrl);
 const PackageLoader = require('./core/PackageLoader');
 const QueueRunner = require('./core/QueueRunner');
 
 CommandRegister.registerVersion();
-CommandRegister.registerInit(() => {
-    // （1）还没在工作目录下创建过配置文件
-    if (!TaskConfigCreator.hasCreated()) {
-        // （2）在工作目录下创建配置文件
-        TaskConfigCreator.create();
-    }
-});
-CommandRegister.registerInstall((templateName, options) => {
-    // TODO 安装模板
-});
+CommandRegister.registerInit(init);
+CommandRegister.registerInstall(install);
 CommandRegister.registerRun((taskName, options) => {
     // （1）获取当前任务对应的中间件队列配置。
     // 通过用户执行的`smash run taskName`命令，拿到当前执行任务里面包含的中间件队列配置。

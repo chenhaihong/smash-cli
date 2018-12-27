@@ -17,7 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.19.0",
-    "smash-task-configure-creator": "^1.0.2",
+    "smash-init": "0.0.1",
+    "smash-install": "0.0.1",
     "yaml": "^1.0.2"
   },
   "devDependencies": {}
