@@ -1,13 +1,14 @@
 {
   "name": "smash-cli",
   "version": "0.0.1",
-  "description": "工程化辅助工具",
+  "description": "A tiny task management and execution tool. Inspired by dawn.",
   "main": "index.js",
   "bin": {
     "smash": "bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/index.test.js",
+    "testCli": "node test/bin.test.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
     "commander": "^2.19.0",
     "smash-init": "0.0.1",
     "smash-install": "0.0.1",
-    "smash-run": "0.0.1"
+    "smash-run": "0.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "fs-extra": "^7.0.1"
+  }
 }

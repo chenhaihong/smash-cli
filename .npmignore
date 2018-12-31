@@ -1,3 +1,4 @@
+/.smash
 .vscode
 node_modules
-/test/temp
+test
