@@ -1,7 +1,7 @@
 {
   "name": "smash-cli",
   "version": "0.0.1",
-  "description": "A tiny task management and execution tool. Inspired by dawn.",
+  "description": "A tiny task management and execution tool. Inspired by [dawn](https://github.com/alibaba/dawn).",
   "main": "index.js",
   "bin": {
     "smash": "bin/index.js"
@@ -10,17 +10,28 @@
     "test": "node test/index.test.js",
     "testCli": "node test/bin.test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chenhaihong/smash-cli"
+  "directories": {
+    "test": "test"
   },
+  "keywords": [
+    "smash",
+    "smash-cli"
+  ],
   "author": "erye <erye@tiiit.cn>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "homepage": "https://github.com/chenhaihong/smash-cli#readme",
   "dependencies": {
-    "commander": "^2.19.0",
-    "smash-init": "0.0.1",
-    "smash-install": "0.0.1",
-    "smash-run": "0.0.3"
+    "fs-extra": "^7.0.1",
+    "smash-init": "^0.0.1",
+    "smash-install": "^0.0.1",
+    "smash-run": "^0.0.3"
   },
   "devDependencies": {
     "fs-extra": "^7.0.1"
