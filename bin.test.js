@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 const path = require('path');
 const fse = require('fs-extra');
 
-const binFilePath = path.resolve(__dirname, '../bin.js');
+const binFilePath = path.resolve(__dirname, './bin.js');
 
 // 测试初初始化命令
 {
