@@ -2,24 +2,27 @@
 
 A tiny task management and execution tool. Inspired by [dawn](https://github.com/alibaba/dawn).
 
-# Install
+# 安装
 
 ```bash
 $ npm i -g smash-cli
 ```
 
-# Usage
-```bash
-# Creat default config file.
-$ smash init
+# 使用
 
-# Download template into current working directory.
-$ smash install smash-template-react
+1. [下载模板](https://github.com/chenhaihong/smash-cli/wiki/%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF)
+1. [创建默认配置文件](https://github.com/chenhaihong/smash-cli/wiki/%E5%88%9B%E5%BB%BA%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+1. [配置与执行任务](https://github.com/chenhaihong/smash-cli/wiki/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1)
 
-# Run helloworld task.
-$ smash run helloworld
-```
+# 开发
 
-# Links
+1. [开发模板](https://github.com/chenhaihong/smash-cli/wiki/%E5%BC%80%E5%8F%91%E6%A8%A1%E6%9D%BF)
+1. [开发中间件](https://github.com/chenhaihong/smash-cli/wiki/%E5%BC%80%E5%8F%91%E4%B8%AD%E9%97%B4%E4%BB%B6)
 
-- [smash-middleware-helloworld](https://github.com/chenhaihong/smash-middleware-helloworld)
+# Examples
+
+- template
+  - [smash-template-react](https://github.com/chenhaihong/smash-template-react)
+- middleware
+  - [smash-middleware-helloworld](https://github.com/chenhaihong/smash-middleware-helloworld)
+  - [smash-middleware-webpack-v4](https://github.com/chenhaihong/smash-middleware-webpack-v4)
