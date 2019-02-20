@@ -1,6 +1,6 @@
 {
   "name": "smash-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tiny task management and execution tool. Inspired by [dawn](https://github.com/alibaba/dawn).",
   "main": "index.js",
   "bin": {
@@ -25,9 +25,9 @@
   "homepage": "https://github.com/chenhaihong/smash-cli#readme",
   "dependencies": {
     "commander": "^2.19.0",
-    "smash-init": "0.0.2",
-    "smash-install": "0.0.1",
-    "smash-run": "0.0.4"
+    "smash-init": "~0.0.2",
+    "smash-install": "~0.0.1",
+    "smash-run": "~0.0.5"
   },
   "devDependencies": {
     "fs-extra": "^7.0.1"
