@@ -26,5 +26,7 @@ $ npm i -g smash-cli
   - [smash-template-react-component](https://github.com/chenhaihong/smash-template-react-component)
 - middleware
   - [smash-middleware-helloworld](https://github.com/chenhaihong/smash-middleware-helloworld)
-  - [smash-middleware-webpack-v4](https://github.com/chenhaihong/smash-middleware-webpack-v4)
+  - [smash-middleware-clean](https://github.com/chenhaihong/smash-middleware-clean)
   - [smash-middleware-eslint](https://github.com/chenhaihong/smash-middleware-eslint)
+  - [smash-middleware-shell](https://github.com/chenhaihong/smash-middleware-shell)
+  - [smash-middleware-webpack-v4](https://github.com/chenhaihong/smash-middleware-webpack-v4)
