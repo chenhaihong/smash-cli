@@ -29,5 +29,6 @@ $ npm i -g smash-cli
   - [smash-middleware-clean](https://github.com/chenhaihong/smash-middleware-clean)
   - [smash-middleware-copy](https://github.com/chenhaihong/smash-middleware-copy)
   - [smash-middleware-eslint](https://github.com/chenhaihong/smash-middleware-eslint)
+  - [smash-middleware-jest](https://github.com/chenhaihong/smash-middleware-jest)
   - [smash-middleware-shell](https://github.com/chenhaihong/smash-middleware-shell)
   - [smash-middleware-webpack-v4](https://github.com/chenhaihong/smash-middleware-webpack-v4)
