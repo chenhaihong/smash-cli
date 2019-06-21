@@ -30,6 +30,7 @@
     "smash-run": "~0.0.5"
   },
   "devDependencies": {
-    "fs-extra": "^7.0.1"
+    "fs-extra": "^7.0.1",
+    "lerna": "^3.15.0"
   }
 }
