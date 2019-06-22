@@ -1,7 +1,9 @@
 {
   "npmClient": "npm",
   "packages": [
-    "packages/*"
+    "packages/*",
+    "middlewares/*",
+    "templates/*"
   ],
   "publishConfig": {
     "ignore": [
