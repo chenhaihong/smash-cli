@@ -1,7 +1,7 @@
 {
   "name": "smash-cli",
   "version": "0.0.2",
-  "description": "A tiny task management and execution tool. Inspired by dawn.",
+  "description": "A tiny task management and execution tool. Yeah, really tiny.",
   "main": "index.js",
   "bin": {
     "smash": "bin.js"
