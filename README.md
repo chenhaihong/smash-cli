@@ -1,6 +1,6 @@
 # smash-cli
 
-A tiny task management and execution tool. Inspired by [dawn](https://github.com/alibaba/dawn).
+A tiny task management and execution tool. Yeah, really tiny.
 
 # 安装
 
