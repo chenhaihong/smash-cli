@@ -1,0 +1,30 @@
+{
+  "name": "smash-init",
+  "version": "0.0.2",
+  "description": "Initializer for smash-cli.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-init#readme",
+  "keywords": [
+    "smash",
+    "smash-cli",
+    "smash initializer"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "scripts": {
+    "test": "node index.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1"
+  }
+}
