@@ -1,0 +1,27 @@
+{
+  "name": "smash-template-react",
+  "version": "0.0.8",
+  "description": "使用 smash-cli 模板规范 开发的 react@16.0.0+ 模板。",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/templates/smash-template-react#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
