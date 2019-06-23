@@ -1,6 +1,6 @@
 {
   "name": "smash-install",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Template package downloader for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-install#readme",
