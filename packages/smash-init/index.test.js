@@ -1,17 +1,12 @@
-#!/usr/bin/env node
+/*global describe test:true*/
+
 'use strict';
 
 const smashInit = require('.');
 
 describe('smash-init', () => {
-    it('needs tests');
+  test('should have .task.yml file', () => {
+    smashInit();
+    // TODO 检查文件
+  });
 });
-
-// try {
-//     const timeName = `Test function init`;
-//     console.time(timeName);
-//     smashInit();
-//     console.timeEnd(timeName);
-// } catch (error) {
-//     console.log(error);
-// }

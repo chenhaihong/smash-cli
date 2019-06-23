@@ -3,7 +3,11 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "lint": "eslint --ext .js packages",
+    "lint": "eslint --ext .js packages --fix",
     "test": "lerna exec test"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.0",
+    "jest": "^24.8.0"
   }
 }

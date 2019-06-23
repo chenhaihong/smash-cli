@@ -10,36 +10,36 @@
 const context = Object.create(null);
 
 class QuereRunner {
-    /**
+  /**
      * 递归执行中间件队列
      * @param {Array} middlewareConfigQueue 
      * @param {Array} installedPaths 中间件的本地安装路径
      */
-    static dequeue(middlewareConfigQueue, installedPaths) {
-        //===========================
-        //==  Hats off to Express. ==
-        //===========================
+  static dequeue(middlewareConfigQueue, installedPaths) {
+    //===========================
+    //==  Hats off to Express. ==
+    //===========================
 
-        const next = () => {
-            if (middlewareConfigQueue.length <= 0) {
-                return false;
-            }
+    const next = () => {
+      if (middlewareConfigQueue.length <= 0) {
+        return false;
+      }
 
-            // 获取中间件配置队列的首位，
-            // 用户定义的配置，包含 { name, ...customed_fiedls } 字段
-            const middlewareConfig = middlewareConfigQueue.shift();
+      // 获取中间件配置队列的首位，
+      // 用户定义的配置，包含 { name, ...customed_fiedls } 字段
+      const middlewareConfig = middlewareConfigQueue.shift();
 
-            // 拿到中间件包的安装路径
-            const installedPath = installedPaths.shift();
+      // 拿到中间件包的安装路径
+      const installedPath = installedPaths.shift();
 
-            // 使用require引入中间件
-            const middleware = require(installedPath);
+      // 使用require引入中间件
+      const middleware = require(installedPath);
 
-            middleware(context, middlewareConfig, next);
-        };
+      middleware(context, middlewareConfig, next);
+    };
 
-        next();
-    }
+    next();
+  }
 }
 
 module.exports = QuereRunner;
