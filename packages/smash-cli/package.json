@@ -1,0 +1,36 @@
+{
+  "name": "smash-cli",
+  "version": "0.0.2",
+  "description": "A tiny task management and execution tool. Yeah, really tiny.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-cli#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "smash": "bin.js"
+  },
+  "keywords": [
+    "smash",
+    "smash-cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "scripts": {
+    "test": "node bin.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "smash-init": "0.0.2",
+    "smash-install": "0.0.1",
+    "smash-run": "0.0.5"
+  },
+  "devDependencies": {
+    "fs-extra": "^7.0.1",
+    "lerna": "^3.15.0"
+  }
+}

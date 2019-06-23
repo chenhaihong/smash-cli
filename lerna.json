@@ -1,10 +1,18 @@
 {
   "npmClient": "npm",
   "packages": [
-    "packages/*",
-    "middlewares/*",
-    "templates/*"
+    "packages/*"
   ],
+  "command": {
+    "create": {
+      "homepage": "https://github.com/chenhaihong/smash-cli",
+      "license": "MIT",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "version": {
+      "exact": true
+    }
+  },
   "publishConfig": {
     "ignore": [
       "*.md"
@@ -14,5 +22,5 @@
   "bootstrapConfig": {
     "ignore": []
   },
-  "version": "independent"
+  "version": "0.0.5"
 }
