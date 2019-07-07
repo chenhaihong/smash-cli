@@ -1,4 +1,9 @@
-// const { execSync } = require('child_process');
-// const path = require('path');
-// const fse = require('fs-extra');
-// const smash = require('.');
+const smash = require('.');
+
+describe('smash-cli/index.js', () => {
+  test('mese should have expected properties', () => {
+    expect(smash).toHaveProperty('init');
+    expect(smash).toHaveProperty('install');
+    expect(smash).toHaveProperty('run');
+  });
+});

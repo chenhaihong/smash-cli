@@ -22,7 +22,7 @@ program
     smash.install(templateName);
   });
 
-// 注册run命令：该命令会执行注册任务里的中间件。
+// 注册run命令：该命令会执行任务里的中间件。
 program
   .command('run <task>')
   .alias('r')
