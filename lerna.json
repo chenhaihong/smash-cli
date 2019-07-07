@@ -1,8 +1,6 @@
 {
   "npmClient": "npm",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "create": {
       "homepage": "https://github.com/chenhaihong/smash-cli",
@@ -14,9 +12,7 @@
     }
   },
   "publishConfig": {
-    "ignore": [
-      "*.md"
-    ],
+    "ignore": ["*.md"],
     "registry": "https://registry.npmjs.org/"
   },
   "bootstrapConfig": {

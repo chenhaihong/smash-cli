@@ -1,4 +1,6 @@
-/*global describe test:true*/
+/**
+ * /*global describe test:true
+ */
 
 'use strict';
 

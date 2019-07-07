@@ -1,8 +1,10 @@
 /**
  * 中间件队列执行器。
- * 
+ *
  * 每个task都是一个中间件队列。
  * 执行一个任务，也就是顺序执行中间件队列的过程。
+ *
+ * @format
  */
 
 // 中间件里面的一个上下文。
@@ -11,10 +13,10 @@ const context = Object.create(null);
 
 class QuereRunner {
   /**
-     * 递归执行中间件队列
-     * @param {Array} middlewareConfigQueue 
-     * @param {Array} installedPaths 中间件的本地安装路径
-     */
+   * 递归执行中间件队列
+   * @param {Array} middlewareConfigQueue
+   * @param {Array} installedPaths 中间件的本地安装路径
+   */
   static dequeue(middlewareConfigQueue, installedPaths) {
     //===========================
     //==  Hats off to Express. ==

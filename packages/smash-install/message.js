@@ -1,3 +1,3 @@
 module.exports = {
-  'SUCCESSFULLY_INSTALLED_TEMPLATE': 'Successfully installed.',
+  SUCCESSFULLY_INSTALLED_TEMPLATE: 'Successfully installed.',
 };

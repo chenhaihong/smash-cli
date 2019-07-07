@@ -1,18 +1,15 @@
-#!/usr/bin/env node
-
 const program = require('commander');
 const smash = require('.');
 const { version } = require('./package.json');
 
 // 注册版本号
-program
-  .version(version, '-v, --version');
+program.version(version, '-v, --version');
 
 // 注册初始化命令：该命令会在工作目录下生成.smash/task.yml文件
 program
   .command('init')
   .description('Create default task config file')
-  .action(function () {
+  .action(function() {
     smash.init();
   });
 
@@ -21,7 +18,7 @@ program
   .command('install <template>')
   .alias('i')
   .description('Download <template>')
-  .action(function (templateName) {
+  .action(function(templateName) {
     smash.install(templateName);
   });
 
@@ -30,11 +27,11 @@ program
   .command('run <task>')
   .alias('r')
   .description('Execute <task>')
-  .action(function (taskName) {
+  .action(function(taskName) {
     smash.run(taskName);
   });
 
-program.on('--help', function () {
+program.on('--help', function() {
   console.log('');
   console.log('Examples:');
   console.log('  $ smash init');
