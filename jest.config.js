@@ -14,7 +14,6 @@ module.exports = {
     // 指定收集覆盖率的目录文件，只收集每个包的lib目录
     '**/lib/**',
   ],
-  // testURL: 'https://www.shuidichou.com/jd', // 设置jsdom环境的URL
   testMatch: [
     // 测试文件匹配规则
     '**/__tests__/**/*.test.js',
@@ -26,10 +25,10 @@ module.exports = {
   coverageThreshold: {
     // 配置测试最低阈值
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
     },
   },
 };

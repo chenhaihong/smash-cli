@@ -1,6 +1,6 @@
 // .prettierrc.js
 module.exports = {
-  printWidth: 180,
+  printWidth: 80,
   tabWidth: 2,
   useTabs: false,
   semi: true,

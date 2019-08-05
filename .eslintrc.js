@@ -8,8 +8,10 @@ module.exports = {
   },
   extends: ['plugin:jsdoc/recommended'],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    describe: 'readonly',
+    it: 'readonly',
+    expect: 'readonly',
+    test: 'readonly',
   },
   parserOptions: {
     ecmaVersion: 2018,

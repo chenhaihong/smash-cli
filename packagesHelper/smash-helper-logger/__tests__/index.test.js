@@ -1,6 +1,13 @@
 'use strict';
 
+const chalk = require('chalk');
 const logger = require('../lib');
+
+jest.spyOn(console, 'log');
+
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('smash-helper-logger', () => {
   it('should have properties', function() {
@@ -11,10 +18,57 @@ describe('smash-helper-logger', () => {
     });
   });
 
-  test('logger.log should print to the console', () => {});
-  test('logger.info should print to the console', () => {});
-  test('logger.warn should print to the console', () => {});
-  test('logger.error should print to the console', () => {});
-  test('logger.success should print to the console', () => {});
-  test('logger.fail should print to the console', () => {});
+  test('logger.log should print well', () => {
+    logger.log('Hello World');
+    expect(console.log.mock.calls[0]).toEqual([
+      'smash',
+      chalk.blueBright('log'),
+      'Hello World',
+    ]);
+  });
+
+  test('logger.info should print well', () => {
+    logger.info('Hello World');
+    expect(console.log.mock.calls[0]).toEqual([
+      'smash',
+      chalk.greenBright('info'),
+      'Hello World',
+    ]);
+  });
+
+  test('logger.warn should print well', () => {
+    logger.warn('Hello World');
+    expect(console.log.mock.calls[0]).toEqual([
+      'smash',
+      chalk.yellowBright('warn'),
+      'Hello World',
+    ]);
+  });
+
+  test('logger.error should print well', () => {
+    logger.error('Hello World');
+    expect(console.log.mock.calls[0]).toEqual([
+      'smash',
+      chalk.redBright('error'),
+      'Hello World',
+    ]);
+  });
+
+  test('logger.success should print well', () => {
+    logger.success('Hello World');
+    expect(console.log.mock.calls[0]).toEqual([
+      'smash',
+      chalk.greenBright('success'),
+      'Hello World',
+    ]);
+  });
+
+  test('logger.fail should print well', () => {
+    logger.fail('Hello World');
+    expect(console.log.mock.calls[0]).toEqual([
+      'smash',
+      chalk.redBright('fail'),
+      'Hello World',
+    ]);
+  });
 });
