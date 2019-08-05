@@ -7,7 +7,7 @@ module.exports = {
   singleQuote: true,
   quoteProps: 'as-needed',
   jsxSingleQuote: true,
-  trailingComma: 'all',
+  trailingComma: 'es5',
   bracketSpacing: true,
   jsxBracketSameLine: false,
   arrowParens: 'always',

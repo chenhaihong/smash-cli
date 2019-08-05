@@ -1,10 +1,10 @@
 {
-  "name": "smash-cli-monorepo",
   "private": true,
+  "name": "smash-cli-monorepo",
+  "version": "0.0.6",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "lint": "eslint --ext .js packages --fix",
-    "test": "lerna exec test"
+    "eslint": "eslint --ext .js --fix ./",
+    "prettier": "prettier --check --write ./**/*.js"
   },
   "devDependencies": {
     "eslint": "^6.0.0",
