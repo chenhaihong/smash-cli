@@ -4,8 +4,6 @@
  * Tips:
  * （1）repository：{home}/.smash-cli/middleware
  * （2）中间件代码的提取路径规则为：{repository}/{name}/{version}
- *
- * @format
  */
 
 const { execSync } = require('child_process');

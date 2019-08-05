@@ -3,13 +3,16 @@
   "name": "smash-cli-monorepo",
   "version": "0.0.6",
   "scripts": {
-    "eslint": "eslint --ext .js --fix ./",
+    "eslint": "eslint --ext .js ./",
     "prettier": "prettier --check --write ./**/*.js"
   },
   "devDependencies": {
-    "eslint": "^6.0.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-jsdoc": "^15.8.0",
+    "fs-extra": "^8.1.0",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
+    "minimist": "^1.2.0",
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1"
   },

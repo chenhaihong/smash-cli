@@ -1,13 +1,20 @@
-const path = require('path');
+const { resolve } = require('path');
+
+const ROOT = resolve(__dirname);
+
 module.exports = {
-  collectCoverage: true, // 收集测试时的覆盖率信息
-  coverageDirectory: path.resolve(__dirname, './coverage'), // 指定输出覆盖信息文件的目录
-  collectCoverageFrom: [
-    // 指定收集覆盖率的目录文件，只收集每个包的lib目录，不收集打包后的dist目录
-    '**/lib/**',
-    '!**/dist/**',
+  verbose: true,
+  setupFiles: [
+    // 初始化smash默认配置
+    // resolve(ROOT, 'scripts/setup.js'),
   ],
-  testURL: 'https://www.shuidichou.com/jd', // 设置jsdom环境的URL
+  collectCoverage: true, // 收集测试时的覆盖率信息
+  coverageDirectory: resolve(ROOT, 'coverage'), // 指定输出覆盖信息文件的目录
+  collectCoverageFrom: [
+    // 指定收集覆盖率的目录文件，只收集每个包的lib目录
+    '**/lib/**',
+  ],
+  // testURL: 'https://www.shuidichou.com/jd', // 设置jsdom环境的URL
   testMatch: [
     // 测试文件匹配规则
     '**/__tests__/**/*.test.js',

@@ -1,14 +1,19 @@
+const { join, resolve } = require('path');
+const fse = require('fs-extra');
 const minimist = require('minimist');
-const rawArgs = process.argv.slice(2);
-const args = minimist(rawArgs);
-const path = require('path');
-let rootDir = path.resolve(__dirname, '../');
-// 指定包测试
-if (args.p) {
-  rootDir = rootDir + '/packages/' + args.p;
+
+const argv = minimist(process.argv.slice(2));
+
+let ROOT = resolve(__dirname, '../');
+if (argv.package) {
+  // 指定包测试
+  ROOT = join(ROOT, argv.package);
+  console.log(ROOT);
+  if (!fse.pathExistsSync(ROOT)) {
+    return console.log('路径不存在:', ROOT);
+  }
 }
-const jestArgs = ['--runInBand', '--rootDir', rootDir];
 
-console.log(`\n===> running: jest ${jestArgs.join(' ')}`);
-
-require('jest').run(jestArgs);
+const args = ['--runInBand', '--rootDir', ROOT];
+console.log(`running: jest ${args.join(' ')}\n`);
+require('jest').run(args);

@@ -9,17 +9,21 @@ $ npm i
 $ npx lerna bootstrap
 ```
 
-## 修正代码格式、检查静态语法
+## 检查静态语法、修正代码格式
 
 ```bash
-$ npm run prettier
 $ npm run eslint
+$ npm run prettier
 ```
 
 ## 测试
 
 ```bash
+# 测试所有包
 $ node scripts/test.js
+
+# 只测试某个包
+$ node scripts/test.js --package=packagesHelper/smash-helper-logger
 ```
 
 ## 查看更改

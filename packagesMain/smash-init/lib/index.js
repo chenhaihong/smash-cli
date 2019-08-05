@@ -1,6 +1,5 @@
 /**
  * smash-cli工具的默认任务配置生成器。
- *
  */
 
 const fse = require('fs-extra');
@@ -10,6 +9,9 @@ const message = {
   INITIALLIZED_SUCCESSFULLY: 'Initialized current working directory successfully.',
 };
 
+/**
+ *
+ */
 function init() {
   const DEFAULT_SMASH_DIR = resolve(__dirname, '.defaultSmash'), // 默认配置文件的路径
     CWD_SMASH_DIR = resolve(process.cwd(), '.smash'), // 工作目录下的.smash目录
