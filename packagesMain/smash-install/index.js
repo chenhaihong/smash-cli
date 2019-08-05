@@ -22,10 +22,7 @@ const installTemplate = async (templateName) => {
     const { name, version } = await pacote.manifest(templateName);
 
     // （2）组装模板包的存放路径。将源码压缩包下载到本地仓库下。
-    const templateDest = path.resolve(
-      TEMPLATE_REPOSITORY,
-      `${name}-${version}.tgz`,
-    );
+    const templateDest = path.resolve(TEMPLATE_REPOSITORY, `${name}-${version}.tgz`);
     await pacote.tarball.toFile(templateName, templateDest);
 
     // （3）解压源码。
@@ -44,10 +41,7 @@ const installTemplate = async (templateName) => {
         const reg = /\.backup$/;
         if (file.match(reg)) {
           const relativeFile = file.replace(srcDir, '');
-          const destFile = path.resolve(
-            destDir,
-            `./${relativeFile.replace(reg, '')}`,
-          );
+          const destFile = path.resolve(destDir, `./${relativeFile.replace(reg, '')}`);
           fse.copySync(file, destFile);
           return false;
         }

@@ -1,6 +1,6 @@
 const program = require('commander');
-const smash = require('.');
-const { version } = require('./package.json');
+const smash = require('../smash-cli');
+const { version } = require('./package.json.js');
 
 // 注册版本号
 program.version(version, '-v, --version');

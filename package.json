@@ -15,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged --bail"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }

@@ -6,10 +6,8 @@
 const fse = require('fs-extra');
 const { resolve } = require('path');
 const message = {
-  CONFIG_EXISTS:
-    'There is already a task configuration file in the current working directory.',
-  INITIALLIZED_SUCCESSFULLY:
-    'Initialized current working directory successfully.',
+  CONFIG_EXISTS: 'There is already a task configuration file in the current working directory.',
+  INITIALLIZED_SUCCESSFULLY: 'Initialized current working directory successfully.',
 };
 
 function init() {
