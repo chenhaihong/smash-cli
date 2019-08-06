@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "description": "Initializer for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
-  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-init#readme",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-init#readme",
   "keywords": [
     "smash",
     "smash-cli",

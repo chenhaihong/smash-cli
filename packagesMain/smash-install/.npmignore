@@ -1,5 +1,1 @@
-.smash
-.vscode
-test
-node_modules
-temp
+__test__

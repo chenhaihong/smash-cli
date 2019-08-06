@@ -35,15 +35,15 @@ describe('smash-init', () => {
 
     expect(spyExists).toBeCalled();
 
-    // 验证输出信息，拷贝成功
-    expect(spySuccess).toBeCalled();
-    expect(spySuccess.mock.calls[0][0]).toMatch(/initialized successfully\./);
-
     expect(spyCopy).toBeCalled();
     expect(spyCopy.mock.calls[0]).toEqual([
       resolve(ROOT, '.defaultSmash'),
       resolve(TEMP, '.smash'),
     ]);
+
+    // 验证输出信息，拷贝成功
+    expect(spySuccess).toBeCalled();
+    expect(spySuccess.mock.calls[0][0]).toMatch(/initialized successfully\./);
   });
 
   test('should not init successfully while a task file existed', () => {

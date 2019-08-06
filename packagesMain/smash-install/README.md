@@ -1,6 +1,6 @@
 # smash-install
 
-Template-package downloader for smash-cli.
+Template downloader for smash-cli.
 
 ## Usage
 

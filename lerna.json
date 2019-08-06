@@ -1,6 +1,11 @@
 {
   "npmClient": "npm",
-  "packages": ["packagesMain/*", "packagesMiddleware/*", "packagesTemplate/*", "packagesHelper/*"],
+  "packages": [
+    "packagesMain/*",
+    "packagesMiddleware/*",
+    "packagesTemplate/*",
+    "packagesHelper/*"
+  ],
   "command": {
     "create": {
       "homepage": "https://github.com/chenhaihong/smash-cli",
@@ -8,6 +13,9 @@
       "registry": "https://registry.npmjs.org/"
     },
     "version": {
+      "exact": true
+    },
+    "add": {
       "exact": true
     }
   },
