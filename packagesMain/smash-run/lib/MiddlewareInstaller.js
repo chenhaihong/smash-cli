@@ -7,16 +7,14 @@
  */
 
 const { execSync } = require('child_process');
-const fs = require('fs');
 const os = require('os');
-const path = require('path');
+const { normalize, resolve } = require('path');
+const fse = require('fs-extra');
 const logger = require('smash-helper-logger');
 const pacote = require('pacote');
 
-const MILLDDLEWARE_REPOSITORY = path.resolve(
-  os.homedir(),
-  './.smash-cli/middleware/'
-);
+// 存放中间件的仓库
+const REPO = resolve(os.homedir(), '.smash-cli/middleware');
 
 class MiddlewareInstaller {
   /**
@@ -32,23 +30,18 @@ class MiddlewareInstaller {
       const { name, version } = await pacote.manifest(spec);
 
       // （2）组装路径， extractDest => 组装存放提取文件的路径
-      const extractDest = path.resolve(
-        MILLDDLEWARE_REPOSITORY,
-        `./${name}/${version}`
-      );
-      if (!fs.existsSync(extractDest)) {
-        console.log(`[smash-run] [${name}@${version}] Installing...`);
+      const extractDest = resolve(REPO, `${name}/${version}`);
+      if (!fse.existsSync(extractDest)) {
+        logger.info(`[${name}@${version}] extracting...`);
         // （3）提取中间件包的内容
         await pacote.extract(spec, extractDest);
         // （4）安装当前中间件的依赖
-        console.log(
-          `[smash-run] [${name}@${version}] Installing dependencies...`
-        );
+        logger.info(`[${name}@${version}] installing dependencies...`);
         execSync('npm i', { cwd: extractDest });
-        console.log(`[smash-run] [${name}@${version}] Installed.`);
+        logger.success(`[${name}@${version}] installed.`);
       }
       // （5）将路径放入要返回的数中组
-      paths.push(path.normalize(extractDest));
+      paths.push(normalize(extractDest));
     }
     return paths;
   }

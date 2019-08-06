@@ -1,4 +1,4 @@
 'use strict';
 
-// allow 20s timeout in an attempt to lessen flakiness of unit tests...
-jest.setTimeout(20e3);
+// allow 100s timeout in an attempt to lessen flakiness of unit tests...
+jest.setTimeout(100e3);
