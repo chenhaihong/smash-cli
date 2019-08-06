@@ -10,7 +10,7 @@
     "smash initializer"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git"
@@ -22,6 +22,7 @@
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
-    "fs-extra": "^7.0.1"
+    "fs-extra": "^7.0.1",
+    "smash-helper-logger": "^0.0.6"
   }
 }

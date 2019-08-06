@@ -16,11 +16,13 @@ module.exports = {
   ],
   testMatch: [
     // 测试文件匹配规则
-    '**/__tests__/**/*.test.js',
+    '**/__test__/**/*.test.js',
   ],
   testPathIgnorePatterns: [
     // 忽略测试路径
     '/node_modules/',
+    '/packagesMiddleware/',
+    '/packagesTemplate/',
   ],
   coverageThreshold: {
     // 配置测试最低阈值

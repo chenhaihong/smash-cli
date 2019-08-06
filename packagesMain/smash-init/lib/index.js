@@ -4,24 +4,24 @@
 
 const fse = require('fs-extra');
 const { resolve } = require('path');
-const message = {
-  CONFIG_EXISTS: 'There is already a task configuration file in the current working directory.',
-  INITIALLIZED_SUCCESSFULLY: 'Initialized current working directory successfully.',
-};
+const logger = require('smash-helper-logger');
 
 /**
+ * 拷贝默认smash任务配置文件到当前工作空间的目录里
  *
+ * @returns {void} 无返回值
  */
 function init() {
-  const DEFAULT_SMASH_DIR = resolve(__dirname, '.defaultSmash'), // 默认配置文件的路径
-    CWD_SMASH_DIR = resolve(process.cwd(), '.smash'), // 工作目录下的.smash目录
-    CWD_SMASH_FILE = resolve(CWD_SMASH_DIR, 'task.yml'); // 工作目录下的.smash任务配置文件
+  const ROOT = resolve(__dirname, '..'),
+    dirDefaultSmash = resolve(ROOT, '.defaultSmash'), // 默认配置文件的路径
+    dirCwdSmash = resolve(process.cwd(), '.smash'), // 工作目录下的.smash目录
+    fileCwdSmash = resolve(dirCwdSmash, 'task.yml'); // 工作目录下的.smash任务配置文件
 
-  if (fse.pathExistsSync(CWD_SMASH_FILE)) {
-    console.log(message.CONFIG_EXISTS);
+  if (fse.pathExistsSync(fileCwdSmash)) {
+    logger.info('task.yml existed.');
   } else {
-    fse.copySync(DEFAULT_SMASH_DIR, CWD_SMASH_DIR);
-    console.log(message.INITIALLIZED_SUCCESSFULLY);
+    fse.copySync(dirDefaultSmash, dirCwdSmash);
+    logger.success('initialized successfully.');
   }
 }
 
