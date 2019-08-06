@@ -11,7 +11,7 @@ const logger = require('smash-helper-logger');
  *
  * @returns {void} 无返回值
  */
-function init() {
+function smashInit() {
   const ROOT = resolve(__dirname, '..'),
     dirDefaultSmash = resolve(ROOT, '.defaultSmash'), // 默认配置文件的路径
     dirCwdSmash = resolve(process.cwd(), '.smash'), // 工作目录下的.smash目录
@@ -25,4 +25,4 @@ function init() {
   }
 }
 
-module.exports = init;
+module.exports = smashInit;
