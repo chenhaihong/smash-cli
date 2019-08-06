@@ -7,6 +7,7 @@ module.exports = {
   setupFiles: [
     // 初始化smash默认配置
     // resolve(ROOT, 'scripts/setup.js'),
+    resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],
   collectCoverage: true, // 收集测试时的覆盖率信息
   coverageDirectory: resolve(ROOT, 'coverage'), // 指定输出覆盖信息文件的目录

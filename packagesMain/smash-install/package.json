@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
-    "pacote": "^9.3.0",
+    "pacote": "9.5.4",
     "smash-helper-logger": "^0.0.6",
     "tar": "^4.4.8"
   }

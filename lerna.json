@@ -17,6 +17,10 @@
     },
     "add": {
       "exact": true
+    },
+    "publish": {
+      "ignoreChanges": ["*.md"],
+      "message": "chore(release): publish"
     }
   },
   "publishConfig": {
