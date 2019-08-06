@@ -22,7 +22,7 @@ afterEach(() => {
 
 afterAll(() => {
   process.chdir(lastCwd); // 重置工作空间
-  fse.removeSync(TEMP); // 重置工作空间后，才能接触对temp目录的占用，然后可删除生成的配置文件
+  fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用，然后可删除生成的配置文件
 });
 
 describe('smash-install', () => {
