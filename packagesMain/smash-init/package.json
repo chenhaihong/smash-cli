@@ -15,14 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git"
   },
-  "scripts": {
-    "test": "node index.test.js"
-  },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
-    "smash-helper-logger": "^0.0.6"
+    "smash-helper-logger": "0.0.6"
   }
 }

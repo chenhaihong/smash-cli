@@ -14,6 +14,7 @@ class QuereRunner {
    * 递归执行中间件队列
    * @param {Array} middlewareConfigQueue
    * @param {Array} installedPaths 中间件的本地安装路径
+   * @returns {void}
    */
   static dequeue(middlewareConfigQueue, installedPaths) {
     //===========================

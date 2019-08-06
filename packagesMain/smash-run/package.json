@@ -15,14 +15,13 @@
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git"
   },
-  "scripts": {
-    "test": "node ./test/index.test.js"
-  },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
-    "pacote": "^9.3.0",
-    "yaml": "^1.1.0"
+    "fs-extra": "8.1.0",
+    "pacote": "9.5.4",
+    "smash-helper-logger": "0.0.6",
+    "yaml": "1.6.0"
   }
 }
