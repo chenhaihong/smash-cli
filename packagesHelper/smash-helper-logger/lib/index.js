@@ -2,7 +2,7 @@
 
 const chalk = require('chalk');
 
-const _name = 'smash';
+const firstName = 'smash';
 
 module.exports = {
   log,
@@ -19,7 +19,7 @@ module.exports = {
  * @returns {void}
  */
 function log(...params) {
-  console.log(_name, chalk.blueBright('log'), ...params); // eslint-disable-line
+  console.log(firstName, chalk.blueBright('log'), ...params); // eslint-disable-line
 }
 
 /**
@@ -28,7 +28,7 @@ function log(...params) {
  * @returns {void}
  */
 function info(...params) {
-  console.log(_name, chalk.greenBright('info'), ...params); // eslint-disable-line
+  console.log(firstName, chalk.greenBright('info'), ...params); // eslint-disable-line
 }
 
 /**
@@ -37,7 +37,7 @@ function info(...params) {
  * @returns {void}
  */
 function warn(...params) {
-  console.log(_name, chalk.yellowBright('warn'), ...params); // eslint-disable-line
+  console.log(firstName, chalk.yellowBright('warn'), ...params); // eslint-disable-line
 }
 
 /**
@@ -46,7 +46,7 @@ function warn(...params) {
  * @returns {void}
  */
 function error(...params) {
-  console.log(_name, chalk.redBright('error'), ...params); // eslint-disable-line
+  console.log(firstName, chalk.redBright('error'), ...params); // eslint-disable-line
 }
 
 /**
@@ -55,7 +55,7 @@ function error(...params) {
  * @returns {void}
  */
 function success(...params) {
-  console.log(_name, chalk.greenBright('success'), ...params); // eslint-disable-line
+  console.log(firstName, chalk.greenBright('success'), ...params); // eslint-disable-line
 }
 
 /**
@@ -64,5 +64,5 @@ function success(...params) {
  * @returns {void}
  */
 function fail(...params) {
-  console.log(_name, chalk.redBright('fail'), ...params); // eslint-disable-line
+  console.log(firstName, chalk.redBright('fail'), ...params); // eslint-disable-line
 }

@@ -24,4 +24,4 @@ smashRun('helloworld-task');
 
 ## Links
 
-- [smash-cli](https://github.com/chenhaihong/smash-cli)
+- [smash-cli](https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-cli)

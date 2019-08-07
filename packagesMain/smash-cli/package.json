@@ -3,7 +3,7 @@
   "version": "0.0.7",
   "description": "A tiny task management and execution tool. Yeah, really tiny.",
   "author": "erye <erye@tiiit.cn>",
-  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-cli#readme",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-cli",
   "license": "MIT",
   "main": "lib/index.js",
   "bin": {

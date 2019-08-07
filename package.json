@@ -1,7 +1,6 @@
 {
   "private": true,
   "name": "smash-cli-monorepo",
-  "version": "0.0.6",
   "scripts": {
     "eslint": "eslint --ext .js ./",
     "prettier": "prettier --check --write ./**/*.js"
