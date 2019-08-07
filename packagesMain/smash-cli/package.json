@@ -1,6 +1,6 @@
 {
   "name": "smash-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A tiny task management and execution tool. Yeah, really tiny.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-cli#readme",
@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "commander": "2.20.0",
-    "smash-init": "0.0.6",
-    "smash-install": "0.0.6",
-    "smash-run": "0.0.6"
+    "smash-init": "0.0.7",
+    "smash-install": "0.0.7",
+    "smash-run": "0.0.7"
   },
   "devDependencies": {
     "exec-sh": "0.3.2",

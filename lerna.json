@@ -1,11 +1,6 @@
 {
   "npmClient": "npm",
-  "packages": [
-    "packagesMain/*",
-    "packagesMiddleware/*",
-    "packagesTemplate/*",
-    "packagesHelper/*"
-  ],
+  "packages": ["packagesHelper/*", "packagesMain/*", "packagesMiddleware/*", "packagesTemplate/*"],
   "command": {
     "create": {
       "homepage": "https://github.com/chenhaihong/smash-cli",
@@ -30,5 +25,5 @@
   "bootstrapConfig": {
     "ignore": []
   },
-  "version": "0.0.6"
+  "version": "0.0.7"
 }
