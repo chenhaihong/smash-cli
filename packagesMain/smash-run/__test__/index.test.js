@@ -11,8 +11,7 @@ const MiddlewareInstaller = require('../lib/MiddlewareInstaller');
 const QueueRunner = require('../lib/QueueRunner');
 
 const lastCwd = process.cwd();
-const ROOT = resolve(__dirname, '..');
-const TEMP = resolve(ROOT, '__fixtures__/smash-project');
+const TEMP = resolve(__dirname, '../__fixtures__/smash-project');
 const REPO = resolve(os.homedir(), '.smash-cli/middleware');
 
 // spy on logger
@@ -32,7 +31,7 @@ const mockSmashRun = jest.fn(smashRun);
 
 beforeAll(() => {
   fse.emptyDirSync(REPO); // 清空中间件仓库
-  fse.emptyDirSync(TEMP);
+  fse.ensureDirSync(TEMP);
   process.chdir(TEMP); // 将工作空间临时迁到这个目录
 });
 
@@ -42,7 +41,6 @@ afterEach(() => {
 
 afterAll(() => {
   process.chdir(lastCwd); // 重置工作空间
-  fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用
   fse.emptyDirSync(REPO); // 清空中间件仓库
 });
 
