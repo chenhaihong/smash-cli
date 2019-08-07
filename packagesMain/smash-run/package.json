@@ -10,7 +10,7 @@
     "smash task runner"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git"
