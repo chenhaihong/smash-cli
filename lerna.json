@@ -14,7 +14,7 @@
       "exact": true
     },
     "publish": {
-      "ignoreChanges": ["*.md"],
+      "ignoreChanges": [],
       "message": "chore(release): publish"
     }
   },
