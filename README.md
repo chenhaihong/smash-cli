@@ -32,6 +32,12 @@ $ node scripts/test.js --package=packagesHelper/smash-helper-logger
 $ npx lerna changed
 ```
 
+## Pushing tags
+
+```bash
+$ npx lerna version
+```
+
 ## 发布
 
 ```bash
