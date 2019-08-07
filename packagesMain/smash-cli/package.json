@@ -29,5 +29,6 @@
   "devDependencies": {
     "exec-sh": "0.3.2",
     "fs-extra": "8.1.0"
-  }
+  },
+  "gitHead": "9079608c01530ebb0d741be72df89f8f75879fc2"
 }
