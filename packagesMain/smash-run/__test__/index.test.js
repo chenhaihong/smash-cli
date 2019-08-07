@@ -4,7 +4,6 @@ const os = require('os');
 const fse = require('fs-extra');
 const logger = require('smash-helper-logger');
 const pacote = require('pacote');
-const smashInit = require('smash-init');
 
 const smashRun = require('../lib');
 const TaskFinder = require('../lib/TaskFinder');
@@ -12,7 +11,8 @@ const MiddlewareInstaller = require('../lib/MiddlewareInstaller');
 const QueueRunner = require('../lib/QueueRunner');
 
 const lastCwd = process.cwd();
-const TEMP = resolve(lastCwd, 'temp');
+const ROOT = resolve(__dirname, '..');
+const TEMP = resolve(ROOT, '__fixtures__/smash-project');
 const REPO = resolve(os.homedir(), '.smash-cli/middleware');
 
 // spy on logger
@@ -34,7 +34,6 @@ beforeAll(() => {
   fse.emptyDirSync(REPO); // 清空中间件仓库
   fse.emptyDirSync(TEMP);
   process.chdir(TEMP); // 将工作空间临时迁到这个目录
-  smashInit();
 });
 
 afterEach(() => {
