@@ -10,13 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "2.4.2"
   }
 }

@@ -4,12 +4,13 @@ const logger = require('smash-helper-logger');
 const smashInstall = require('../lib');
 
 const lastCwd = process.cwd();
-const TEMP = resolve(lastCwd, 'temp');
+const ROOT = resolve(__dirname, '..'); // 该包的根目录
+const TEMP = resolve(ROOT, '__temp__');
 
+const mockInstall = jest.fn(smashInstall);
+const spyCopySync = jest.spyOn(fse, 'copySync');
 const spySuccess = jest.spyOn(logger, 'success');
 const spyFail = jest.spyOn(logger, 'fail');
-const spyCopySync = jest.spyOn(fse, 'copySync');
-const mockInstall = jest.fn(smashInstall);
 
 beforeAll(() => {
   fse.emptyDirSync(TEMP);
@@ -22,13 +23,15 @@ afterEach(() => {
 
 afterAll(() => {
   process.chdir(lastCwd); // 重置工作空间
-  fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用，然后可删除生成的配置文件
+  fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用
 });
 
 describe('smash-install', () => {
-  test('should install well', async () => {
+  test('should install known template successfully', async () => {
     expect.assertions(4);
 
+    // 因为要覆盖到拷贝冗余文件的逻辑，
+    // 所以选这个包
     const tplName = 'smash-template-react';
     await mockInstall(tplName);
 
