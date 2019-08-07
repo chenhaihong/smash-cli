@@ -5,9 +5,9 @@
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packages/smash-cli#readme",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "bin": {
-    "smash": "bin.js"
+    "smash": "lib/bin.js"
   },
   "keywords": [
     "smash",
@@ -22,10 +22,12 @@
   },
   "dependencies": {
     "commander": "2.20.0",
-    "fs-extra": "8.1.0",
-    "smash-helper-logger": "0.0.6",
     "smash-init": "0.0.6",
     "smash-install": "0.0.6",
     "smash-run": "0.0.6"
+  },
+  "devDependencies": {
+    "exec-sh": "0.3.2",
+    "fs-extra": "8.1.0"
   }
 }

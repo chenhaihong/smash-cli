@@ -1,15 +1,15 @@
-const smash = require('../lib');
+const programmaticSmash = require('../lib');
 
-describe('smash-cli/index.js', () => {
+describe('programmatic api', () => {
   test('should have expected properties', () => {
-    expect(smash).toHaveProperty('init');
-    expect(smash).toHaveProperty('install');
-    expect(smash).toHaveProperty('run');
+    expect(programmaticSmash).toHaveProperty('init');
+    expect(programmaticSmash).toHaveProperty('install');
+    expect(programmaticSmash).toHaveProperty('run');
   });
 
   test('should have specific-type properties', () => {
-    expect(typeof smash.init).toBe('function');
-    expect(typeof smash.install).toBe('function');
-    expect(typeof smash.run).toBe('function');
+    expect(typeof programmaticSmash.init).toBe('function');
+    expect(typeof programmaticSmash.install).toBe('function');
+    expect(typeof programmaticSmash.run).toBe('function');
   });
 });

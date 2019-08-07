@@ -1,83 +1,69 @@
-const { execSync } = require('child_process');
-const path = require('path');
+const { resolve } = require('path');
+const execShPromise = require('exec-sh').promise;
 const fse = require('fs-extra');
+const program = require('commander');
+const programmaticSmash = require('../lib/index');
 
-// const smashCli = path.resolve(__dirname, '../lib/bin.js');
+// spy on commander
+const spyProgramHelp = jest.spyOn(program, 'help');
+// spy on programmaticSmash
+const spySmashInit = jest.spyOn(programmaticSmash, 'init');
+const spySmashInstall = jest.spyOn(programmaticSmash, 'install');
+const spySmashRun = jest.spyOn(programmaticSmash, 'run');
 
-// // 测试初初始化命令
-// {
-//   const timeName = 'Test smash init';
-//   console.time(timeName);
-//   {
-//     const cwd = path.resolve(__dirname, './temp/smash-init');
-//     fse.ensureDirSync(cwd);
-//     const r = execSync(`node ${smashCli} init`, { cwd, encoding: 'utf8' });
-//     console.log(r);
-//   }
-//   console.timeEnd(timeName);
-// }
+const ROOT = resolve(__dirname, '..'); // 该包的根目录
+const TEMP_CWD = resolve(ROOT, '__temp__');
+const smashBin = resolve(ROOT, 'lib/bin.js');
+const bin = (cwd) => (command) => execShPromise(`node ${smashBin} ${command}`, { cwd, stdio: null });
 
-// // 测试安装模板命令
-// {
-//   const timeName = 'Test smash install';
-//   console.time(timeName);
-//   {
-//     const cwd = path.resolve(__dirname, './temp/smash-install');
-//     fse.ensureDirSync(cwd);
-//     const r = execSync(`node ${smashCli} install smash-middleware-helloworld`, { cwd, encoding: 'utf8' });
-//     console.log(r);
-//   }
-//   console.timeEnd(timeName);
-// }
+beforeAll(() => {
+  fse.emptyDirSync(TEMP_CWD);
+});
 
-// // 测试运行任务命令
-// {
-//   const timeName = 'Test smash run';
-//   console.time(timeName);
-//   {
-//     const cwd = path.resolve(__dirname, './temp/smash-run');
-//     fse.ensureDirSync(cwd);
-//     const r1 = execSync(`node ${smashCli} init`, { cwd, encoding: 'utf8' });
-//     console.log(r1);
-//     const r2 = execSync(`node ${smashCli} run helloworld`, { cwd, encoding: 'utf8' });
-//     console.log(r2);
-//   }
-//   console.timeEnd(timeName);
-// }
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
-// const dir = path.resolve(__dirname, 'smash-tmp');
+afterAll(() => {
+  fse.removeSync(TEMP_CWD);
+});
 
-// beforeAll(() => {
-//   fse.removeSync(dir);
-//   init(dir, () => {});
-// });
+describe('cli', () => {
+  test('should print help info without any option or command', async () => {
+    const { stdout, stderr } = await bin(null)('');
+    expect.assertions(5);
+    expect(spyProgramHelp).toBeCalled();
+    expect(stdout).toMatch(/Examples\:/);
+    expect(stdout).toMatch(/smash init/);
+    expect(stdout).toMatch(/smash install smash-template-react/);
+    expect(stdout).toMatch(/smash run helloworld/);
+  });
 
-// afterAll(() => {
-//   fse.removeSync(dir);
-// });
+  test('should print help info with "-h|--help" option', async () => {
+    const { stdout, stderr } = await bin(null)('--help');
+    expect.assertions(5);
+    expect(spyProgramHelp).toBeCalled();
+    expect(stdout).toMatch(/Examples\:/);
+    expect(stdout).toMatch(/smash init/);
+    expect(stdout).toMatch(/smash install smash-template-react/);
+    expect(stdout).toMatch(/smash run helloworld/);
+  });
 
-// describe('smash-cli/bin', () => {
-//   test('"smash" should run well', (done) => {
-//     expect.assertions(1);
-//     execSh(`node ${mese}`, { cwd: dir }, function(err, stdout, stderr) {
-//       expect(err).toBeNull();
-//       done();
-//     });
-//   });
+  test('shold run smash-init with "init" command', async () => {
+    const { stdout, stderr } = await bin('init');
 
-//   test('"mese -v" should run well', (done) => {
-//     expect.assertions(1);
-//     execSh(`node ${mese} -v`, { cwd: dir }, function(err) {
-//       expect(err).toBeNull();
-//       done();
-//     });
-//   });
+    expect(spySmashInit).toBeCalled();
+  });
 
-//   test('"mese -h" should run well', (done) => {
-//     expect.assertions(1);
-//     execSh(`node ${mese} -h`, { cwd: dir }, function(err) {
-//       expect(err).toBeNull();
-//       done();
-//     });
-//   });
-// });
+  test('shold run smash-install with "install|i" command', async () => {
+    const { stdout, stderr } = await bin('install smash-template-react');
+
+    expect(spySmashInstall).toBeCalled();
+  });
+
+  test('shold run smash-run with "run|r" command', async () => {
+    const { stdout, stderr } = await bin('run helloworld');
+
+    expect(spySmashRun).toBeCalled();
+  });
+});
