@@ -14,6 +14,11 @@ if (argv.package) {
   }
 }
 
-const args = ['--runInBand', '--rootDir', ROOT];
+const args = [
+  '--runInBand', //顺序执行
+  // '--detectOpenHandles',
+  `--rootDir`,
+  ROOT,
+];
 console.log(`running: jest ${args.join(' ')}\n`);
 require('jest').run(args);

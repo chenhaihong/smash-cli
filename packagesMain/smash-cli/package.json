@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "bin": {
-    "smash": "lib/bin.js"
+    "smash": "lib/bin"
   },
   "keywords": [
     "smash",
