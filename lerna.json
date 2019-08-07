@@ -19,7 +19,7 @@
     }
   },
   "publishConfig": {
-    "ignore": ["*.md"],
+    "ignore": [],
     "registry": "https://registry.npmjs.org/"
   },
   "bootstrapConfig": {
