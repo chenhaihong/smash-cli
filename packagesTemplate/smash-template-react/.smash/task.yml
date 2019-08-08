@@ -1,0 +1,25 @@
+server:
+  - name: smash-middleware-webpack-v4
+    type: server # 浏览器网页应用，启用webpack-dev-server
+
+watch:
+  - name: smash-middleware-webpack-v4
+    type: watch # 浏览器网页应用，开启watch模式
+
+build:
+  # 检查语法错误并修复
+  # - name: smash-middleware-eslint
+  #   options:
+  #     - ./src
+  #     - --ext .jsx,.js
+  #     - --fix
+  - name: smash-middleware-clean
+    remove: true
+    dirs:
+      - ./dist
+  - name: smash-middleware-webpack-v4
+    type: build # 浏览器网页应用，生产环境
+
+test:
+  - name: smash-middleware-jest
+    options: ./__tests__ --passWithNoTests --coverage

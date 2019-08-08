@@ -1,0 +1,22 @@
+{
+  "name": "reactv16",
+  "version": "0.0.1",
+  "description": "react@16.0.0+",
+  "main": "index.js",
+  "author": "erye <erye@tiiit.cn>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-middleware-webpack-v4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-middleware-webpack-v4/issues"
+  },
+  "homepage": "https://github.com/chenhaihong/smash-middleware-webpack-v4#readme",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "dependencies": {}
+}

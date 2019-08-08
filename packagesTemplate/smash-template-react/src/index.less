@@ -1,0 +1,28 @@
+html {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+p {
+  font-size: 24px;
+  font-weight: bold;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 300px;
+  min-height: 400px;
+  background: #ccc;
+  transform: translate(-50%, -50%);
+}

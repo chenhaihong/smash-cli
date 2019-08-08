@@ -1,0 +1,28 @@
+{
+  "name": "smash-middleware-copy",
+  "version": "0.0.9",
+  "description": "A copy middleware for smash-cli.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-copy#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "smash",
+    "smash-cli",
+    "smash middleware",
+    "hello world"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "glob": "^7.1.3",
+    "handlebars": "^4.1.0",
+    "is-glob": "^4.0.0"
+  }
+}

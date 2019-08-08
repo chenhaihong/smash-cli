@@ -1,0 +1,12 @@
+helloworld:
+  - name: 'smash-middleware-helloworld' # 中间件名称
+    paramA: 'param a' # 传递给这个中间件的参数 paramA
+    paramB: 'param b' # 传递给这个中间件的参数 paramB
+
+server:
+  - name: smash-middleware-webpack-v4
+    type: server # 启用webpack-dev-server，自动打开页面，在网页查看运行效果
+
+lib:
+  - name: smash-middleware-webpack-v4
+    type: lib # 构建lib

@@ -1,0 +1,26 @@
+{
+  "name": "smash-middleware-jest",
+  "version": "0.0.9",
+  "description": "A jest middleware for smash-cli.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-jest#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "smash",
+    "smash-cli",
+    "smash middleware",
+    "hello world"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "exec-sh": "^0.3.2",
+    "jest": "^24.1.0"
+  }
+}

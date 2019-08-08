@@ -1,0 +1,36 @@
+{
+  "name": "smash-template-react-component",
+  "version": "0.0.9",
+  "description": "使用smash-cli模板规范 开发的react组件模板。",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesTemplate/smash-template-react-component#readme",
+  "license": "MIT",
+  "main": "dist/index.min.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "smash",
+    "smash-cli",
+    "smash template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "scripts": {
+    "dev": "smash run server",
+    "build": "smash run lib"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  }
+}

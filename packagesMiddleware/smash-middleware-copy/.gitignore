@@ -1,0 +1,5 @@
+/.smash
+.vscode
+node_modules
+test
+dist

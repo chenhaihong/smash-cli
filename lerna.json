@@ -14,12 +14,12 @@
       "exact": true
     },
     "publish": {
-      "ignoreChanges": [],
+      "ignoreChanges": ["*.md"],
       "message": "chore(release): publish"
     }
   },
   "publishConfig": {
-    "ignore": [],
+    "ignore": ["*.md"],
     "registry": "https://registry.npmjs.org/"
   },
   "bootstrapConfig": {
