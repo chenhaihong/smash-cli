@@ -2,67 +2,62 @@
 
 const chalk = require('chalk');
 
-const firstName = 'smash';
+module.exports = class Logger {
+  constructor(name = 'smash') {
+    this.name = name;
+  }
 
-module.exports = {
-  log,
-  info,
-  warn,
-  error,
-  success,
-  fail,
+  /**
+   * 输出普通提示
+   * @param  {...any} params 要输出的信息
+   * @returns {void}
+   */
+  log(...params) {
+    console.log(this.name, chalk.blueBright('log'), ...params); // eslint-disable-line
+  }
+
+  /**
+   * 输出信息
+   * @param  {...any} params 要输出的信息
+   * @returns {void}
+   */
+  info(...params) {
+    console.log(this.name, chalk.greenBright('info'), ...params); // eslint-disable-line
+  }
+
+  /**
+   * 输出警告
+   * @param  {...any} params 要输出的信息
+   * @returns {void}
+   */
+  warn(...params) {
+    console.log(this.name, chalk.yellowBright('warn'), ...params); // eslint-disable-line
+  }
+
+  /**
+   * 输出错误
+   * @param  {...any} params 要输出的信息
+   * @returns {void}
+   */
+  error(...params) {
+    console.log(this.name, chalk.redBright('error'), ...params); // eslint-disable-line
+  }
+
+  /**
+   * 输出成功提示
+   * @param  {...any} params 要输出的信息
+   * @returns {void}
+   */
+  success(...params) {
+    console.log(this.name, chalk.greenBright('success'), ...params); // eslint-disable-line
+  }
+
+  /**
+   * 输出失败提示
+   * @param  {...any} params 要输出的信息
+   * @returns {void}
+   */
+  fail(...params) {
+    console.log(this.name, chalk.redBright('fail'), ...params); // eslint-disable-line
+  }
 };
-
-/**
- * 输出普通提示
- * @param  {...any} params 要输出的信息
- * @returns {void}
- */
-function log(...params) {
-  console.log(firstName, chalk.blueBright('log'), ...params); // eslint-disable-line
-}
-
-/**
- * 输出信息
- * @param  {...any} params 要输出的信息
- * @returns {void}
- */
-function info(...params) {
-  console.log(firstName, chalk.greenBright('info'), ...params); // eslint-disable-line
-}
-
-/**
- * 输出警告
- * @param  {...any} params 要输出的信息
- * @returns {void}
- */
-function warn(...params) {
-  console.log(firstName, chalk.yellowBright('warn'), ...params); // eslint-disable-line
-}
-
-/**
- * 输出错误
- * @param  {...any} params 要输出的信息
- * @returns {void}
- */
-function error(...params) {
-  console.log(firstName, chalk.redBright('error'), ...params); // eslint-disable-line
-}
-
-/**
- * 输出成功提示
- * @param  {...any} params 要输出的信息
- * @returns {void}
- */
-function success(...params) {
-  console.log(firstName, chalk.greenBright('success'), ...params); // eslint-disable-line
-}
-
-/**
- * 输出失败提示
- * @param  {...any} params 要输出的信息
- * @returns {void}
- */
-function fail(...params) {
-  console.log(firstName, chalk.redBright('fail'), ...params); // eslint-disable-line
-}

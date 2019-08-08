@@ -18,10 +18,10 @@ function smashInit() {
     fileCwdSmash = resolve(dirCwdSmash, 'task.yml'); // 工作目录下的.smash任务配置文件
 
   if (fse.pathExistsSync(fileCwdSmash)) {
-    logger.info('task.yml existed.');
+    logger.info('Task.yml existed.');
   } else {
     fse.copySync(dirDefaultSmash, dirCwdSmash);
-    logger.success('initialized successfully.');
+    logger.success('Initialized successfully.');
   }
 }
 
