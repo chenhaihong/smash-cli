@@ -38,7 +38,7 @@ async function smashInstall(tplName) {
     // 部分文件，比如.gitignore、.npmignore并不会被发布到官方仓库，所以需要增加一个逻辑。
     // 这个逻辑是：针对被忽略发布文件，在目录下新增有特殊后缀名.backup的冗余文件，用来替代发布。
     // 后续，拷贝的逻辑，针对特殊后缀名称的文件，将其名称做修改成没有后缀的名称。
-    const dirSrc = resolve(dirTarball, './package');
+    const dirSrc = resolve(dirTarball, 'package');
     const dirDst = process.cwd();
     fse.copySync(dirSrc, dirDst, {
       filter: (file) => {

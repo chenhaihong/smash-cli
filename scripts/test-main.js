@@ -16,6 +16,7 @@ if (argv.package) {
 
 const args = [
   '--runInBand', //顺序执行
+  // '--detectOpenHandles',
   '--config',
   resolve(__dirname, '../jest.config.js'),
   `--rootDir`,

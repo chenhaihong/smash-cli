@@ -27,7 +27,7 @@ afterAll(() => {
 });
 
 describe('smash-install', () => {
-  test('should install known template successfully', async () => {
+  it('should install known template successfully', async (done) => {
     expect.assertions(4);
 
     // 因为要覆盖到拷贝冗余文件的逻辑，
@@ -41,17 +41,24 @@ describe('smash-install', () => {
     expect(spyCopySync).toBeCalled();
 
     expect(spySuccess).toBeCalled();
+
+    done();
   });
 
-  test('should not install well', async () => {
+  it('should not install unknown package well', async (done) => {
     expect.assertions(3);
 
-    const tplName = 'smsah-waremiddle-helloworld';
+    const tplName = 'smsah-waremiddle-worldhello';
     await mockInstall(tplName);
 
     expect(mockInstall).toBeCalled();
     expect(mockInstall.mock.calls[0][0]).toBe(tplName);
 
     expect(spyFail).toBeCalled();
+
+    done();
   });
+
+  // TODO 缺少断网环境下的测试用例
+  // it('should not install well without network', async (done) => {});
 });
