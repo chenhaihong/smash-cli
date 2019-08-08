@@ -24,9 +24,7 @@ async function smashRun(taskName) {
       // （3）获取该任务的所有中间件的路径。
       // Tip：将中间件的安装路径放在installedPaths数组对象里，
       //      避免污染 middlewareConfigQueue 数组对象。
-      const installedPaths = await MiddlewareInstaller.getInstalledPaths(
-        middlewareConfigQueue
-      );
+      const installedPaths = await MiddlewareInstaller.getInstalledPaths(middlewareConfigQueue);
       // （4）执行中间件队列。
       QueueRunner.dequeue(middlewareConfigQueue, installedPaths);
     }

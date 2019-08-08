@@ -1,5 +1,6 @@
 {
-  "npmClient": "npm",
+  "useWorkspaces": true,
+  "npmClient": "yarn",
   "packages": ["packagesHelper/*", "packagesMain/*", "packagesMiddleware/*", "packagesTemplate/*"],
   "command": {
     "create": {

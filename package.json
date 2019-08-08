@@ -1,5 +1,11 @@
 {
   "private": true,
+  "workspaces": [
+    "packagesHelper/*",
+    "packagesMain/*",
+    "packagesMiddleware/*",
+    "packagesTemplate/*"
+  ],
   "name": "smash-cli-monorepo",
   "scripts": {
     "eslint": "eslint --ext .js ./",

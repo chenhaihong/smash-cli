@@ -4,21 +4,22 @@ const minimist = require('minimist');
 
 const argv = minimist(process.argv.slice(2));
 
-let ROOT = resolve(__dirname, '../');
+let rootDir = resolve(__dirname, '../');
 if (argv.package) {
   // 指定包测试
-  ROOT = join(ROOT, argv.package);
-  console.log(ROOT);
-  if (!fse.pathExistsSync(ROOT)) {
-    return console.log('路径不存在:', ROOT);
+  rootDir = join(rootDir, argv.package);
+  console.log(rootDir);
+  if (!fse.pathExistsSync(rootDir)) {
+    return console.log('路径不存在:', rootDir);
   }
 }
 
 const args = [
   '--runInBand', //顺序执行
-  // '--detectOpenHandles',
+  '--config',
+  resolve(__dirname, '../jest.config.js'),
   `--rootDir`,
-  ROOT,
+  rootDir,
 ];
 console.log(`running: jest ${args.join(' ')}\n`);
 require('jest').run(args);

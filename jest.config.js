@@ -10,10 +10,16 @@ module.exports = {
     resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],
   collectCoverage: true, // 收集测试时的覆盖率信息
-  coverageDirectory: resolve(ROOT, 'coverage'), // 指定输出覆盖信息文件的目录
   collectCoverageFrom: [
     // 指定收集覆盖率的目录文件，只收集每个包的lib目录
     '**/lib/**',
+  ],
+  coverageDirectory: resolve(ROOT, 'coverage'), // 指定输出覆盖信息文件的目录
+  coveragePathIgnorePatterns: [
+    // 忽略覆盖
+    '/node_modules/',
+    '/packagesMiddleware/',
+    '/packagesTemplate/',
   ],
   testMatch: [
     // 测试文件匹配规则
