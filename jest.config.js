@@ -6,7 +6,7 @@ module.exports = {
   verbose: true,
   setupFiles: [
     // 初始化smash默认配置
-    // resolve(ROOT, 'scripts/setup-before-and-after-all.js'),
+    resolve(ROOT, 'scripts/setup-before-and-after-all.js'),
     resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],
   collectCoverage: true, // 收集测试时的覆盖率信息
@@ -23,7 +23,7 @@ module.exports = {
   ],
   testMatch: [
     // 测试文件匹配规则
-    '**/__test__/**/*.test.js',
+    '**/__tests__/**/*.test.js',
   ],
   testPathIgnorePatterns: [
     // 忽略测试路径

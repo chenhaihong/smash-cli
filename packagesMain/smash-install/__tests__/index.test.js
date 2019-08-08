@@ -14,7 +14,10 @@ const spyFail = jest.spyOn(logger, 'fail');
 
 beforeAll(() => {
   fse.emptyDirSync(TEMP);
-  process.chdir(TEMP); // 将工作空间临时迁到这个目录
+
+  // TODO 突然出现，切换工作空间无效的问题。
+  // 将工作空间临时迁到这个目录
+  process.chdir(TEMP);
 });
 
 afterEach(() => {

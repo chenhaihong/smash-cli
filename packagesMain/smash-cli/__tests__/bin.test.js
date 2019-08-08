@@ -24,12 +24,13 @@ afterAll(() => {
 
 describe('cli', () => {
   describe('should print help info', () => {
-    it('without any option or command', async () => {
+    it('without any option or command', async (done) => {
       const { stdout, stderr } = await bin(null)('');
       expect(stdout).toMatch(/Examples\:/);
       expect(stdout).toMatch(/smash init/);
       expect(stdout).toMatch(/smash install smash-template-react/);
       expect(stdout).toMatch(/smash run helloworld/);
+      done();
     });
 
     it('with "--help" option', async () => {

@@ -11,7 +11,7 @@ const MiddlewareInstaller = require('../lib/MiddlewareInstaller');
 const QueueRunner = require('../lib/QueueRunner');
 
 const lastCwd = process.cwd();
-const TEMP = resolve(__dirname, '../__fixtures__/smash-project');
+const DIR_FIXTURE = resolve(__dirname, '../__fixtures__/smash-project');
 const REPO = resolve(os.homedir(), '.smash-cli/middleware');
 
 // spy on logger
@@ -31,8 +31,8 @@ const mockSmashRun = jest.fn(smashRun);
 
 beforeAll(() => {
   fse.emptyDirSync(REPO); // 清空中间件仓库
-  fse.ensureDirSync(TEMP);
-  process.chdir(TEMP); // 将工作空间临时迁到这个目录
+  fse.ensureDirSync(DIR_FIXTURE);
+  process.chdir(DIR_FIXTURE); // 将工作空间临时迁到这个目录
 });
 
 afterEach(() => {
@@ -45,7 +45,7 @@ afterAll(() => {
 });
 
 describe('smash-run', () => {
-  it('should run known task and install first-time-run middleware', async () => {
+  it('should run known task and install first-time-run middleware', async (done) => {
     await mockSmashRun('helloworld');
 
     // should run known task well
@@ -58,9 +58,11 @@ describe('smash-run', () => {
     expect(spyGetInstalledPaths).toBeCalled();
     expect(spyExtract).toBeCalled();
     expect(spySuccess).toBeCalled();
+
+    done();
   });
 
-  it('should not run unknown task well', async () => {
+  it('should not run unknown task well', async (done) => {
     await mockSmashRun('worldhello');
 
     expect(mockSmashRun).toBeCalled();
@@ -73,9 +75,11 @@ describe('smash-run', () => {
     // 直接进入错误分支，输出错误信息
     expect(spyWarn).toBeCalled();
     expect(spyWarn.mock.calls[0]).toContain('task not found.');
+
+    done();
   });
 
-  it('should not re-install not-first-time-run middleware', async () => {
+  it('should not re-install not-first-time-run middleware', async (done) => {
     await mockSmashRun('helloworld');
 
     expect(mockSmashRun).toBeCalled();
@@ -84,9 +88,11 @@ describe('smash-run', () => {
     // 再次使用中间件不需要安装
     expect(spyGetInstalledPaths).toBeCalled();
     expect(spyExtract).not.toBeCalled();
+
+    done();
   });
 
-  it('should not run known task with unknown middleware sucessfully', async () => {
+  it('should not run known task with unknown middleware sucessfully', async (done) => {
     await mockSmashRun('task-with-unknown-middleware'); // 运行未知task
 
     expect(spyGetMiddlewareQueue).toBeCalled();
@@ -96,5 +102,7 @@ describe('smash-run', () => {
     expect(spyDequeue).not.toBeCalled(); // 不会执行中间件队列任务
 
     expect(spyError).toBeCalled(); // 捕获异常时，通过logger.error输出了错误信息
+
+    done();
   });
 });
