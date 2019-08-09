@@ -9,7 +9,7 @@
 // 你可以在这个空集对象上挂在任意数据。它会沿着中间件队列传递下去。
 const context = Object.create(null);
 
-class QuereRunner {
+module.exports = class QuereRunner {
   /**
    * 递归执行中间件队列
    * @param {Array} middlewareConfigQueue
@@ -41,6 +41,4 @@ class QuereRunner {
 
     next();
   }
-}
-
-module.exports = QuereRunner;
+};

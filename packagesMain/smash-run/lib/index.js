@@ -2,7 +2,7 @@
  * Task executing function for smash-cli.
  */
 
-const logger = require('smash-helper-logger');
+const SmashLogger = require('smash-helper-logger');
 const TaskFinder = require('./TaskFinder');
 const MiddlewareInstaller = require('./MiddlewareInstaller');
 const QueueRunner = require('./QueueRunner');
@@ -15,6 +15,7 @@ module.exports = smashRun;
  * @returns {void}
  */
 async function smashRun(taskName) {
+  const logger = new SmashLogger('smash-run');
   try {
     // （1）获取当前任务对应的中间件队列配置。
     const middlewareConfigQueue = TaskFinder.getMiddlewareQueue(taskName);
@@ -30,7 +31,7 @@ async function smashRun(taskName) {
     }
     // （2.2）如果用户未定义这个任务，提示没有定义该任务
     else {
-      logger.warn('task not found.');
+      logger.warn('Task not found:', taskName, '.');
     }
   } catch (error) {
     logger.error(error.message);

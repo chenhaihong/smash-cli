@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('yaml'); // 使用yaml包来解析yaml配置
 
-class TaskFinder {
+module.exports = class TaskFinder {
   /**
    * 获取用户配置的任务列表
    * @returns {Object} 任务配置对象
@@ -27,6 +27,4 @@ class TaskFinder {
     const tasks = this.getTasks();
     return tasks[taskName]; // 每个任务都是一个中间件队列
   }
-}
-
-module.exports = TaskFinder;
+};
