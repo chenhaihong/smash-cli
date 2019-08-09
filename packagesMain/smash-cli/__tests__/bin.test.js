@@ -30,59 +30,85 @@ describe('cli', () => {
       expect(stdout).toMatch(/smash init/);
       expect(stdout).toMatch(/smash install smash-template-react/);
       expect(stdout).toMatch(/smash run helloworld/);
+
       done();
     });
 
-    it('with "--help" option', async () => {
+    it('with "--help" option', async (done) => {
       const { stdout, stderr } = await bin(null)('--help');
       expect(stdout).toMatch(/Examples\:/);
       expect(stdout).toMatch(/smash init/);
       expect(stdout).toMatch(/smash install smash-template-react/);
       expect(stdout).toMatch(/smash run helloworld/);
+
+      done();
     });
 
-    it('with "-h" option', async () => {
+    it('with "-h" option', async (done) => {
       const { stdout, stderr } = await bin(null)('-h');
       expect(stdout).toMatch(/Examples\:/);
       expect(stdout).toMatch(/smash init/);
       expect(stdout).toMatch(/smash install smash-template-react/);
       expect(stdout).toMatch(/smash run helloworld/);
+
+      done();
     });
   });
 
-  it('shold run smash-init with "init" command', async () => {
+  describe('init', () => {
     const cwd = resolve(TEMP, 'dir_for_init');
     fse.ensureDirSync(cwd);
-    const { stdout, stderr } = await bin(cwd)('init');
-    expect(stdout).toMatch(/initialized successfully\./);
+
+    it('should initialize non-smash directory well', async (done) => {
+      const { stdout, stderr } = await bin(cwd)('init');
+      expect(stdout).toMatch(/Initialized successfully\./);
+
+      done();
+    });
+
+    it('should not initialize task-file-existed directory successfully', async (done) => {
+      const { stdout, stderr } = await bin(cwd)('init');
+      expect(stdout).toMatch(/Task.yml existed\./);
+
+      done();
+    });
   });
 
-  describe('install|i <template>', () => {
-    it('shold run smash-install with "install" command', async () => {
+  describe('Download <template>', () => {
+    it('should run smash-install with "install" command', async (done) => {
       const cwd = resolve(TEMP, 'dir_for_install');
       fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('install smash-template-react');
-      expect(stdout).toMatch(/successfully installed\./);
+      expect(stdout).toMatch(/Successfully installed\./);
+
+      done();
     });
 
-    it('shold run smash-install with "i" command', async () => {
+    it('should run smash-install with "i" command', async (done) => {
       const cwd = resolve(TEMP, 'dir_for_i');
       fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('i smash-template-react');
-      expect(stdout).toMatch(/successfully installed\./);
+      expect(stdout).toMatch(/Successfully installed\./);
+
+      done();
     });
   });
 
   describe('run|r <task>', () => {
     const cwd = resolve(ROOT, '__fixtures__/smash-project');
-    it('shold run smash-run with "run" command', async () => {
+
+    it('should run smash-run with "run" command', async (done) => {
       const { stdout, stderr } = await bin(cwd)('run helloworld');
       expect(stdout).toMatch(/Hello world/);
+
+      done();
     });
 
-    it('shold run smash-run with "r" command', async () => {
+    it('should run smash-run with "r" command', async (done) => {
       const { stdout, stderr } = await bin(cwd)('r helloworld');
       expect(stdout).toMatch(/Hello world/);
+
+      done();
     });
   });
 });
