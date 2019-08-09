@@ -9,7 +9,7 @@ module.exports = class Logger {
 
   /**
    * 输出普通提示
-   * @param  {...any} params 要输出的信息
+   * @param  {...String} params 要输出的信息
    * @returns {void}
    */
   log(...params) {
@@ -18,7 +18,7 @@ module.exports = class Logger {
 
   /**
    * 输出信息
-   * @param  {...any} params 要输出的信息
+   * @param  {...String} params 要输出的信息
    * @returns {void}
    */
   info(...params) {
@@ -27,7 +27,7 @@ module.exports = class Logger {
 
   /**
    * 输出警告
-   * @param  {...any} params 要输出的信息
+   * @param  {...String} params 要输出的信息
    * @returns {void}
    */
   warn(...params) {
@@ -36,7 +36,7 @@ module.exports = class Logger {
 
   /**
    * 输出错误
-   * @param  {...any} params 要输出的信息
+   * @param  {...String} params 要输出的信息
    * @returns {void}
    */
   error(...params) {
@@ -45,7 +45,7 @@ module.exports = class Logger {
 
   /**
    * 输出成功提示
-   * @param  {...any} params 要输出的信息
+   * @param  {...String} params 要输出的信息
    * @returns {void}
    */
   success(...params) {
@@ -54,7 +54,7 @@ module.exports = class Logger {
 
   /**
    * 输出失败提示
-   * @param  {...any} params 要输出的信息
+   * @param  {...String} params 要输出的信息
    * @returns {void}
    */
   fail(...params) {

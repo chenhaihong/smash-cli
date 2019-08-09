@@ -2,15 +2,17 @@
 
 const { resolve } = require('path');
 const fse = require('fs-extra');
-const logger = require('smash-helper-logger');
+const autoMockSmashLogger = require('smash-helper-logger');
 const smashInit = require('../lib');
+
+//  auto mock ES6 class SmashLogger
+jest.mock('smash-helper-logger');
 
 const lastCwd = process.cwd();
 const ROOT = resolve(__dirname, '..'); // 该包的根目录
 const TEMP = resolve(ROOT, '__temp__');
 
-const spyInfo = jest.spyOn(logger, 'info');
-const spySuccess = jest.spyOn(logger, 'success');
+// spy on fs-extra
 const spyCopySync = jest.spyOn(fse, 'copySync');
 const spyExistsSync = jest.spyOn(fse, 'pathExistsSync');
 
@@ -29,8 +31,8 @@ afterAll(() => {
 });
 
 describe('smash-init', () => {
-  test('should init non-smash directory well', () => {
-    expect.assertions(5);
+  test('should initialize non-smash directory well', () => {
+    expect.assertions(6);
     smashInit();
 
     expect(spyExistsSync).toBeCalled();
@@ -39,18 +41,24 @@ describe('smash-init', () => {
     expect(spyCopySync.mock.calls[0]).toEqual([resolve(ROOT, '.defaultSmash'), resolve(TEMP, '.smash')]);
 
     // 验证输出信息，拷贝成功
-    expect(spySuccess).toBeCalled();
-    expect(spySuccess.mock.calls[0][0]).toMatch(/initialized successfully\./);
+    expect(autoMockSmashLogger).toBeCalled();
+    const instance = autoMockSmashLogger.mock.instances[0];
+    const mockSuccess = instance.success;
+    expect(mockSuccess).toBeCalled();
+    expect(mockSuccess.mock.calls[0][0]).toMatch(/Initialized successfully\./);
   });
 
-  test('should not init task-file-existed directory successfully', () => {
-    expect.assertions(3);
+  test('should not initialize task-file-existed directory successfully', () => {
+    expect.assertions(4);
     smashInit();
 
     expect(spyExistsSync).toBeCalled();
 
     // 验证输出信息，拷贝失败
-    expect(spyInfo).toBeCalled();
-    expect(spyInfo.mock.calls[0][0]).toMatch(/task.yml existed\./);
+    expect(autoMockSmashLogger).toBeCalled();
+    const instance = autoMockSmashLogger.mock.instances[0];
+    const mockFail = instance.fail;
+    expect(mockFail).toBeCalled();
+    expect(mockFail.mock.calls[0][0]).toMatch(/Task.yml existed\./);
   });
 });

@@ -1,6 +1,6 @@
 # `smash-init`
 
-Initializer for smash-cli.
+Generate a `.smash/task.yml` file in the current work dirctory.
 
 ## Usage
 
