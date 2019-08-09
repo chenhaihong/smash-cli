@@ -50,7 +50,7 @@ describe('smash-install', () => {
     // 顺利输出“提示成功信息”
     const instance = autoMockSmashLogger.mock.instances[0];
     const mockSuccess = instance.success;
-    expect(mockSuccess.calls[0][0]).toMatch(/Successfully installed/);
+    expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed/);
     done();
   });
 
