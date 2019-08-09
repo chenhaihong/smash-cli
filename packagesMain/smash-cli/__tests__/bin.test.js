@@ -57,9 +57,9 @@ describe('cli', () => {
 
   describe('init', () => {
     const cwd = resolve(TEMP, 'dir_for_init');
-    fse.ensureDirSync(cwd);
 
     it('should initialize non-smash directory well', async (done) => {
+      fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('init');
       expect(stdout).toMatch(/Initialized successfully\./);
 
@@ -74,12 +74,12 @@ describe('cli', () => {
     });
   });
 
-  describe('Download <template>', () => {
+  describe('install', () => {
     it('should run smash-install with "install" command', async (done) => {
       const cwd = resolve(TEMP, 'dir_for_install');
       fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('install smash-template-react');
-      expect(stdout).toMatch(/Successfully installed\./);
+      expect(stdout).toMatch(/Successfully installed/);
 
       done();
     });
@@ -88,13 +88,13 @@ describe('cli', () => {
       const cwd = resolve(TEMP, 'dir_for_i');
       fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('i smash-template-react');
-      expect(stdout).toMatch(/Successfully installed\./);
+      expect(stdout).toMatch(/Successfully installed/);
 
       done();
     });
   });
 
-  describe('run|r <task>', () => {
+  describe('run', () => {
     const cwd = resolve(ROOT, '__fixtures__/smash-project');
 
     it('should run smash-run with "run" command', async (done) => {
