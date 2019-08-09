@@ -1,16 +1,18 @@
 const { resolve } = require('path');
 const fse = require('fs-extra');
-const logger = require('smash-helper-logger');
+const autoMockSmashLogger = require('smash-helper-logger');
 const smashInstall = require('../lib');
+
+// auto mock ES6 class SmashLogger
+jest.mock('smash-helper-logger');
+// mock SmashInstall
+const mockInstall = jest.fn(smashInstall);
+// spy on fs-extra
+const spyCopySync = jest.spyOn(fse, 'copySync');
 
 const lastCwd = process.cwd();
 const ROOT = resolve(__dirname, '..'); // 该包的根目录
 const TEMP = resolve(ROOT, '__temp__');
-
-const mockInstall = jest.fn(smashInstall);
-const spyCopySync = jest.spyOn(fse, 'copySync');
-const spySuccess = jest.spyOn(logger, 'success');
-const spyFail = jest.spyOn(logger, 'fail');
 
 beforeAll(() => {
   fse.emptyDirSync(TEMP);
@@ -38,13 +40,17 @@ describe('smash-install', () => {
     const tplName = 'smash-template-react';
     await mockInstall(tplName);
 
+    // 顺利调用安装函数
     expect(mockInstall).toBeCalled();
     expect(mockInstall.mock.calls[0][0]).toBe(tplName);
 
+    // 顺利拷贝模板
     expect(spyCopySync).toBeCalled();
 
-    expect(spySuccess).toBeCalled();
-
+    // 顺利输出“提示成功信息”
+    const instance = autoMockSmashLogger.mock.instances[0];
+    const mockSuccess = instance.success;
+    expect(mockSuccess.calls[0][0]).toMatch(/Successfully installed/);
     done();
   });
 
@@ -57,7 +63,10 @@ describe('smash-install', () => {
     expect(mockInstall).toBeCalled();
     expect(mockInstall.mock.calls[0][0]).toBe(tplName);
 
-    expect(spyFail).toBeCalled();
+    // 输出“失败信息”
+    const instance = autoMockSmashLogger.mock.instances[0];
+    const mockFail = instance.fail;
+    expect(mockFail).toBeCalled();
 
     done();
   });

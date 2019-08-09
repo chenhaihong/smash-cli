@@ -5,7 +5,7 @@
 const os = require('os');
 const { join, resolve } = require('path');
 const fse = require('fs-extra');
-const logger = require('smash-helper-logger');
+const SmashLogger = require('smash-helper-logger');
 const pacote = require('pacote');
 const tar = require('tar');
 
@@ -20,6 +20,7 @@ module.exports = smashInstall;
  * @returns {void}
  */
 async function smashInstall(tplName) {
+  const logger = new SmashLogger('smash-install');
   try {
     // （1）获取包信息，检出包名、版本号。如果不存在，会抛出错误。
     const { name, version } = await pacote.manifest(tplName);
@@ -44,8 +45,8 @@ async function smashInstall(tplName) {
       filter: (file) => {
         const reg = /\.backup$/;
         if (file.match(reg)) {
-          const relativeFile = file.replace(dirSrc, ''); // .gitignore.backup
-          const destFile = join(dirDst, relativeFile.replace(reg, '')); // .gitignore
+          const relativeFile = file.replace(dirSrc, ''); // => '/.gitignore.backup'
+          const destFile = join(dirDst, relativeFile.replace(reg, '')); // => '{cwd}/.gitignore'
           fse.copySync(file, destFile);
           return false;
         }
@@ -53,7 +54,7 @@ async function smashInstall(tplName) {
       },
     });
 
-    logger.success('successfully installed.');
+    logger.success(`Successfully installed ${name}@${version}.`);
   } catch (error) {
     logger.fail(error.message);
   }
