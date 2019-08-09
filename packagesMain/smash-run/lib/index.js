@@ -31,9 +31,9 @@ async function smashRun(taskName) {
     }
     // （2.2）如果用户未定义这个任务，提示没有定义该任务
     else {
-      logger.warn('Task not found:', taskName, '.');
+      logger.fail('Task not found:', taskName, '.');
     }
   } catch (error) {
-    logger.error(error.message);
+    logger.fail(error.message);
   }
 }
