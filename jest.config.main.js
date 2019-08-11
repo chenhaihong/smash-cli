@@ -5,7 +5,7 @@ const ROOT = resolve(__dirname);
 module.exports = {
   verbose: true,
   setupFiles: [
-    resolve(ROOT, 'scripts/setup-empty-coverage.js.js'),
+    resolve(ROOT, 'scripts/setup-empty-coverage.js'),
     resolve(ROOT, 'scripts/setup-empty-repo.js'),
     resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],

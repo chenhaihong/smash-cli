@@ -4,10 +4,7 @@ const ROOT = resolve(__dirname);
 
 module.exports = {
   verbose: true,
-  setupFiles: [
-    resolve(ROOT, 'scripts/setup-empty-coverage.js.js'),
-    resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
-  ],
+  setupFiles: [resolve(ROOT, 'scripts/setup-empty-coverage.js'), resolve(ROOT, 'scripts/setup-unit-test-timeout.js')],
   collectCoverage: true, // 收集测试时的覆盖率信息
   collectCoverageFrom: [
     // 指定收集覆盖率的目录文件，只收集每个包的lib目录
