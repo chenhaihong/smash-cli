@@ -4,7 +4,7 @@ const minimist = require('minimist');
 
 const argv = minimist(process.argv.slice(2));
 
-let rootDir = resolve(__dirname, '../');
+let rootDir = resolve(__dirname, '..');
 if (argv.package) {
   // 指定包测试
   rootDir = join(rootDir, argv.package);

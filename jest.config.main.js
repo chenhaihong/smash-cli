@@ -5,7 +5,7 @@ const ROOT = resolve(__dirname);
 module.exports = {
   verbose: true,
   setupFiles: [
-    // 初始化smash默认配置
+    resolve(ROOT, 'scripts/setup-empty-coverage.js.js'),
     resolve(ROOT, 'scripts/setup-empty-repo.js'),
     resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],

@@ -11,7 +11,7 @@ $ yrm use taobao
 
 # 安装依赖
 $ yarn install
-$ npx lerna bootstrap
+# $ npx lerna bootstrap
 ```
 
 ## 检查静态语法、修正代码格式
@@ -26,9 +26,11 @@ $ yarn run prettier
 ```bash
 # 测试所有main和helper包
 $ node scripts/test-main.js
-
 # 只测试某个包
 $ node scripts/test-main.js --package=packagesHelper/smash-helper-logger
+
+# 测试所有main和helper包
+$ node scripts/test-middleware.js --package=packagesMiddleware/smash-middleware-clean
 ```
 
 ## 查看更改

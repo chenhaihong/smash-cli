@@ -5,8 +5,7 @@ const ROOT = resolve(__dirname);
 module.exports = {
   verbose: true,
   setupFiles: [
-    // 初始化smash默认配置
-    resolve(ROOT, 'scripts/setup-empty-repo.js'),
+    resolve(ROOT, 'scripts/setup-empty-coverage.js.js'),
     resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],
   collectCoverage: true, // 收集测试时的覆盖率信息
@@ -18,7 +17,8 @@ module.exports = {
   coveragePathIgnorePatterns: [
     // 忽略覆盖
     '/node_modules/',
-    '/packagesMiddleware/',
+    '/packagesHelper/',
+    '/packagesMain/',
     '/packagesTemplate/',
   ],
   testMatch: [
@@ -28,7 +28,8 @@ module.exports = {
   testPathIgnorePatterns: [
     // 忽略测试路径
     '/node_modules/',
-    '/packagesMiddleware/',
+    '/packagesHelper/',
+    '/packagesMain/',
     '/packagesTemplate/',
   ],
   coverageThreshold: {
