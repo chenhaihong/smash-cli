@@ -5,7 +5,7 @@
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-clean#readme",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "keywords": [
     "smash",
     "smash-cli",
