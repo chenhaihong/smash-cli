@@ -17,6 +17,8 @@ module.exports = {
     '/packagesHelper/',
     '/packagesMain/',
     '/packagesTemplate/',
+    '/__tests__/',
+    '/__fixtures__/',
   ],
   testMatch: [
     // 测试文件匹配规则
@@ -28,6 +30,7 @@ module.exports = {
     '/packagesHelper/',
     '/packagesMain/',
     '/packagesTemplate/',
+    '/__fixtures__/',
   ],
   coverageThreshold: {
     // 配置测试最低阈值
