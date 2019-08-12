@@ -35,9 +35,9 @@ const filesUnknown = [
 ];
 const filesKnown = [
   // dirs
-  '/src/filesKnown ----> /dist/filesKnown',
+  '/src/filesKnown -----------> /dist/filesKnown',
   // files
-  '/src/index.css -----> /dist/filesKnownCSS/index.css',
+  '/src/filesKnown/index.css -> /dist/filesKnownCSS/index.css',
 ];
 const filesWithTplData = [
   // dirs with tplData
