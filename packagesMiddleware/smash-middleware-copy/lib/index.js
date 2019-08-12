@@ -50,6 +50,11 @@ function copy(ctx, config, next) {
       return;
     }
 
+    if (!tplData) {
+      fse.copySync(src, dst);
+      return;
+    }
+
     const stats = fse.statSync(src);
     if (stats.isFile()) {
       _copyFile(src, dst, tplData);

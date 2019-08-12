@@ -1,19 +1,25 @@
+const { resolve } = require('path');
+const fse = require('fs-extra');
 const copy = require('../lib');
 
-// const { ctx, config, next } = {
-//   ctx: Object.create(null),
-//   config: {
-//     files: ['./*.js -> ./dist/glob', './test/a.js -> ./dist/b.js', './test -> ./dist/a'],
-//     tplData: {
-//       name: 'copy',
-//     },
-//   },
-//   next() {
-//     console.log('[next] Hello next.');
-//   },
-// };
+const lastCwd = process.cwd();
+const ROOT = resolve(__dirname, '..');
+const FXITURE = resolve(ROOT, '__fixtures__/smash-project');
+const DIST = resolve(FXITURE, 'dist');
 
-// copy(ctx, config, next);
+beforeAll(() => {
+  fse.removeSync(DIST);
+  process.chdir(FXITURE);
+});
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+afterAll(() => {
+  process.chdir(lastCwd);
+  fse.removeSync(DIST);
+});
 
 const ctx = {};
 const filesKnown = [
