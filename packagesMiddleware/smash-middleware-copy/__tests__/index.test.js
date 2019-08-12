@@ -24,24 +24,26 @@ afterAll(() => {
 const ctx = {};
 const filesNotMatched = '/src/lib/*.js /dist/lib';
 const filesGlob = [
-  // files glob
-  '/src/lib-a/*.js ---> /dist/lib',
   // dirs glob
-  './src/lib-* --------> /dist/',
+  './src/filesGlo* -----> /dist/',
+  // files glob
+  '/src/filesGlob/*.js -> /dist/filesGlobJavascript',
 ];
 const filesUnknown = [
   // unknown files
-  '/src/unknown-files.txt -> /dist/unknown-files.txt',
+  '/src/filesUnknown/unknown-files.txt -> /dist/unknown-files.txt',
 ];
 const filesKnown = [
-  // files
-  '/src/index.css -------> /dist/style/index.css',
   // dirs
-  '/src/images -------> /dist/images',
+  '/src/filesKnown ----> /dist/filesKnown',
+  // files
+  '/src/index.css -----> /dist/filesKnownCSS/index.css',
 ];
 const filesWithTplData = [
-  // with tplData
-  '/src/withTpl.txt ---> /dist/withTpl.txt',
+  // dirs with tplData
+  '/src/filesWithTplData -------------> /dist/filesWithTplData',
+  // files with tplData
+  '/src/filesWithTplData/withTpl.txt -> /dist/filesWithTplDataTXT/withTpl.txt',
 ];
 const next = () => {};
 
