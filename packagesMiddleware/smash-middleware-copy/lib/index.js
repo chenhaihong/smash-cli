@@ -3,7 +3,7 @@
  * 拷贝工作目录下的文件（夹）到指定位置，支持模板文件的拷贝。
  */
 
-const { join, resolve } = require('path');
+const { basename, join, parse, resolve } = require('path');
 const fse = require('fs-extra');
 const Glob = require('glob').Glob;
 const Handlebars = require('handlebars');
@@ -27,8 +27,9 @@ function copy(ctx, config, next) {
 
   const reg = /-+>/; // ------------->
   files.forEach((line) => {
-    // 只有包含"-------->"才能走下面的逻辑
-    // 比如 /a.js ------> /b.js
+    // 类型0：不包含"-->"符号
+    // 只有包含"-->"才能走下面的逻辑
+    // 比如 /a.js --> /b.js
     if (!line.match(reg)) {
       logger.warn('/-+>/ not matched:', line);
       return;
@@ -37,12 +38,13 @@ function copy(ctx, config, next) {
     src = src.trim();
     dst = dst.trim();
 
-    // glob类型
+    // 类型1：glob类型
     if (isGlob(src)) {
       _copyPattern(src, dst, tplData);
       return;
     }
 
+    // 类型2：未知的文件（夹）
     src = _safePath(src);
     dst = _safePath(dst);
     if (!fse.pathExistsSync(src)) {
@@ -50,11 +52,13 @@ function copy(ctx, config, next) {
       return;
     }
 
+    // 类型3：不包含tplData
     if (!tplData) {
       fse.copySync(src, dst);
       return;
     }
 
+    // 类型4：包含tplData的文件（夹）
     const stats = fse.statSync(src);
     if (stats.isFile()) {
       _copyFile(src, dst, tplData);
@@ -121,11 +125,14 @@ function _copyDir(srcDir, destDir, tplData = null) {
  * @returns {void} 无返回值
  */
 function _copyPattern(pattern, destDir, tplData = null) {
+  // /src/lib-a/*.js 转为 ./src/lib-a/*.js
+  /^\//.test(pattern) && (pattern = '.' + pattern);
+
   const mg = new Glob(pattern, { mark: true, sync: true });
   const cwd = process.cwd();
   mg.found.forEach((file) => {
     const src = join(cwd, file);
-    const dst = join(destDir, file);
+    const dst = join(cwd, destDir, basename(src));
     const stats = fse.statSync(src);
     if (stats.isFile()) {
       _copyFile(src, dst, tplData);
