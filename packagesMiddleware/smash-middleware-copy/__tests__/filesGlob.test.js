@@ -1,14 +1,11 @@
 const fse = require('fs-extra');
-const glob = require('glob');
 jest.mock('smash-helper-logger');
 const autoMockSmashLogger = require('smash-helper-logger');
 const SmashCopy = require('../lib');
 
 // autoMockSmashLogger instance
 const mockInstance = autoMockSmashLogger.mock.instances[0];
-const mockInfo = mockInstance.info;
-// spy on glob
-const spyGlob = jest.spyOn(glob, 'Glob');
+const mockSuccess = mockInstance.success;
 // spy on fs-extra
 const spyPathExistsSync = jest.spyOn(fse, 'pathExistsSync');
 const spyCopySync = jest.spyOn(fse, 'copySync');
@@ -22,8 +19,8 @@ const mockNext = jest.fn(() => {});
 require('./setup-before-after-all');
 
 beforeEach(() => {
-  mockInfo.mockClear();
-  spyGlob.mockClear();
+  mockSuccess.mockClear();
+
   spyPathExistsSync.mockClear();
 
   spyCopySync.mockClear();
@@ -50,12 +47,10 @@ describe('with glob files', () => {
 
     expect(spyPathExistsSync).not.toBeCalled();
 
-    expect(spyGlob).toBeCalled();
-    expect(spyGlob.mock.calls.length).toBe(2);
-    expect(spyGlob.mock.calls[0][0]).tbEqual('./src/filesGlo*');
-    expect(spyGlob.mock.calls[1][0]).tbEqual('./src/filesGlob/*.js');
-
     expect(spyCopySync).toBeCalled();
+
+    expect(mockSuccess).toBeCalled();
+    expect(mockSuccess.mock.calls.length).toBe(2);
 
     expect(spyStatSync).not.toBeCalled();
 
@@ -70,15 +65,13 @@ describe('with glob files and tplData', () => {
 
     expect(spyPathExistsSync).not.toBeCalled();
 
-    expect(spyGlob).toBeCalled();
-    expect(spyGlob.mock.calls.length).toBe(2);
-    expect(spyGlob.mock.calls[0][0]).tbEqual('./src/filesGlo*');
-    expect(spyGlob.mock.calls[1][0]).tbEqual('./src/filesGlob/*.js');
-
     expect(spyStatSync).toBeCalled();
     expect(spyReaddirSync).toBeCalled();
     expect(spyReadFileSync).toBeCalled();
     expect(spyWriteFileSync).toBeCalled();
+
+    expect(mockSuccess).toBeCalled();
+    expect(mockSuccess.mock.calls.length).toBe(3);
 
     expect(mockNext).toBeCalled();
     done();

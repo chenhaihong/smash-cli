@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 const fse = require('fs-extra');
 
 const lastCwd = process.cwd();

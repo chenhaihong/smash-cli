@@ -53,6 +53,7 @@ function SmashCopy(ctx, config, next) {
     // 类型4：不包含tplData
     if (!tplData) {
       fse.copySync(src, dst);
+      logger.success(`Copy ${src} -> ${dst}`);
       return;
     }
 
@@ -88,6 +89,7 @@ function _copyGlob(pattern, destDir, tplData) {
 
     if (!tplData) {
       fse.copySync(src, dst);
+      logger.success(`Copy ${src} -> ${dst}`);
       return;
     }
 
@@ -129,11 +131,9 @@ function _copyDir(srcDir, destDir, tplData) {
  * @returns {void} 无返回值
  */
 function _copyFile(srcFile, dstFile, tplData) {
-  logger.info(`Copy ${srcFile} -> ${dstFile}`);
   let source = fse.readFileSync(srcFile, 'utf8');
-  if (tplData) {
-    source = Handlebars.compile(source)(tplData);
-  }
+  source = Handlebars.compile(source)(tplData);
   fse.ensureFileSync(dstFile);
   fse.writeFileSync(dstFile, source, 'utf8');
+  logger.success(`Copy ${srcFile} -> ${dstFile}`);
 }
