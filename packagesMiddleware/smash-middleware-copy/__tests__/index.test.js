@@ -1,26 +1,8 @@
 const { resolve } = require('path');
 const fse = require('fs-extra');
-const copy = require('../lib');
+const SmashCopy = require('../lib');
 
-const lastCwd = process.cwd();
-const ROOT = resolve(__dirname, '..');
-const FXITURE = resolve(ROOT, '__fixtures__/smash-project');
-const DIST = resolve(FXITURE, 'dist');
-
-beforeAll(() => {
-  fse.removeSync(DIST);
-  process.chdir(FXITURE);
-});
-
-beforeEach(() => {
-  jest.clearAllMocks();
-});
-
-afterAll(() => {
-  process.chdir(lastCwd);
-  fse.removeSync(DIST);
-});
-
+// params for SmashCopy
 const ctx = {};
 const filesNotMatched = '/src/lib/*.js /dist/lib';
 const filesGlob = [
@@ -47,34 +29,62 @@ const filesWithTplData = [
 ];
 const next = () => {};
 
-const mockCopy = jest.fn(copy);
+// mock next
 const mockNext = jest.fn(next);
+// spy on fs-extra
+const spyPathExistsSync = jest.spyOn(fse, 'pathExistsSync');
+const spyCopySync = jest.spyOn(fse, 'copySync');
+const spyStatSync = jest.spyOn(fse, 'statSync');
+const spyReaddirSync = jest.spyOn(fse, 'readdirSync');
+const spyReadFileSync = jest.spyOn(fse, 'readFileSync');
+const spyWriteFileSync = jest.spyOn(fse, 'writeFileSync');
+
+// cwd variables for setup
+const lastCwd = process.cwd();
+const ROOT = resolve(__dirname, '..');
+const FIXTURE = resolve(ROOT, '__fixtures__/smash-project');
+const DIST = resolve(FIXTURE, 'dist');
+
+beforeAll(() => {
+  // 所有的文件都会被拷贝到dist目录下
+  fse.removeSync(DIST);
+  process.chdir(FIXTURE);
+});
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+afterAll(() => {
+  process.chdir(lastCwd);
+  fse.removeSync(DIST);
+});
 
 describe('smash-middleware-copy', () => {
   it('should run well without any files', (done) => {
-    mockCopy(ctx, {}, mockNext);
+    SmashCopy(ctx, {}, mockNext);
     done();
   });
   it('should not copy not-matched files', (done) => {
-    mockCopy(ctx, { files: filesNotMatched }, mockNext);
+    SmashCopy(ctx, { files: filesNotMatched }, mockNext);
     done();
   });
   it('should not copy unknown files', (done) => {
-    mockCopy(ctx, { files: filesUnknown }, mockNext);
+    SmashCopy(ctx, { files: filesUnknown }, mockNext);
     done();
   });
   it('should copy glob files well', (done) => {
-    mockCopy(ctx, { files: filesGlob }, mockNext);
+    SmashCopy(ctx, { files: filesGlob }, mockNext);
     done();
   });
   it('should copy known files well', (done) => {
-    mockCopy(ctx, { files: filesKnown }, mockNext);
+    SmashCopy(ctx, { files: filesKnown }, mockNext);
     expect(mockNext).toBeCalled();
     done();
   });
   it('should copy with-tpl-data files well', (done) => {
     const tplData = { name: 'erye' };
-    mockCopy(
+    SmashCopy(
       ctx,
       {
         files: filesWithTplData,

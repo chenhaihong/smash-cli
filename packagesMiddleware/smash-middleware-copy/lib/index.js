@@ -3,7 +3,7 @@
  * 拷贝工作目录下的文件（夹）到指定位置，支持模板文件的拷贝。
  */
 
-const { basename, join, resolve } = require('path');
+const { basename, join } = require('path');
 const fse = require('fs-extra');
 const Glob = require('glob').Glob;
 const Handlebars = require('handlebars');
