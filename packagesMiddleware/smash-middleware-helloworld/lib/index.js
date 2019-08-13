@@ -4,7 +4,7 @@
  * @param {Object} config Config for the current middleware.
  * @param {Function} next The next middleware function.
  */
-module.exports = function middleware(ctx, config, next) {
+module.exports = function SmashHelloWorld(ctx, config, next) {
   // Do what u want here.
   console.log(
     // ctx,
@@ -12,5 +12,5 @@ module.exports = function middleware(ctx, config, next) {
     'Hello world'
   );
 
-  next(); // If u type this line, the QueueRunner will run the next middleware.
+  next && next(); // If u type this line, the QueueRunner will run the next middleware.
 };

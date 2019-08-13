@@ -13,7 +13,8 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMain/smash-run"
   },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"

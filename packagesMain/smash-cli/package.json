@@ -15,7 +15,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMain/smash-cli"
   },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
