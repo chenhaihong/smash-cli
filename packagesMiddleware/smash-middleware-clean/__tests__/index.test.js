@@ -34,7 +34,7 @@ afterAll(() => {
 describe('smash-middleware-clean', () => {
   describe('without dirs', () => {
     it('should not run remove or empty', () => {
-      SmashMiddlewareClean(ctx, {}, mockNext);
+      SmashClean(ctx, {}, mockNext);
 
       expect(spyPathExistsSync).not.toBeCalled();
       expect(spyRemoveSync).not.toBeCalled();
@@ -45,7 +45,7 @@ describe('smash-middleware-clean', () => {
   describe('with empty-string dirs', () => {
     it('should not run remove or empty', () => {
       const dirs = ['', ' '];
-      SmashMiddlewareClean(ctx, { dirs }, mockNext);
+      SmashClean(ctx, { dirs }, mockNext);
 
       expect(spyPathExistsSync).not.toBeCalled();
       expect(spyRemoveSync).not.toBeCalled();
@@ -55,7 +55,7 @@ describe('smash-middleware-clean', () => {
   });
   describe('with unknown dirs', () => {
     it('should not run remove or empty', () => {
-      SmashMiddlewareClean(ctx, { dirs: dirsUnknown }, mockNext);
+      SmashClean(ctx, { dirs: dirsUnknown }, mockNext);
 
       expect(spyPathExistsSync).toBeCalled();
       expect(spyRemoveSync).not.toBeCalled();
@@ -66,7 +66,7 @@ describe('smash-middleware-clean', () => {
   describe('with known dirs', () => {
     it('should empty directories well', () => {
       const dirs = dirsKnown[0];
-      SmashClean(ctx, { dirs }, next);
+      SmashClean(ctx, { dirs }, mockNext);
 
       expect(spyPathExistsSync).toBeCalled();
       expect(spyEmptyDirSync).toBeCalled();
@@ -75,7 +75,7 @@ describe('smash-middleware-clean', () => {
     });
     it('should remove directories well', () => {
       const dirs = dirsKnown;
-      SmashClean(ctx, { dirs, remove: true }, next);
+      SmashClean(ctx, { dirs, remove: true }, mockNext);
 
       expect(spyPathExistsSync).toBeCalled();
       expect(spyEmptyDirSync).not.toBeCalled();
