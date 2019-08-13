@@ -3,8 +3,17 @@
  */
 
 const execSh = require('exec-sh');
+const SmashLogger = require('smash-helper-logger');
 
-module.exports = function shell(ctx, config, next) {
+module.exports = SmashShell;
+
+/**
+ * Shell executor.
+ * @param {Object|null} ctx
+ * @param {Object} config 当前中间件的配置信息
+ * @param {Function} next 是否执行下一个中间件
+ */
+function SmashShell(ctx, config, next) {
   let { commonds } = config;
   Array.isArray(commonds) && (commonds = commonds.join(' && '));
 
@@ -20,4 +29,4 @@ module.exports = function shell(ctx, config, next) {
       next();
     }
   });
-};
+}

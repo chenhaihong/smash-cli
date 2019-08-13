@@ -5,7 +5,7 @@
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-shell#readme",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "keywords": [
     "smash",
     "smash-cli",
@@ -13,12 +13,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMiddleware/smash-middleware-shell"
   },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
-    "exec-sh": "^0.3.2"
+    "exec-sh": "0.3.2",
+    "smash-helper-logger": "0.0.9"
   }
 }
