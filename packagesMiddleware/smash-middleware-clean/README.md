@@ -12,15 +12,23 @@ clean:
     dirs:
       - ./dist
       - ./build
+remove:
+  - name: smash-middleware-clean
+    remove: true
+    dirs:
+      - ./dist
+      - ./build
 ```
 
-然后，执行以下命令来运行 `clean` 任务：
+然后，执行以下命令来运行 `clean` 或者 `remove` 任务：
 
 ```bash
+# `clean` 任务会清空当前工作目录下的 `dist` 和 `build` 目录。
 $ smash run clean
-```
 
-上面的 `clean` 任务会清空当前工作目录下的 `dist` 和 `build` 目录。
+# `remove` 任务会删除当前工作目录下的 `dist` 和 `build` 目录。
+$ smash run remove
+```
 
 # 链接
 

@@ -8,14 +8,14 @@ const fse = require('fs-extra');
 module.exports = SmashMiddlewareClean;
 
 /**
- * Directory cleaner middleware.
+ * Directory cleaner.
  * @param {Object} ctx
  * @param {Object} config 配置对象
  * @param {Function|null} next 下一个待执行的中间件函数
  */
 function SmashMiddlewareClean(ctx, config, next) {
   // （1）获取并规范化参数
-  let { dirs, remove = false } = config;
+  let { dirs = [], remove = false } = config;
   typeof dirs === 'string' && (dirs = [dirs]);
 
   // （2）遍历数组
@@ -32,5 +32,5 @@ function SmashMiddlewareClean(ctx, config, next) {
     }
   });
 
-  next && next();
+  next();
 }
