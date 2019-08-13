@@ -27,7 +27,7 @@ function SmashCopy(ctx, config, next) {
 
   const reg = /-+>/;
   files.forEach((line) => {
-    // 类型0：不包含"-->"符号。只有包含"-->"才能走下面的逻辑，比如"/a.js --> /b.js"
+    // 类型1：不包含"-->"符号。只有包含"-->"才能走下面的逻辑，比如"/a.js --> /b.js"
     if (!line.match(reg)) {
       logger.warn('/-+>/ not matched:', line);
       return;
@@ -36,13 +36,13 @@ function SmashCopy(ctx, config, next) {
     src = src.trim();
     dst = dst.trim();
 
-    // 类型1：glob类型
+    // 类型2：glob类型
     if (isGlob(src)) {
       _copyGlob(src, dst, tplData);
       return;
     }
 
-    // 类型2：不存在的文件（夹）
+    // 类型3：不存在的文件（夹）
     src = join(process.cwd(), src);
     dst = join(process.cwd(), dst);
     if (!fse.pathExistsSync(src)) {
@@ -50,13 +50,13 @@ function SmashCopy(ctx, config, next) {
       return;
     }
 
-    // 类型3：不包含tplData
+    // 类型4：不包含tplData
     if (!tplData) {
       fse.copySync(src, dst);
       return;
     }
 
-    // 类型4：包含tplData的文件（夹）
+    // 类型5：包含tplData的文件（夹）
     const stats = fse.statSync(src);
     if (stats.isDirectory()) {
       _copyDir(src, dst, tplData);
@@ -85,6 +85,12 @@ function _copyGlob(pattern, destDir, tplData) {
   mg.found.forEach((file) => {
     const src = join(cwd, file);
     const dst = join(cwd, destDir, basename(src));
+
+    if (!tplData) {
+      fse.copySync(src, dst);
+      return;
+    }
+
     const stats = fse.statSync(src);
     if (stats.isDirectory()) {
       _copyDir(src, dst, tplData);
@@ -92,23 +98,6 @@ function _copyGlob(pattern, destDir, tplData) {
       _copyFile(src, dst, tplData);
     }
   });
-}
-
-/**
- * 拷贝文件到目标地址，如果含有模板数据，则进行替换
- * @param {String} srcFile 源文件地址
- * @param {String} dstFile 目标文件地址
- * @param {Object|null} tplData 模板数据
- * @returns {void} 无返回值
- */
-function _copyFile(srcFile, dstFile, tplData) {
-  logger.info(`Copy ${srcFile} -> ${dstFile}`);
-  let source = fse.readFileSync(srcFile, 'utf8');
-  if (tplData) {
-    source = Handlebars.compile(source)(tplData);
-  }
-  fse.ensureFileSync(dstFile);
-  fse.writeFileSync(dstFile, source, 'utf8');
 }
 
 /**
@@ -130,4 +119,21 @@ function _copyDir(srcDir, destDir, tplData) {
       _copyFile(src, dst, tplData);
     }
   }
+}
+
+/**
+ * 拷贝文件到目标地址，如果含有模板数据，则进行替换
+ * @param {String} srcFile 源文件地址
+ * @param {String} dstFile 目标文件地址
+ * @param {Object|null} tplData 模板数据
+ * @returns {void} 无返回值
+ */
+function _copyFile(srcFile, dstFile, tplData) {
+  logger.info(`Copy ${srcFile} -> ${dstFile}`);
+  let source = fse.readFileSync(srcFile, 'utf8');
+  if (tplData) {
+    source = Handlebars.compile(source)(tplData);
+  }
+  fse.ensureFileSync(dstFile);
+  fse.writeFileSync(dstFile, source, 'utf8');
 }

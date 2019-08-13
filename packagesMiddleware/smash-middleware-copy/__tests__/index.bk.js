@@ -1,5 +1,9 @@
 const { resolve } = require('path');
 const fse = require('fs-extra');
+const glob = require('glob');
+const autoHandlebars = require('handlebars');
+const autoMockIsGlob = require('is-glob');
+
 const SmashCopy = require('../lib');
 
 // params for SmashCopy
@@ -31,6 +35,8 @@ const next = () => {};
 
 // mock next
 const mockNext = jest.fn(next);
+// spy on glob
+const spyGlob = jest.spyOn(glob, 'Glob');
 // spy on fs-extra
 const spyPathExistsSync = jest.spyOn(fse, 'pathExistsSync');
 const spyCopySync = jest.spyOn(fse, 'copySync');
