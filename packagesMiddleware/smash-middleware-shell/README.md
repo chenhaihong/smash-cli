@@ -9,8 +9,8 @@ A shell executor middleware for smash-cli.
 ```yaml
 shell:
   - name: smash-middleware-shell
-    commonds:
-      - mkdir test && cd test
+    commands:
+      - mkdir demo && cd demo
       - ls
       - touch index.js
       - ls
