@@ -4,8 +4,11 @@
 
 const path = require('path');
 const execSh = require('exec-sh');
+const SmashLogger = require('smash-helper-logger');
 
 module.exports = function middleware(ctx, config, next) {
+  const logger = new SmashLogger('smash-middleware-jest');
+
   let { options = '' } = config;
 
   // （1）获取options参数，如果是数组，转为字符串
@@ -20,14 +23,10 @@ module.exports = function middleware(ctx, config, next) {
   // （3）执行jest
   execSh([`${shellPath} ${options}`], (err) => {
     if (err) {
-      console.log('');
       console.log(`[smash-middleware-jest] End with exit code ${err.code}.`);
       return;
     }
 
-    if (next) {
-      console.log('');
-      next();
-    }
+    next && next();
   });
 };

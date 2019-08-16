@@ -10,17 +10,19 @@
     "smash",
     "smash-cli",
     "smash middleware",
-    "hello world"
+    "smash jest"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMiddleware/smash-middleware-jest"
   },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
-    "exec-sh": "^0.3.2",
-    "jest": "^24.1.0"
+    "exec-sh": "0.3.2",
+    "jest": "24.9.0",
+    "smash-helper-logger": "0.0.9"
   }
 }
