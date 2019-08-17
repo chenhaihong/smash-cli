@@ -1,11 +1,24 @@
-const middleware = require('.');
+const { resolve } = require('path');
+const SmashJest = require('../lib');
 
-const { ctx, config, next } = {
-  ctx: Object.create(null),
-  config: {
-    options: './test --coverage',
-  },
-  next() {},
+const FIXTURE = resolve(__dirname, '../__fixtures__');
+
+const ctx = Object.create(null);
+const config = {
+  options: './test --coverage',
 };
+const mockNext = jest.fn(() => {});
 
-middleware(ctx, config, next);
+describe('smash-middleware-jest', () => {
+  it('sholule run well without any test files', async (done) => {
+    await SmashJest(ctx, config, mockNext);
+
+    done();
+  });
+
+  it('sholule run well with test files', async (done) => {
+    await SmashJest(ctx, config, mockNext);
+
+    done();
+  });
+});
