@@ -4,6 +4,7 @@
 
 const path = require('path');
 const execSh = require('exec-sh');
+const jest = require('jest');
 const SmashLogger = require('smash-helper-logger');
 
 module.exports = function middleware(ctx, config, next) {
@@ -16,7 +17,7 @@ module.exports = function middleware(ctx, config, next) {
   Array.isArray(options) && (options = options.join(' '));
 
   // （2）获取jest的脚本路径
-  let shellPath = path.resolve(__dirname, './node_modules/.bin/jest');
+  let shellPath = path.resolve(__dirname, '../node_modules/.bin/jest');
   if (process.platform == 'win32') {
     shellPath += '.cmd';
   }
