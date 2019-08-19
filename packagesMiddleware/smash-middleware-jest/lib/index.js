@@ -8,9 +8,28 @@ const jest = require('jest');
 const SmashLogger = require('smash-helper-logger');
 
 module.exports = function middleware(ctx, config, next) {
+  let { type = null, options = '' } = config;
   const logger = new SmashLogger('smash-middleware-jest');
+  const TYPES = {
+    NODE: 'node', // 针对node应用
+    REACT: 'react', // 针对react应用
+    TYPESCRIPT: 'typescript', // 针对TS应用
+    VANILLA: 'vanilla', // 针对浏览器环境的原生js应用
+    VUE: 'vue', // 针对vue应用
+  };
 
-  let { options = '' } = config;
+  // （1）检查检查类型是否为空
+  if (!type) {
+    logger.warn('Please specify the type of your application.');
+    return;
+  }
+
+  // （2）检查类型是否正确
+  const keys = Object.keys(TYPES);
+  if (!keys.includes(type)) {
+    logger.warn('Not supported type:', type);
+    return;
+  }
 
   // （1）获取options参数，如果是数组，转为字符串
   // 这个参数的规范与jest的规范一致
