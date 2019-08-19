@@ -63,6 +63,7 @@ $ cd docusaurus/website && yarn install
 $ cd docusaurus/website && yarn start
 
 # Publish the Site
+# https://chenhaihong.github.io/smash-cli/
 $ cd docusaurus/website && yarn build
-$ npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master USE_SSH=false npm run publish-gh-pages
+$ npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
 ```
