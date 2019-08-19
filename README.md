@@ -61,4 +61,8 @@ $ cd docusaurus/website && yarn install
 
 # A browser window will open up at http://localhost:3000
 $ cd docusaurus/website && yarn start
+
+# Publish the Site
+$ cd docusaurus/website && yarn build
+$ npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master USE_SSH=false npm run publish-gh-pages
 ```
