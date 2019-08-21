@@ -14,15 +14,15 @@ const users = [
     caption: 'smash-cli',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/img/undraw_open_source.svg',
-    infoLink: 'https://www.facebook.com',
+    image: '/smash-cli/img/undraw_code_review.svg',
+    infoLink: 'https://www.smash-cli.com',
     pinned: true,
   },
 ];
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
-  tagline: 'A website for testing',
+  title: 'smash-cli@0.0.9', // Title for your website.
+  tagline: 'A tiny task manager for JavaScript projects.',
   url: 'https://chenhaihong.github.io', // Your website URL
   baseUrl: '/smash-cli/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,11 +38,13 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'doc1', label: 'Docs' },
+    { doc: 'getting-started/what-is-smash-cli', label: 'Docs' },
     { doc: 'doc4', label: 'API' },
     { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
+    // { search: true },
   ],
+  // algolia: {},
 
   // If you have users set above, you add it here:
   users,
@@ -54,8 +56,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#13316b',
-    secondaryColor: '#0d224a',
+    primaryColor: '#0099FF', //'#13316b',
+    secondaryColor: '#0099FF',
   },
 
   /* Custom fonts for website */
@@ -73,7 +75,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} www.smash-cli.com`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -104,7 +106,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/chenhaihong/smash-cli',
 };
 
 module.exports = siteConfig;
