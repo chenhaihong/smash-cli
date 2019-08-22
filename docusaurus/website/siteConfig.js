@@ -39,10 +39,15 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'getting-started/what-is-smash-cli', label: 'Docs' },
-    { doc: 'doc4', label: 'API' },
+    { doc: 'apis/helper-packages/smash-helper-logger', label: 'API' },
     { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
+    {
+      href: 'https://github.com/chenhaihong/smash-cli',
+      label: 'GitHub',
+    },
     // { search: true },
+    { languages: true },
   ],
   // algolia: {},
 
@@ -80,6 +85,7 @@ const siteConfig = {
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: 'default',
+    theme: 'atom-one-dark',
   },
 
   // Add custom scripts here that would be placed in <script> tags.
