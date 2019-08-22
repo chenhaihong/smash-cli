@@ -39,7 +39,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'getting-started/what-is-smash-cli', label: 'Docs' },
-    { doc: 'apis/helper-packages/smash-helper-logger', label: 'API' },
+    { doc: 'apis/main-packages/smash-cli', label: 'API' },
     { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
     {
