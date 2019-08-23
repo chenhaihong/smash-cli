@@ -6,9 +6,11 @@
 @media only screen and (min-width: 1024px) {
   /* 顶部导航 */
   .navigationSlider .slidingNav ul li a {
-    color: #999;
+    margin: 0 10px;
+    padding: 6px 0;
     border-bottom: 1px solid transparent;
   }
+  .navigationSlider .slidingNav ul li.siteNavGroupActive a,
   .navigationSlider .slidingNav ul li.siteNavItemActive a {
     color: #fff;
     border-bottom: 1px solid #fff;
@@ -27,4 +29,12 @@
 /* 侧边栏，高亮样式 */
 .toc .toggleNav ul li.navListItemActive a {
   font-weight: bold;
+}
+
+.homeContainer {
+  padding: 80px 0;
+}
+
+.homeContainer + .mainContainer {
+  padding: 0;
 }

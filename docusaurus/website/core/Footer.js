@@ -9,6 +9,7 @@ const React = require('react');
 
 class Footer extends React.Component {
   docUrl(doc, language) {
+    console.log(doc, language);
     const baseUrl = this.props.config.baseUrl;
     const docsUrl = this.props.config.docsUrl;
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
@@ -37,25 +38,66 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>Getting Started (or other categories)</a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>Guides (or other categories)</a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>API Reference (or other categories)</a>
+            <a
+              href={this.docUrl(
+                'documentation/getting-started/what-is-smash-cli.html',
+                this.props.language
+              )}
+              target='_blank'
+            >
+              Getting Started
+            </a>
+            <a
+              href={this.docUrl(
+                'documentation/middlewares/smash-middleware-helloworld.html',
+                this.props.language
+              )}
+              target='_blank'
+            >
+              Middlewares
+            </a>
+            <a
+              href={this.docUrl(
+                'documentation/templates/smash-template-react.html',
+                this.props.language
+              )}
+              target='_blank'
+            >
+              Templates
+            </a>
+            <a
+              href={this.docUrl(
+                'documentation/apis/smash-cli.html',
+                this.props.language
+              )}
+              target='_blank'
+            >
+              Programmatic APIs
+            </a>
+            <a
+              href={this.docUrl(
+                'examples/usage/using-a-template.html',
+                this.props.language
+              )}
+              target='_blank'
+            >
+              Examples
+            </a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>User Showcase</a>
-            <a href='https://stackoverflow.com/questions/tagged/' target='_blank' rel='noreferrer noopener'>
-              Stack Overflow
-            </a>
-            <a href='https://discordapp.com/'>Project Chat</a>
-            <a href='https://twitter.com/' target='_blank' rel='noreferrer noopener'>
-              Twitter
+            <a
+              href={this.pageUrl('users.html', this.props.language)}
+              target='_blank'
+            >
+              User Showcase
             </a>
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href='https://github.com/'>GitHub</a>
+            <a href={`${this.props.config.baseUrl}blog`} target='_blank'>
+              Blog
+            </a>
             <a
               className='github-button'
               href={this.props.config.repoUrl}
@@ -69,7 +111,10 @@ class Footer extends React.Component {
             </a>
             {this.props.config.twitterUsername && (
               <div className='social'>
-                <a href={`https://twitter.com/${this.props.config.twitterUsername}`} className='twitter-follow-button'>
+                <a
+                  href={`https://twitter.com/${this.props.config.twitterUsername}`}
+                  className='twitter-follow-button'
+                >
                   Follow @{this.props.config.twitterUsername}
                 </a>
               </div>
@@ -90,7 +135,7 @@ class Footer extends React.Component {
           </div>
         </section>
 
-        <a href='https://opensource.facebook.com/' target='_blank' rel='noreferrer noopener' className='fbOpenSource'>
+        <a target='_blank' rel='noreferrer noopener' className='fbOpenSource'>
           <img
             src={`${this.props.config.baseUrl}img/oss_logo.png`}
             alt='Facebook Open Source'

@@ -14,15 +14,15 @@ const users = [
     caption: 'smash-cli',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/smash-cli/img/undraw_code_review.svg',
+    image: '/smash-cli/img/smash-cli.svg',
     infoLink: 'https://www.smash-cli.com',
     pinned: true,
   },
 ];
 
 const siteConfig = {
-  title: 'smash-cli@0.0.9', // Title for your website.
-  tagline: 'A tiny task manager for JavaScript projects.',
+  title: 'smash-cli', // Title for your website.
+  tagline: 'A tiny task manager for modern JavaScript projects.',
   url: 'https://chenhaihong.github.io', // Your website URL
   baseUrl: '/smash-cli/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,6 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    { page: 'index', label: 'Home' },
     {
       doc: 'documentation/getting-started/what-is-smash-cli',
       label: 'Documentation',
@@ -50,7 +51,7 @@ const siteConfig = {
       label: 'GitHub',
     },
     // { search: true },
-    { languages: true },
+    // { languages: true },
   ],
   // algolia: {},
 
@@ -58,14 +59,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/favicon-white.ico',
+  footerIcon: 'img/favicon-white.ico',
+  favicon: 'img/favicon-black.ico',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#111111',
-    secondaryColor: '#222222',
+    primaryColor: '#20232a',
+    secondaryColor: '#282c34',
   },
 
   /* Custom fonts for website */

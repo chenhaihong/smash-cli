@@ -3,6 +3,6 @@ title: Installation
 sidebar_label: Installation
 ---
 
-```bash
+```shell
 $ npm i -g smash-cli
 ```

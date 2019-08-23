@@ -60,13 +60,18 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <Logo img_src={`${baseUrl}img/smash-cli.svg`} />
         <div className='inner'>
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href='#try'>Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button
+              href={docUrl('documentation/getting-started/what-is-smash-cli')}
+            >
+              Documentation
+            </Button>
+            <Button href={docUrl('examples/usage/using-a-template.html')}>
+              Examples
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -80,74 +85,39 @@ class Index extends React.Component {
     const { baseUrl } = siteConfig;
 
     const Block = (props) => (
-      <Container padding={['bottom', 'top']} id={props.id} background={props.background}>
-        <GridBlock align='center' contents={props.children} layout={props.layout} />
+      <Container
+        padding={['bottom', 'top']}
+        id={props.id}
+        background={props.background}
+      >
+        <GridBlock
+          align='center'
+          contents={props.children}
+          layout={props.layout}
+        />
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div className='productShowcaseSection paddingBottom' style={{ textAlign: 'center' }}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id='try'>
-        {[
-          {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
-          },
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background='dark'>
-        {[
-          {
-            content: 'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background='light'>
-        {[
-          {
-            content: 'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
     const Features = () => (
-      <Block layout='fourColumn'>
+      <Block layout='fourColumn' background='light'>
         {[
           {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
+            content: 'Easy to get started.',
+            // image: `${baseUrl}img/smash-cli.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Easy',
           },
           {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
+            content: 'Reuse middlewares without repeated downloads',
+            // image: `${baseUrl}img/smash-cli.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Reusable',
+          },
+          {
+            content: 'Help to purify your project',
+            // image: `${baseUrl}img/smash-cli.svg`,
+            imageAlign: 'top',
+            title: 'Pure',
           },
         ]}
       </Block>
@@ -166,10 +136,11 @@ class Index extends React.Component {
           </a>
         ));
 
-      const pageUrl = (page) => baseUrl + (language ? `${language}/` : '') + page;
+      const pageUrl = (page) =>
+        baseUrl + (language ? `${language}/` : '') + page;
 
       return (
-        <div className='productShowcaseSection paddingBottom'>
+        <div className='productShowcaseSection paddingTop paddingBottom'>
           <h2>Who is Using This?</h2>
           <p>This project is used by all these people</p>
           <div className='logos'>{showcase}</div>
@@ -187,10 +158,6 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className='mainContainer'>
           <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
           <Showcase />
         </div>
       </div>

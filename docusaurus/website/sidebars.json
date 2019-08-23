@@ -4,9 +4,12 @@
       "documentation/getting-started/what-is-smash-cli",
       "documentation/getting-started/installation"
     ],
-    "Middlewares": [],
-    "Templates": [],
-    "Programmatic Apis": [
+    "Middlewares": ["documentation/middlewares/smash-middleware-helloworld"],
+    "Templates": [
+      "documentation/templates/smash-template-react-component",
+      "documentation/templates/smash-template-react"
+    ],
+    "Programmatic APIs": [
       "documentation/apis/smash-cli",
       "documentation/apis/smash-init",
       "documentation/apis/smash-install",
