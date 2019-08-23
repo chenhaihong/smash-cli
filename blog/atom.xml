@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenhaihong.github.io/smash-cli/blog</id>
-    <title>smash-cli@0.0.9 Blog</title>
+    <title>smash-cli Blog</title>
     <updated>2019-08-21T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://chenhaihong.github.io/smash-cli/blog"/>
-    <subtitle>The best place to stay up-to-date with the latest smash-cli@0.0.9 news and events.</subtitle>
-    <logo>https://chenhaihong.github.io/smash-cli/img/favicon.ico</logo>
+    <subtitle>The best place to stay up-to-date with the latest smash-cli news and events.</subtitle>
+    <logo>https://chenhaihong.github.io/smash-cli/img/favicon-white.ico</logo>
     <rights>Copyright © 2019 www.smash-cli.com</rights>
     <entry>
         <title type="html"><![CDATA[v0.0.9 coming soon!]]></title>
