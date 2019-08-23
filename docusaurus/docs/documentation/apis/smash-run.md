@@ -3,6 +3,12 @@ title: smash-run
 sidebar_label: smash-run
 ---
 
+# Installation
+
+```bash
+$ npm install smash-run
+```
+
 ## Usage
 
 ### 1. Create `task.yml`

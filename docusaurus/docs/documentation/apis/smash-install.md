@@ -5,6 +5,12 @@ sidebar_label: smash-install
 
 Template downloader for smash-cli.
 
+# Installation
+
+```bash
+$ npm install smash-install
+```
+
 ## Usage
 
 ```javascript

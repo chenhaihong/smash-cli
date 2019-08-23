@@ -5,6 +5,12 @@ sidebar_label: smash-helper-logger
 
 Logger helper for `smash-cli`.
 
+# Installation
+
+```bash
+$ npm install smash-helper-logger
+```
+
 ## Usage
 
 ```javascript

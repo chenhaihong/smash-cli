@@ -1,19 +1,21 @@
 {
-  "docs": {
+  "documentation": {
     "Getting Started": [
-      "getting-started/what-is-smash-cli",
-      "getting-started/installation"
+      "documentation/getting-started/what-is-smash-cli",
+      "documentation/getting-started/installation"
     ],
-    "Middleware": [],
-    "Template": []
+    "Middlewares": [],
+    "Templates": [],
+    "Programmatic Apis": [
+      "documentation/apis/smash-cli",
+      "documentation/apis/smash-init",
+      "documentation/apis/smash-install",
+      "documentation/apis/smash-run",
+      "documentation/apis/smash-helper-logger"
+    ]
   },
-  "apis": {
-    "Main Packages": [
-      "apis/main-packages/smash-cli",
-      "apis/main-packages/smash-init",
-      "apis/main-packages/smash-install",
-      "apis/main-packages/smash-run"
-    ],
-    "Helper Packages": ["apis/helper-packages/smash-helper-logger"]
+  "examples": {
+    "Usage": ["examples/usage/using-a-template"],
+    "Contribute": ["examples/contribute/writing-a-template"]
   }
 }

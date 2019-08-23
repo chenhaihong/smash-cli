@@ -38,8 +38,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'getting-started/what-is-smash-cli', label: 'Docs' },
-    { doc: 'apis/main-packages/smash-cli', label: 'API' },
+    {
+      doc: 'documentation/getting-started/what-is-smash-cli',
+      label: 'Documentation',
+    },
+    { doc: 'examples/usage/using-a-template', label: 'Examples' },
     { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
     {
@@ -61,8 +64,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#0099FF', //'#13316b',
-    secondaryColor: '#0099FF',
+    primaryColor: '#111111',
+    secondaryColor: '#222222',
   },
 
   /* Custom fonts for website */
