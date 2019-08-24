@@ -25,7 +25,7 @@ remove:
 
 Then, run the `empty` or `remove` task by executing the following command:
 
-```shell
+```bash
 # empty dist and build
 $ smash run empty
 

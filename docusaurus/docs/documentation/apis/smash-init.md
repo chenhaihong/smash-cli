@@ -5,7 +5,7 @@ sidebar_label: smash-init
 
 Generate a `.smash/task.yml` file in the current work dirctory.
 
-# Installation
+## Installation
 
 ```bash
 $ npm install smash-init

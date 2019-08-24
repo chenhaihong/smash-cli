@@ -7,7 +7,7 @@ React@16+ template.
 
 ## Installation
 
-```bash
+```terminal
 $ mkdir demo && cd demo
 $ smash i smash-template-react
 ```
@@ -20,7 +20,7 @@ $ smash run server # start webpack-dev-server
 
 # or
 $ npm i
-$ smash run watch
+$ smash r watch
 ```
 
 ## Build
@@ -31,5 +31,5 @@ $ smash run build
 
 ## Tip
 
-- It will cost you some times to install `smash-middleware-webpack-v4`
+- It will cost you a few minutes to install `smash-middleware-webpack-v4`
   middleware at the first time.

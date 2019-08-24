@@ -21,6 +21,6 @@ shell:
 
 Then, run the `shell` task by executing the following command:
 
-```shell
+```bash
 $ smash run shell
 ```

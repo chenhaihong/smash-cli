@@ -2,9 +2,18 @@
   "documentation": {
     "Getting Started": [
       "documentation/getting-started/what-is-smash-cli",
-      "documentation/getting-started/installation"
+      "documentation/getting-started/installation",
+      "documentation/getting-started/configuration"
     ],
-    "Middlewares": ["documentation/middlewares/smash-middleware-helloworld"],
+    "Middlewares": [
+      "documentation/middlewares/smash-middleware-clean",
+      "documentation/middlewares/smash-middleware-copy",
+      "documentation/middlewares/smash-middleware-eslint",
+      "documentation/middlewares/smash-middleware-helloworld",
+      "documentation/middlewares/smash-middleware-jest",
+      "documentation/middlewares/smash-middleware-shell",
+      "documentation/middlewares/smash-middleware-webpack-v4"
+    ],
     "Templates": [
       "documentation/templates/smash-template-react-component",
       "documentation/templates/smash-template-react"

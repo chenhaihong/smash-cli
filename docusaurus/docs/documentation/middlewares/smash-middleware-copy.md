@@ -24,7 +24,7 @@ copy:
 
 Then, run the `copy` task by executing the following command:
 
-```shell
+```bash
 $ smash run copy
 ```
 

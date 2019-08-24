@@ -16,6 +16,6 @@ helloworld:
 
 Then, run the `helloworld` task by executing the following command:
 
-```shell
+```bash
 $ smash run helloworld
 ```

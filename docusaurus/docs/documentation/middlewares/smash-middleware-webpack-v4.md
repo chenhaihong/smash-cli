@@ -3,10 +3,7 @@ title: smash-middleware-webpack-v4
 sidebar_label: smash-middleware-webpack-v4
 ---
 
-A webpack 4 middleware for smash-cli.
-
-使用 [smash-cli 中间件规范](https://github.com/chenhaihong/smash-cli) 开发的
-webpack 中间件，该中间件已经内置了
+A webpack 4 middleware for smash-cli. 该中间件已经内置了
 [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server)。
 
 - 支持 mock
@@ -18,11 +15,12 @@ webpack 中间件，该中间件已经内置了
   - js(x)：添加了 stage-0、1、2、3 的支持
   - css、less
 
-## 使用
+## Usage
 
-<!-- ## Step 1 - 加入配置 -->
+<!-- ### Step 1 - 加入配置 -->
+
 <details>
-<summary><b>Step 1 - 加入配置</b></summary>
+<summary>Step 1 - 加入配置</summary>
 <p>
 在 <code>.smash/task.yml</code> 文件中加入配置：
 
@@ -54,9 +52,10 @@ buildLib:
     </p>
     </details>
 
-<!-- ## Step 2 - 添加自定义webpack配置 -->
+<!-- ### Step 2 - 添加自定义 webpack 配置 -->
+
 <details>
-<summary><b>Step 2 [可选] - 添加自定义webpack配置</b></summary>
+<summary>Step 2 [可选] - 添加自定义webpack配置</summary>
 <p>
 
 在项目根目录新建 `webpack.config.js` 文件，可增加自定义配置。
@@ -92,9 +91,10 @@ module.exports = ({ webpack, defaultWebpackConfig }) => {
 </p>
 </details>
 
-<!-- ## Step 3 - 执行任务 -->
+<!-- ### Step 3 - 执行任务 -->
+
 <details>
-<summary><b>Step 3 - 执行任务</b></summary>
+<summary>Step 3 - 执行任务</summary>
 <p>
 
 ```bash
@@ -114,12 +114,11 @@ $ smash run buildLib
 </p>
 </details>
 
-## 使用示例
+## Examples
 
-- [smash-template-react](https://www.npmjs.com/package/smash-template-react)
+- [smash-template-react](documentation/templates/smash-template-react.md)
+- [smash-template-react-component](documentation/templates/smash-template-react-component.md)
 
-## 链接
+## Links
 
-- [smash-cli](https://github.com/chenhaihong/smash-cli)
-- [开发 smash-cli 中间件](https://github.com/chenhaihong/smash-cli/wiki/%E5%BC%80%E5%8F%91%E4%B8%AD%E9%97%B4%E4%BB%B6)
 - [webpack loaders [zh]](https://webpack.docschina.org/loaders/)

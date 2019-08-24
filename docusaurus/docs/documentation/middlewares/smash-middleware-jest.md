@@ -17,6 +17,6 @@ jest:
 
 Then, run the `jest` task by executing the following command:
 
-```shell
+```bash
 $ smash run jest
 ```

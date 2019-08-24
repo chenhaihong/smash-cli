@@ -30,7 +30,7 @@ lint:
 
 Then, run the `lint` task by executing the following command:
 
-```shell
+```bash
 $ smash run lint
 ```
 

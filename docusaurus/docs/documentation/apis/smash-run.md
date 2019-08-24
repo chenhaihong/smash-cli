@@ -3,7 +3,9 @@ title: smash-run
 sidebar_label: smash-run
 ---
 
-# Installation
+Task executor for smash-cli.
+
+## Installation
 
 ```bash
 $ npm install smash-run
@@ -11,7 +13,7 @@ $ npm install smash-run
 
 ## Usage
 
-### 1. Create `task.yml`
+### Create `task.yml`
 
 Create `{cwd}/.smash/task.yml`:
 
@@ -21,10 +23,12 @@ helloworld-task:
   - name: smash-middleware-helloworld
 ```
 
-### 2. Run task
+### Run task
 
 ```javascript
 const smashRun = require('smash-run');
 
 smashRun('helloworld-task');
+// helloworld
+// helloworld
 ```

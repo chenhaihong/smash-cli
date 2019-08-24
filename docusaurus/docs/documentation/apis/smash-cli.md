@@ -3,9 +3,9 @@ title: smash-cli
 sidebar_label: smash-cli
 ---
 
-A tiny task management and execution tool. Yeah, really tiny.
+A tiny task manager for modern JavaScript projects.
 
-# Installation
+## Installation
 
 ```bash
 $ npm install smash-cli
