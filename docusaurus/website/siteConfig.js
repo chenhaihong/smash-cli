@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { page: 'index', label: 'Home' },
+    // { page: 'index', label: 'Home' },
     {
       doc: 'documentation/getting-started/what-is-smash-cli',
       label: 'Documentation',

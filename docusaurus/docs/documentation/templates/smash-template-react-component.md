@@ -43,5 +43,5 @@ $ smash run lib
 
 ## Tip
 
-- It will waste some times to install `smash-middleware-webpack-v4` middleware
-  at the first time.
+- It will cost you some times to install `smash-middleware-webpack-v4`
+  middleware at the first time.

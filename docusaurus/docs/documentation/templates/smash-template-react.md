@@ -16,7 +16,7 @@ $ smash i smash-template-react
 
 ```bash
 $ npm i
-$ smash run server # start on webpack-dev-server
+$ smash run server # start webpack-dev-server
 
 # or
 $ npm i
@@ -31,5 +31,5 @@ $ smash run build
 
 ## Tip
 
-- It will waste some times to install `smash-middleware-webpack-v4` middleware
-  at the first time.
+- It will cost you some times to install `smash-middleware-webpack-v4`
+  middleware at the first time.

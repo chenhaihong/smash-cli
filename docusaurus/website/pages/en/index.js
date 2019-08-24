@@ -102,7 +102,7 @@ class Index extends React.Component {
       <Block layout='fourColumn' background='light'>
         {[
           {
-            content: 'Easy to get started.',
+            content: 'Easy to get started',
             // image: `${baseUrl}img/smash-cli.svg`,
             imageAlign: 'top',
             title: 'Easy',
@@ -114,7 +114,7 @@ class Index extends React.Component {
             title: 'Reusable',
           },
           {
-            content: 'Help to purify your project',
+            content: 'Help to purify your JavaScript projects',
             // image: `${baseUrl}img/smash-cli.svg`,
             imageAlign: 'top',
             title: 'Pure',
