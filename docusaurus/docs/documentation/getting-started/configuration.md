@@ -23,8 +23,7 @@ helloworld:
   - name: smash-middleware-helloworld
 ```
 
-It defines a task called `helloworld`.<br> It uses `smash-middleware-helloworld`
-middleware to output `Hello world` to the console.
+It defines a task named `helloworld`.
 
 ## Run a task
 
@@ -34,3 +33,6 @@ $ smash run helloworld
 # or
 $ smash r helloworld
 ```
+
+It uses `smash-middleware-helloworld` middleware to output `Hello world` to the
+console.

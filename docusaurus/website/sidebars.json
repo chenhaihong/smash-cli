@@ -27,7 +27,13 @@
     ]
   },
   "examples": {
-    "Usage": ["examples/usage/using-a-template"],
-    "Contribute": ["examples/contribute/writing-a-template"]
+    "Usage": [
+      "examples/usage/using-a-template",
+      "examples/usage/using-a-middleware"
+    ],
+    "Contribute": [
+      "examples/contribute/writing-a-template",
+      "examples/contribute/writing-a-middleware"
+    ]
   }
 }

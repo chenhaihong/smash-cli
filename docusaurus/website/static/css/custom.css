@@ -27,8 +27,10 @@
 }
 
 /* 侧边栏，高亮样式 */
+.toc .toggleNav ul li a:hover,
 .toc .toggleNav ul li.navListItemActive a {
-  font-weight: bold;
+  color: #cc9933;
+  text-decoration: none;
 }
 
 .homeContainer {
@@ -37,4 +39,18 @@
 
 .homeContainer + .mainContainer {
   padding: 0;
+}
+
+.nav-footer .fbOpenSource {
+  text-align: center;
+}
+
+a {
+  color: #cc9933;
+  text-decoration: none;
+}
+
+.post a:hover {
+  color: #cc9933;
+  text-decoration: none;
 }

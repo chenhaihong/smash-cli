@@ -65,7 +65,9 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button
-              href={docUrl('documentation/getting-started/what-is-smash-cli')}
+              href={docUrl(
+                'documentation/getting-started/what-is-smash-cli.html'
+              )}
             >
               Documentation
             </Button>
@@ -164,5 +166,7 @@ class Index extends React.Component {
     );
   }
 }
+
+Index.title = 'Home';
 
 module.exports = Index;

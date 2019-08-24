@@ -33,7 +33,7 @@ $ smash run lib
 ├── dist              # 组件的构建输出目录，文件输出规则：[name].min.js
 ├── lib               # 组件入口目录，入口文件规则：*.js(x)
 ├── src               # 本地测试开发的文件存放的目录
-├── webpack.config.js
+└── webpack.config.js
 ```
 
 ## Tip

@@ -44,7 +44,7 @@ const siteConfig = {
       label: 'Documentation',
     },
     { doc: 'examples/usage/using-a-template', label: 'Examples' },
-    { page: 'help', label: 'Help' },
+    // { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
     {
       external: true,
@@ -118,6 +118,13 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/chenhaihong/smash-cli',
+
+  CNAME: 'www.smash-cli.com',
+  disableTitleTagline: true,
+  docsSideNavCollapsible: true,
+  editUrl: '',
+  scrollToTop: true,
+  useEnglishUrl: false,
 };
 
 module.exports = siteConfig;

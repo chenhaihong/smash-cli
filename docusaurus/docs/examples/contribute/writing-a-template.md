@@ -3,40 +3,44 @@ title: Writing a template
 sidebar_label: Writing a template
 ---
 
-It is very easy to publish your own template.
+It is very easy to write your own template.
 
-## How to pulish your own template?
+## 1. Create a package
 
-### 1. Change `name` in `package.json`
-
-```json
-{
-  "name": "smash-template-[name]"
-}
-```
-
-### 2. Add `keywords` to `package.json`
-
-```json
-{
-  "keywords": ["smash", "smash-cli", "smash template"]
-}
-```
-
-### 3. Publish it now
+Create a package by executing the following command:
 
 ```bash
-$ npm publish --access public
+$ mkdir smash-template-demo && cd smash-template-demo
+$ npm init
 ```
 
-##
+Change your template's name into `smash-template-[name]`:
 
-## Files with `.backup` suffix
+```json
+{
+  "name": "smash-template-demo",
+  "keywords": ["smash", "smash-cli", "smash template", "other keyword"]
+}
+```
 
-The `.gitignore`, `.npmignore` and other files in the template package may not
-be published.<br> We can slove this by adding `.backup` suffix to the filename.
+Don't forget add your keywords meanwhile.
+
+## 2. Add your files
+
+Add what your want into your package.
+
+### Files with `.backup` suffix
+
+The `.gitignore`, `.npmignore` and some other files will not be published. Add
+`.backup` suffix into the filename to slove it.
+
+For examples:
 
 ```
-├── .gitignore        # this file will not be published.
-├── .gitignore.backup # this file will be publish.
+├── .gitignore        # this file will not be published
+└── .gitignore.backup # this file will be publish
 ```
+
+## 3. Publish it now
+
+Execute `npm publish --access public` to publish it.

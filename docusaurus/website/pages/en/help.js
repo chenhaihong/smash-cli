@@ -19,18 +19,30 @@ function Help(props) {
   const langPart = `${language ? `${language}/` : ''}`;
   const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
 
+  const documentationLink = docUrl(
+    'documentation/getting-started/what-is-smash-cli.html'
+  );
+  const examplesLink = docUrl('examples/usage/using-a-template.html');
+  const yuqueLink = 'https://www.yuque.com/smash-cli';
+  const repoLink = 'https://github.com/chenhaihong/smash-cli';
+  const issuesLink = 'https://github.com/chenhaihong/smash-cli/issues';
+  const pullsLink = 'https://github.com/chenhaihong/smash-cli/pulls';
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl('doc1.html')})`,
-      title: 'Browse Docs',
+      content: `Learn more using the [documentation on this site](${documentationLink}).`,
+      title: 'Browse Documentation',
     },
     {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
+      content: `Learn more using the [examples on this site](${examplesLink}).`,
+      title: 'Browse Examples',
     },
     {
-      content: "Find out what's new with this project",
-      title: 'Stay up to date',
+      content: `You can follow and contact us on [Yuque](${yuqueLink}).`,
+      title: 'Yuque',
+    },
+    {
+      content: `At our [GitHub repo](${repoLink}) Browse and submit [issues](${issuesLink}) or [pull requests](${pullsLink}) for bugs you find or any new features you may want implemented.`,
+      title: 'GitHub',
     },
   ];
 
@@ -41,12 +53,17 @@ function Help(props) {
           <header className='postHeader'>
             <h1>Need help?</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
-          <GridBlock contents={supportLinks} layout='threeColumn' />
+          <p>
+            If you need help with smash-cli, you can try one of the mechanisms
+            below.
+          </p>
+          <GridBlock contents={supportLinks} layout='fourColumn' />
         </div>
       </Container>
     </div>
   );
 }
+
+Help.title = 'Help';
 
 module.exports = Help;

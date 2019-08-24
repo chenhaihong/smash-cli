@@ -45,4 +45,6 @@ class Users extends React.Component {
   }
 }
 
+Users.title = 'User Showcase';
+
 module.exports = Users;
