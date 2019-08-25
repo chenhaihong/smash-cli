@@ -23,7 +23,7 @@ Change your package's name into `smash-middleware-[name]`:
 }
 ```
 
-Don't forget update your keywords meanwhile.
+Don't forget to update your keywords meanwhile.
 
 ## 2. Add your codes
 

@@ -23,7 +23,7 @@ Change your template's name into `smash-template-[name]`:
 }
 ```
 
-Don't forget add your keywords meanwhile.
+Don't forget to add your keywords meanwhile.
 
 ## 2. Add your files
 
