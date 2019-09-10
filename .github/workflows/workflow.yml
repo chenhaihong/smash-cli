@@ -1,0 +1,27 @@
+name: Node CI - 测试主包
+
+on: [push]
+
+jobs:
+  test-main:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8, 10, 11, 12]
+        os: [windows-latest, macOS-latest, ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          os: ${{ matrix.os }}
+      - run: npm i -g yarn
+      - run: yarn install
+      # - run: yarn config set ignore-engines true
+      - name: test-main
+        run: node scripts/test-main.js
+        # env:
+        #   CI: true

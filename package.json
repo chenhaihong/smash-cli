@@ -4,7 +4,8 @@
     "packagesHelper/*",
     "packagesMain/*",
     "packagesMiddleware/*",
-    "packagesTemplate/*"
+    "packagesTemplate/*",
+    "docusaurus/website"
   ],
   "name": "smash-cli-monorepo",
   "scripts": {
