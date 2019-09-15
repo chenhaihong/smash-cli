@@ -1,6 +1,6 @@
 server:
   - name: smash-middleware-webpack-v4
-    type: server # 浏览器网页应用，启用webpack-dev-server
+    type: dev-server # 浏览器网页应用，启用webpack-dev-server
 
 watch:
   - name: smash-middleware-webpack-v4

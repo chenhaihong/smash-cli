@@ -5,7 +5,7 @@ helloworld:
 
 server:
   - name: smash-middleware-webpack-v4
-    type: server # 启用webpack-dev-server，自动打开页面，在网页查看运行效果
+    type: dev-server # 启用webpack-dev-server，自动打开页面，在网页查看运行效果
 
 lib:
   - name: smash-middleware-webpack-v4
