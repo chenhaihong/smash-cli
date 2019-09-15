@@ -25,9 +25,9 @@ A webpack 4 middleware for smash-cli. 该中间件已经内置了
 在 <code>.smash/task.yml</code> 文件中加入配置：
 
 ```yaml
-server:
+dev-server:
   - name: smash-middleware-webpack-v4
-    type: server # 浏览器网页应用，启用webpack-dev-server
+    type: dev-server # 浏览器网页应用，启用webpack-dev-server
 
 watch:
   - name: smash-middleware-webpack-v4
@@ -45,7 +45,7 @@ buildLib:
 参数的配置规则如下：
 
 - `type`：默认为 `build`
-  - `server`：浏览器网页应用，启用 webpack-dev-server
+  - `dev-server`：浏览器网页应用，启用 webpack-dev-server
   - `watch`：浏览器网页应用，开启 watch 模式
   - `build`：浏览器网页应用，生产环境
   - `lib`：js 库类型应用，生产环境
@@ -99,7 +99,7 @@ module.exports = ({ webpack, defaultWebpackConfig }) => {
 
 ```bash
 # 启动 webpack-dev-server
-$ smash run server
+$ smash run dev-server
 
 # 开启 watch 模式
 $ smash run watch

@@ -15,8 +15,8 @@
       "documentation/middlewares/smash-middleware-webpack-v4"
     ],
     "Templates": [
-      "documentation/templates/smash-template-react-component",
-      "documentation/templates/smash-template-react"
+      "documentation/templates/smash-template-react",
+      "documentation/templates/smash-template-react-component"
     ],
     "Programmatic APIs": [
       "documentation/apis/smash-cli",
