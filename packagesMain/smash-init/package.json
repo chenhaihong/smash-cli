@@ -1,6 +1,6 @@
 {
   "name": "smash-init",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Initializer for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-init#readme",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "fs-extra": "8.1.0",
-    "smash-helper-logger": "0.0.9"
+    "smash-helper-logger": "0.0.10"
   },
   "gitHead": "9079608c01530ebb0d741be72df89f8f75879fc2"
 }

@@ -1,6 +1,6 @@
 {
   "name": "smash-middleware-clean",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A directory cleaner middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-clean#readme",

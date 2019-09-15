@@ -1,6 +1,6 @@
 {
   "name": "smash-template-react-component",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "使用smash-cli模板规范 开发的react组件模板。",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesTemplate/smash-template-react-component#readme",
