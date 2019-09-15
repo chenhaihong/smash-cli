@@ -1,5 +1,5 @@
 const path = require('path');
-const smashMiddlewareWebpackV4 = require('..');
+const smashMiddlewareWebpackV4 = require('../lib');
 
 process.chdir(path.resolve(__dirname, './reactV16'));
 

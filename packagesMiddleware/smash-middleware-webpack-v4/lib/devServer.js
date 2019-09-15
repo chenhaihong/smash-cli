@@ -8,7 +8,13 @@ const webpack = require('webpack');
 
 const DEFAULT_PORT = 8080;
 
-const { colors, status, version, bonjour, defaultTo } = require('webpack-dev-server/bin/utils');
+const {
+  colors,
+  status,
+  version,
+  bonjour,
+  defaultTo,
+} = require('webpack-dev-server/bin/utils');
 
 const Server = require('webpack-dev-server');
 
@@ -56,9 +62,13 @@ function processOptions(config) {
 
   if (!options.publicPath) {
     // eslint-disable-next-line
-    options.publicPath = (firstWpOpt.output && firstWpOpt.output.publicPath) || '';
+    options.publicPath =
+      (firstWpOpt.output && firstWpOpt.output.publicPath) || '';
 
-    if (!/^(https?:)?\/\//.test(options.publicPath) && options.publicPath[0] !== '/') {
+    if (
+      !/^(https?:)?\/\//.test(options.publicPath) &&
+      options.publicPath[0] !== '/'
+    ) {
       options.publicPath = `/${options.publicPath}`;
     }
   }
@@ -205,7 +215,10 @@ function startDevServer(config, options) {
     }).apply(compiler);
   }
 
-  const suffix = options.inline !== false || options.lazy === true ? '/' : '/webpack-dev-server/';
+  const suffix =
+    options.inline !== false || options.lazy === true
+      ? '/'
+      : '/webpack-dev-server/';
 
   try {
     server = new Server(compiler, options, log);

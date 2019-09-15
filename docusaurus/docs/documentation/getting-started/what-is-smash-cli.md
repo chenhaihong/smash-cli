@@ -13,10 +13,6 @@ A tiny task manager for modern JavaScript projects.
 
 Easy to get started.
 
-- Execute `smash init` to generate a .smash/task.yml file.
-- Execute `smash install <tamplate-name>` to download a template package.
-- Execute `smash run <task-name>`.
-
 ## Reusable
 
 Reuse middlewares without repeated downloads.

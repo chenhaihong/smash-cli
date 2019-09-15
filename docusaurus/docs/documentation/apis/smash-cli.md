@@ -17,10 +17,10 @@ $ npm install smash-cli
 const programmaticSmash = require('smash-cli');
 const { init, install, run } = programmaticSmash;
 
-// generate .smash/stak.yml under current working directory.
+// generate .smash/stak.yml
 init();
 
-// install smash-template-react under current working directory.
+// install smash-template-react
 install('smash-template-react');
 
 // Run helloworld task.

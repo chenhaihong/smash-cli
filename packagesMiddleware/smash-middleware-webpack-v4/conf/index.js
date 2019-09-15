@@ -5,28 +5,29 @@ const webpack = require('webpack');
 
 module.exports = {
   /**
-   * 根据type获取对应的webpack配置
+   * 这是当前中间件使用的各个类型的默认webpack配置，
+   * 根据type来获取对应的webpack配置
    */
   getDefaultConfig(type) {
-    let defaultConfig;
-    let common = require('./webpack.common'); // 通用配置
-    let browserBuild = require('./webpack.browserBuild'); // web网页类型
-    let browserServer = require('./webpack.browserServer'); // web网页类型，包含webpack-dev-server的配置
-    let watch = require('./webpack.watch'); // web网页类型的监听模式
-    let lib = require('./webpack.lib'); // （非web网页类型的）库
+    const _base = require('./webpack.base'); // 通用配置
+    const _build = require('./webpack.build'); // web网页类型-生产模式
+    const _devServer = require('./webpack.devServer'); // web网页类型-包含webpack-dev-server的配置
+    const _watch = require('./webpack.watch'); // web网页类型-监听模式
+    const _lib = require('./webpack.lib'); // 针对库类型应用的开发
 
+    let defaultConfig = {};
     switch (type) {
-      case 'server':
-        defaultConfig = merge(common(), browserBuild(), browserServer());
+      case 'dev-server':
+        defaultConfig = merge(_base(), _build(), _devServer());
         break;
       case 'watch':
-        defaultConfig = merge(common(), browserBuild(), watch());
+        defaultConfig = merge(_base(), _build(), _watch());
         break;
       case 'build':
-        defaultConfig = merge(common(), browserBuild());
+        defaultConfig = merge(_base(), _build());
         break;
       case 'lib':
-        defaultConfig = merge(common(), lib());
+        defaultConfig = merge(_base(), _lib());
         break;
     }
     return defaultConfig;

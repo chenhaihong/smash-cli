@@ -1,8 +1,8 @@
 module.exports = {
   ////////////////////////////////////////
-  // webpack.common.js
-  // webpack.browserBuild.js
-  // webpack.browserServer.js
+  // webpack.base.js
+  // webpack.build.js
+  // webpack.devServer.js
   ////////////////////////////////////////
   // entry
   entryJsDir: './src',

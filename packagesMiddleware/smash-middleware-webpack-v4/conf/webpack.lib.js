@@ -1,6 +1,6 @@
 /**
  * 这个webpack配置适用于：
- *    (非web网页类型的)库的开发，react ui库、broswer js库、node js库...
+ *    (非web网页类型的)库的开发，react ui库、broswer js库...
  */
 
 const fs = require('fs');

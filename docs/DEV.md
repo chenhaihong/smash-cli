@@ -1,7 +1,3 @@
-# smash-cli
-
-A tiny task manager for JavaScript projects.
-
 # 1 开发
 
 ## 1.1 安装依赖
@@ -45,25 +41,8 @@ $ npx lerna changed
 
 ```bash
 # 只发布tag
-$ npx lerna version
+# $ npx lerna version
 
 # 发布tag，发布npm
 $ npx lerna publish
-```
-
-# 2 文档
-
-使用 `docusaurus` 生成的文档。
-
-```bash
-# 安装依赖
-$ cd docusaurus/website && yarn install
-
-# A browser window will open up at http://localhost:3000
-$ cd docusaurus/website && yarn start
-
-# Publish the Site
-# https://chenhaihong.github.io/smash-cli/
-$ cd docusaurus/website && yarn build
-$ npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
 ```

@@ -1,5 +1,5 @@
 /**
- * 这个webpack配置适用于：（web网页类型的）应用的开发
+ * 这个webpack追加配置适用于：（web网页类型的）应用的开发
  */
 
 const fs = require('fs');

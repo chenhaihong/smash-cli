@@ -5,7 +5,7 @@
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-webpack-v4#readme",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "keywords": [
     "smash",
     "smash-cli",
@@ -17,8 +17,8 @@
     "url": "git+https://github.com/chenhaihong/smash-cli.git"
   },
   "scripts": {
-    "test": "node ./test/reactV16.test.js",
-    "testlib": "node ./test/reactLib.test.js"
+    "test": "node ./__fixtures__/reactV16.test.js",
+    "testlib": "node ./__fixtures__/reactLib.test.js"
   },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"

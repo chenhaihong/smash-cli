@@ -24,7 +24,11 @@ export function bindProvider(Component) {
     render() {
       return (
         <Context.Provider value={this.state}>
-          <Component {...this.props} $store={this.state} update$store={update$store} />
+          <Component
+            {...this.props}
+            $store={this.state}
+            update$store={update$store}
+          />
         </Context.Provider>
       );
     }
@@ -36,7 +40,9 @@ export function bindConsumer(Component) {
   return function ConsumerComponent(props) {
     return (
       <Context.Consumer>
-        {($store) => <Component {...props} $store={$store} update$store={update$store} />}
+        {($store) => (
+          <Component {...props} $store={$store} update$store={update$store} />
+        )}
       </Context.Consumer>
     );
   };

@@ -46,6 +46,25 @@ function getDevServer() {
  * @param {Object} app express服务实例
  */
 function addMocks(app) {
+  // （1）mock目录下所有的js文件，把他们全部合并到mocks对象
+  // mock文件示例
+  // module.exports = {
+  //   '/user/profile': {
+  //     method: 'get',
+  //     result: {
+  //       success: true,
+  //       name: 'erye',
+  //     },
+  //   },
+  //   '/user/login': {
+  //     method: 'post',
+  //     result() {
+  //       return {
+  //         success: Math.random() > 0.5,
+  //       };
+  //     },
+  //   },
+  // };
   let mocks = {};
   const dir = path.resolve(process.cwd(), constants.mockDir);
   fse.ensureDirSync(dir);
@@ -57,6 +76,7 @@ function addMocks(app) {
     }
   }
 
+  // （2）遍历mocks对象，进行mock
   for (const path in mocks) {
     if (!mocks.hasOwnProperty(path)) continue;
     let { method, result } = mocks[path];
