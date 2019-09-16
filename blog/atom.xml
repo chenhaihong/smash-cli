@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://chenhaihong.github.io/smash-cli/blog</id>
+    <id>https://www.smash-cli.com/blog</id>
     <title>smash-cli Blog</title>
     <updated>2019-08-21T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
-    <link rel="alternate" href="https://chenhaihong.github.io/smash-cli/blog"/>
+    <link rel="alternate" href="https://www.smash-cli.com/blog"/>
     <subtitle>The best place to stay up-to-date with the latest smash-cli news and events.</subtitle>
-    <logo>https://chenhaihong.github.io/smash-cli/img/favicon-white.ico</logo>
+    <logo>https://www.smash-cli.com/img/favicon-white.ico</logo>
     <rights>Copyright © 2019 www.smash-cli.com</rights>
     <entry>
         <title type="html"><![CDATA[v0.0.9 coming soon!]]></title>
-        <id>https://chenhaihong.github.io/smash-cli/blog/2019/08/21/blog-post.html</id>
-        <link href="https://chenhaihong.github.io/smash-cli/blog/2019/08/21/blog-post.html">
+        <id>https://www.smash-cli.com/blog/2019/08/21/blog-post.html</id>
+        <link href="https://www.smash-cli.com/blog/2019/08/21/blog-post.html">
         </link>
         <updated>2019-08-21T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>smash-cli v0.0.9 is coming!</p>

@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>smash-cli Blog</title>
-        <link>https://chenhaihong.github.io/smash-cli/blog</link>
+        <link>https://www.smash-cli.com/blog</link>
         <description>The best place to stay up-to-date with the latest smash-cli news and events.</description>
         <lastBuildDate>Wed, 21 Aug 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>smash-cli Blog</title>
-            <url>https://chenhaihong.github.io/smash-cli/img/favicon-white.ico</url>
-            <link>https://chenhaihong.github.io/smash-cli/blog</link>
+            <url>https://www.smash-cli.com/img/favicon-white.ico</url>
+            <link>https://www.smash-cli.com/blog</link>
         </image>
         <copyright>Copyright © 2019 www.smash-cli.com</copyright>
         <item>
             <title><![CDATA[v0.0.9 coming soon!]]></title>
-            <link>https://chenhaihong.github.io/smash-cli/blog/2019/08/21/blog-post.html</link>
-            <guid>https://chenhaihong.github.io/smash-cli/blog/2019/08/21/blog-post.html</guid>
+            <link>https://www.smash-cli.com/blog/2019/08/21/blog-post.html</link>
+            <guid>https://www.smash-cli.com/blog/2019/08/21/blog-post.html</guid>
             <pubDate>Wed, 21 Aug 2019 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>smash-cli v0.0.9 is coming!</p>
 ]]></description>
