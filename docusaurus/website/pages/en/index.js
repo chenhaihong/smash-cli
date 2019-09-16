@@ -19,7 +19,8 @@ class HomeSplash extends React.Component {
     const { baseUrl, docsUrl } = siteConfig;
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
     const langPart = `${language ? `${language}/` : ''}`;
-    const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
+    // const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
+    const docUrl = (doc) => `${baseUrl}${docsPart}${doc}`;
 
     const SplashContainer = (props) => (
       <div className='homeContainer'>
@@ -138,8 +139,9 @@ class Index extends React.Component {
           </a>
         ));
 
-      const pageUrl = (page) =>
-        baseUrl + (language ? `${language}/` : '') + page;
+      // const langPart = language ? `${language}/` : '';
+      // const pageUrl = (page) => baseUrl + langPart + page;
+      const pageUrl = (page) => baseUrl + page;
 
       return (
         <div className='productShowcaseSection paddingTop paddingBottom'>

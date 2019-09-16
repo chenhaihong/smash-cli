@@ -17,12 +17,14 @@ function Help(props) {
   const { baseUrl, docsUrl } = siteConfig;
   const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
   const langPart = `${language ? `${language}/` : ''}`;
-  const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
+  // const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
+  const docUrl = (doc) => `${baseUrl}${docsPart}${doc}`;
 
   const documentationLink = docUrl(
     'documentation/getting-started/what-is-smash-cli.html'
   );
   const examplesLink = docUrl('examples/usage/using-a-template.html');
+
   const yuqueLink = 'https://www.yuque.com/smash-cli';
   const repoLink = 'https://github.com/chenhaihong/smash-cli';
   const issuesLink = 'https://github.com/chenhaihong/smash-cli/issues';

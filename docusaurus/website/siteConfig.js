@@ -14,7 +14,7 @@ const users = [
     caption: 'smash-cli',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/smash-cli/img/smash-cli.svg',
+    image: '/img/smash-cli.svg',
     infoLink: 'https://www.smash-cli.com',
     pinned: true,
   },
@@ -23,8 +23,9 @@ const users = [
 const siteConfig = {
   title: 'smash-cli', // Title for your website.
   tagline: 'A tiny task manager for modern JavaScript projects.',
-  url: 'https://chenhaihong.github.io', // Your website URL
-  baseUrl: '/smash-cli/', // Base URL for your project */
+  url: 'https://www.smash-cli.com', // Your website URL
+  // baseUrl: '/smash-cli/', // Base URL for your project */
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -119,10 +120,10 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/chenhaihong/smash-cli',
 
-  CNAME: 'www.smash-cli.com',
-  disableTitleTagline: true,
+  // disableTitleTagline: true,
   docsSideNavCollapsible: true,
-  editUrl: '',
+  editUrl:
+    'https://github.com/chenhaihong/smash-cli/edit/master/docusaurus/docs/',
   scrollToTop: true,
   useEnglishUrl: false,
 };
