@@ -1,6 +1,6 @@
 {
   "name": "smash-run",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Task executing function for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-run#readme",
@@ -22,7 +22,7 @@
   "dependencies": {
     "fs-extra": "8.1.0",
     "pacote": "9.5.4",
-    "smash-helper-logger": "0.0.10",
+    "smash-helper-logger": "0.0.11",
     "yaml": "1.6.0"
   },
   "gitHead": "9079608c01530ebb0d741be72df89f8f75879fc2"
