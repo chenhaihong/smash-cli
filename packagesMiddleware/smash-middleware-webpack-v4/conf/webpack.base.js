@@ -63,22 +63,8 @@ module.exports = function() {
         },
         {
           resource: {
-            test: /\.js$/,
+            test: /\.jsx?$/,
             exclude: [/(node_modules|bower_components)/, /\.test\.js$/],
-          },
-          use: {
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: true,
-              presets: [require.resolve('@babel/preset-env')],
-              plugins: getAllStagePluginsOfBabel(),
-            },
-          },
-        },
-        {
-          resource: {
-            test: /\.jsx$/,
-            exclude: [/(node_modules|bower_components)/],
           },
           use: {
             loader: 'babel-loader',
@@ -112,6 +98,12 @@ module.exports = function() {
 
 /**
  * 获取babel stage0、1、2、3的所有插件
+ *
+ * As of Babel v7, all the stage presets have been deprecated. Check the blog post for more information.
+ * https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets
+ *
+ * For upgrade instructions, see the README.
+ * https://github.com/babel/babel/blob/master/packages/babel-preset-stage-0/README.md
  */
 function getAllStagePluginsOfBabel() {
   return [
@@ -147,8 +139,13 @@ function getAllStagePluginsOfBabel() {
     require.resolve('@babel/plugin-syntax-import-meta'),
     [
       require.resolve('@babel/plugin-proposal-class-properties'),
-      { loose: false },
+      { loose: true },
     ],
     require.resolve('@babel/plugin-proposal-json-strings'),
+
+    // A plugin that enables the re-use of Babel's injected helper code to save on codesize.
+    // 为什么会出现这个插件，以及为什么使用它？
+    // 阅读：https://babeljs.io/docs/en/babel-plugin-transform-runtime#why
+    require.resolve('@babel/plugin-transform-runtime'),
   ];
 }

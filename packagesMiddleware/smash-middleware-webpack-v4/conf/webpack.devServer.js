@@ -22,7 +22,7 @@ function getDevServer() {
     compress: true,
     open: true,
     hot: true,
-    port: 8080,
+    // port: 8080,
     overlay: {
       warnings: true,
       errors: true,

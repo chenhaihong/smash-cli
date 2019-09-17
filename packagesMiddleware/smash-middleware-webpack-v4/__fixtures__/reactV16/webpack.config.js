@@ -15,7 +15,7 @@ module.exports = ({ webpack, defaultWebpackConfig }) => {
       ...defaultWebpackConfig.devServer,
       hot: true,
       // hotOnly: true, // 只启用页面无刷新替换
-      port: 8080,
+      // port: 8080,
     },
   };
 };

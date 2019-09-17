@@ -13,31 +13,24 @@ class HelloWorld extends Component {
     };
   }
   componentWillMount() {}
-  componentDidMount() {
+  async getProfile() {
     // 支持mock
-    axios
-      .get('/user/profile')
-      .then(function(response) {
-        const { data } = response;
-        console.log(data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
+    const res = await axios.get('/user/profile');
+    const { data } = res;
+    console.log(data);
+  }
+  async login() {
     // 支持proxy
-    axios
-      .post('/api/user/login', {
-        name: 'erye',
-        password: '123123123',
-      })
-      .then(function(response) {
-        const { data } = response;
-        console.log(data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    const res = await axios.post('/api/user/login', {
+      name: 'erye',
+      password: '123123123',
+    });
+    const { data } = res;
+    console.log(data);
+  }
+  componentDidMount() {
+    this.getProfile();
+    this.login();
 
     // 支持动态引用
     import('./helper/math').then((math) => {
