@@ -1,6 +1,7 @@
 # smash-middleware-webpack-v4
 
-使用 [smash-cli 中间件规范](https://github.com/chenhaihong/smash-cli) 开发的 webpack 中间件，该中间件已经内置了
+使用 [smash-cli 中间件规范](https://www.smash-cli.com/) 开发的 webpack 中间件，
+该中间件已经内置了
 [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server)。
 
 - 支持 mock
@@ -110,10 +111,11 @@ $ smash run buildLib
 
 # 使用示例
 
-- [smash-template-react](https://www.npmjs.com/package/smash-template-react)
+- [smash-template-react](https://www.smash-cli.com/docs/documentation/templates/smash-template-react.html)
+- [smash-template-react-component](https://www.smash-cli.com/docs/documentation/templates/smash-template-react-component.html)
 
 # 链接
 
-- [smash-cli](https://github.com/chenhaihong/smash-cli)
-- [开发 smash-cli 中间件](https://github.com/chenhaihong/smash-cli/wiki/%E5%BC%80%E5%8F%91%E4%B8%AD%E9%97%B4%E4%BB%B6)
+- [smash-cli](https://www.smash-cli.com/)
+- [开发 smash-cli 中间件](https://www.smash-cli.com/docs/examples/contribute/writing-a-middleware.html)
 - [webpack loaders [zh]](https://webpack.docschina.org/loaders/)

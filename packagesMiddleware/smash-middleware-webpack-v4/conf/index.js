@@ -10,24 +10,25 @@ module.exports = {
    */
   getDefaultConfig(type) {
     const _base = require('./webpack.base'); // 通用配置
-    const _build = require('./webpack.build'); // web网页类型-生产模式
+    const _htmlEntry = require('./webpack.htmlEntry'); // web网页类型-生产模式
     const _devServer = require('./webpack.devServer'); // web网页类型-包含webpack-dev-server的配置
     const _watch = require('./webpack.watch'); // web网页类型-监听模式
     const _lib = require('./webpack.lib'); // 针对库类型应用的开发
+    const _minify = require('./webpack.minify');
 
     let defaultConfig = {};
     switch (type) {
       case 'dev-server':
-        defaultConfig = merge(_base(), _build(), _devServer());
+        defaultConfig = merge(_base(), _htmlEntry(), _devServer());
         break;
       case 'watch':
-        defaultConfig = merge(_base(), _build(), _watch());
+        defaultConfig = merge(_base(), _htmlEntry(), _watch());
         break;
       case 'build':
-        defaultConfig = merge(_base(), _build());
+        defaultConfig = merge(_base(), _htmlEntry(), _minify());
         break;
       case 'lib':
-        defaultConfig = merge(_base(), _lib());
+        defaultConfig = merge(_base(), _lib(), _minify());
         break;
     }
     return defaultConfig;

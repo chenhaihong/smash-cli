@@ -1,6 +1,6 @@
 module.exports = ({ webpack, defaultWebpackConfig }) => {
   return {
-    devtool: 'source-map',
+    // devtool: 'source-map',
     externals: {
       axios: 'axios',
       jquery: 'jQuery',

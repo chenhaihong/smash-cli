@@ -3,13 +3,8 @@
  */
 
 const { resolve } = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const constants = require('./constants');
-
-let extractCSSPlugin = new ExtractTextWebpackPlugin({
-  filename: '[name].[contenthash:hex:6].css',
-  allChunks: true,
-});
 
 module.exports = function() {
   return {
@@ -37,10 +32,10 @@ module.exports = function() {
       // `filename` provides a template for naming your bundles (remember to use `[name]`)
       filename: '[name].[hash:6].js',
       // `chunkFilename` provides a template for naming code-split bundles (optional)
-      chunkFilename: '[name].[hash:6].js',
+      chunkFilename: '[id].[hash:6].js',
     },
 
-    // 各种类型文件对应的loader，样式文件的loader跟extractCSSPlugin有关联
+    // 各种类型文件对应的loader，样式文件的loader跟提取样式插件有关联
     // 决定了如何处理项目中的不同类型的模块。
     // https://webpack.docschina.org/configuration/module/
     module: {
@@ -49,17 +44,28 @@ module.exports = function() {
         { resource: { test: /\.json$/ }, use: ['json-loader'] },
         {
           resource: { test: /\.css$/ },
-          use: extractCSSPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader'],
-          }),
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
+              },
+            },
+            'css-loader',
+          ],
         },
         {
           resource: { test: /\.less$/ },
-          use: extractCSSPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'less-loader'],
-          }),
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
+              },
+            },
+            'css-loader',
+            'less-loader',
+          ],
         },
         {
           resource: {
@@ -82,10 +88,22 @@ module.exports = function() {
     },
 
     // 剥离样式的插件
-    plugins: [extractCSSPlugin],
+    plugins: [
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // all options are optional
+        // https://www.npmjs.com/package/mini-css-extract-plugin#minimal-example
+        filename: '[name].[hash:6].css',
+        chunkFilename: '[id].[hash:6].css',
+        ignoreOrder: false, // Enable to remove warnings about conflicting order
+      }),
+    ],
 
-    // 模块的解析路径：从以下两个位置读取
+    // 设置模块如何被解析
+    // https://webpack.docschina.org/configuration/resolve/
     resolve: {
+      extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '*'],
+      // 模块的解析路径：从以下两个位置读取
       modules: [resolve(__dirname, '../node_modules'), 'node_modules'],
     },
 

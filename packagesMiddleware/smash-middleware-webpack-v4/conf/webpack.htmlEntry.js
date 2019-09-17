@@ -10,8 +10,6 @@ const constants = require('./constants');
 
 module.exports = () => {
   return {
-    mode: 'production',
-    devtool: 'source-map', // 生产模式下，也可以选择none，不生成source map
     entry: getEntry(), // 入口文件
     plugins: getPlugins(), // 往html文件插入js、css文件的标签的插件
   };
