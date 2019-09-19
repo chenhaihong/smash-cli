@@ -54,3 +54,11 @@ a {
   color: #cc9933;
   text-decoration: none;
 }
+
+.copyright a {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.copyright a:hover {
+  color: #c93;
+}

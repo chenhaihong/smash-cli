@@ -184,7 +184,11 @@ class Footer extends React.Component {
             height='100'
           />
         </a>
-        <section className='copyright'>{this.props.config.copyright}</section>
+        <section className='copyright'>
+          <span>{this.props.config.copyright}</span>
+          <br />
+          <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow">粤ICP备18035177号-2</a>
+        </section>
       </footer>
     );
   }
