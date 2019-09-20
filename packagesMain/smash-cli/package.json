@@ -1,9 +1,9 @@
 {
   "name": "smash-cli",
   "version": "0.0.11",
-  "description": "A tiny task manager for JavaScript projects.",
+  "description": "A tiny task manager for modern JavaScript projects.",
   "author": "erye <erye@tiiit.cn>",
-  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-cli",
+  "homepage": "https://www.smash-cli.com/",
   "license": "MIT",
   "main": "lib/index.js",
   "bin": {

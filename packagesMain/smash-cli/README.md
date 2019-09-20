@@ -1,34 +1,33 @@
 # smash-cli
 
-A tiny task management and execution tool. Yeah, really tiny.
+A tiny task manager for modern JavaScript projects.
 
-# 安装
+## Install
 
 ```bash
 $ npm i -g smash-cli
 ```
 
-# 使用
+## Usage
 
-1. [下载模板](https://github.com/chenhaihong/smash-cli/wiki/%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF)
-1. [创建默认配置文件](https://github.com/chenhaihong/smash-cli/wiki/%E5%88%9B%E5%BB%BA%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
-1. [配置与执行任务](https://github.com/chenhaihong/smash-cli/wiki/%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1)
+1. [Using a template](https://www.smash-cli.com/docs/examples/usage/using-a-template.html)
+1. [Using a middleware](https://www.smash-cli.com/docs/examples/usage/using-a-middleware.html)
+1. [Configuration](https://www.smash-cli.com/docs/documentation/getting-started/configuration.html)
 
-# 开发
+## Contribute
 
-1. [开发模板](https://github.com/chenhaihong/smash-cli/wiki/%E5%BC%80%E5%8F%91%E6%A8%A1%E6%9D%BF)
-1. [开发中间件](https://github.com/chenhaihong/smash-cli/wiki/%E5%BC%80%E5%8F%91%E4%B8%AD%E9%97%B4%E4%BB%B6)
+1. [Writing a template](https://www.smash-cli.com/docs/examples/contribute/writing-a-template.html)
+1. [Writing a middleware](https://www.smash-cli.com/docs/examples/contribute/writing-a-middleware.html)
 
-# Examples
+## Examples
 
 - template
-  - [smash-template-react](https://github.com/chenhaihong/smash-template-react)
-  - [smash-template-react-component](https://github.com/chenhaihong/smash-template-react-component)
+  - [smash-template-react](https://www.smash-cli.com/docs/documentation/templates/smash-template-react.html)
+  - [smash-template-react-component](https://www.smash-cli.com/docs/documentation/templates/smash-template-react-component.html)
 - middleware
-  - [smash-middleware-helloworld](https://github.com/chenhaihong/smash-middleware-helloworld)
-  - [smash-middleware-clean](https://github.com/chenhaihong/smash-middleware-clean)
-  - [smash-middleware-copy](https://github.com/chenhaihong/smash-middleware-copy)
-  - [smash-middleware-eslint](https://github.com/chenhaihong/smash-middleware-eslint)
-  - [smash-middleware-jest](https://github.com/chenhaihong/smash-middleware-jest)
-  - [smash-middleware-shell](https://github.com/chenhaihong/smash-middleware-shell)
-  - [smash-middleware-webpack-v4](https://github.com/chenhaihong/smash-middleware-webpack-v4)
+  - [smash-middleware-clean](https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-clean.html)
+  - [smash-middleware-copy](https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-copy.html)
+  - [smash-middleware-eslint](https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-eslint.html)
+  - [smash-middleware-jest](https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-jest.html)
+  - [smash-middleware-shell](https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-shell.html)
+  - [smash-middleware-webpack-v4](https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-webpack-v4.html)

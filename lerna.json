@@ -9,7 +9,7 @@
   ],
   "command": {
     "create": {
-      "homepage": "https://github.com/chenhaihong/smash-cli",
+      "homepage": "https://www.smash-cli.com/",
       "license": "MIT",
       "registry": "https://registry.npmjs.org/"
     },
