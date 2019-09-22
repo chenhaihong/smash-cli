@@ -22,7 +22,7 @@ $ cd docusaurus/website && yarn start
 $ cd docusaurus/website && yarn build
 ```
 
-# 4 Publish to guthub-page
+# 4 Publish to github-page
 
 ```bash
 # Publish the Site
