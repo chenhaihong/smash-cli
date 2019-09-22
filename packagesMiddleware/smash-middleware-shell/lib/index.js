@@ -33,6 +33,7 @@ async function SmashShell(ctx, config, next) {
       command = command.trim();
       if (/^cd\s+/.test(command)) {
         // 如果包含cd字符，需要更新工作空间
+        // 这个追加工作目录的逻辑参考了exeq的代码逻辑
         lastCwd = join(lastCwd, command.replace(/^cd\s+/, ''));
         continue;
       }

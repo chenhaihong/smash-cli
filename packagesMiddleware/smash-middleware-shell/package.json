@@ -3,7 +3,7 @@
   "version": "0.0.12",
   "description": "A shell executor middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
-  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-shell#readme",
+  "homepage": "https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-shell.html",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
