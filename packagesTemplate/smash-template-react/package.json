@@ -1,6 +1,6 @@
 {
   "name": "smash-template-react",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "使用 smash-cli 模板规范 开发的 react@16.0.0+ 模板。",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesTemplate/smash-template-react#readme",
