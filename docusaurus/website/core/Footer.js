@@ -188,6 +188,8 @@ class Footer extends React.Component {
           <span>{this.props.config.copyright}</span>
           <br />
           <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow">粤ICP备18035177号-2</a>
+          <span> | </span>
+          <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011302002170" target="_blank" rel="nofollow">粤公网安备 44011302002170号</a>
         </section>
       </footer>
     );
