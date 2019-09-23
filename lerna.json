@@ -21,7 +21,7 @@
     },
     "publish": {
       "ignoreChanges": ["*.md"],
-      "message": "chore(release): publish"
+      "message": ":sparkles: chore(release): publish"
     }
   },
   "publishConfig": {
