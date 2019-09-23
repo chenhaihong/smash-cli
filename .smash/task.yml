@@ -1,0 +1,28 @@
+
+# install docusaurus dependencies
+start:
+  - name: smash-middleware-shell
+    commands:
+      - cd docusaurus/website
+      - yarn install
+
+# start docusaurus
+start:
+  - name: smash-middleware-shell
+    commands:
+      - cd docusaurus/website
+      - yarn start
+
+# build docusaurus
+build:
+  - name: smash-middleware-shell
+    commands:
+      - cd docusaurus/website
+      - yarn build
+
+# publish docusaurus to gh-pages
+gh-pages:
+  - name: smash-middleware-shell
+    commands:
+      - cd docusaurus/website
+      - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
