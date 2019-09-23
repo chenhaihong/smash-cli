@@ -1,6 +1,6 @@
 
 # install docusaurus dependencies
-start:
+install-docusaurus:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website

@@ -1,25 +1,16 @@
-# 1 开发
+# 开发
 
-## 1.1 安装依赖
+## 1 安装依赖
 
 ```bash
-# 安装yarn
+# 安装yarn，使用淘宝源
 $ npm i -g yarn yrm
 $ yrm use taobao
 
-# 安装依赖
 $ yarn install
-# $ npx lerna bootstrap
 ```
 
-## 1.2 检查静态语法、修正代码格式
-
-```bash
-$ yarn run eslint
-$ yarn run prettier
-```
-
-## 1.3 测试
+## 2 测试
 
 ```bash
 # 测试所有main和helper包
@@ -27,22 +18,19 @@ $ node scripts/test-main.js
 # 只测试某个主包
 $ node scripts/test-main.js --package=packagesHelper/smash-helper-logger
 
-# 单个测试中间包
+# 测试单个中间件
 $ node scripts/test-middleware.js --package=packagesMiddleware/smash-middleware-clean
 ```
 
-## 1.4 查看更改
+## 3 查看更改
 
 ```bash
 $ npx lerna changed
 ```
 
-## 1.5 发布
+## 4 发布
 
 ```bash
-# 只发布tag
-# $ npx lerna version
-
-# 发布tag，发布npm
+# 发布tag，提交记录，发布npm
 $ npx lerna publish
 ```
