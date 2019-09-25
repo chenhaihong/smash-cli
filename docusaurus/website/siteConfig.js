@@ -18,6 +18,14 @@ const users = [
     infoLink: 'https://www.smash-cli.com',
     pinned: true,
   },
+  {
+    caption: 'www.tiiit.cn',
+    // You will need to prepend the image path with your baseUrl
+    // if it is not '/', like: '/test-site/img/image.jpg'.
+    image: '/img/www.tiiit.cn.jpg',
+    infoLink: 'https://www.tiiit.cn',
+    pinned: true,
+  },
 ];
 
 const siteConfig = {
