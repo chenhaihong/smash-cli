@@ -1,6 +1,6 @@
 {
   "name": "smash-middleware-eslint",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "An eslint middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-eslint#readme",
