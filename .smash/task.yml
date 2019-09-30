@@ -1,4 +1,3 @@
-
 # install docusaurus dependencies
 install-docusaurus:
   - name: smash-middleware-shell
@@ -25,4 +24,25 @@ gh-pages:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website
-      - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
+      - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run
+        publish-gh-pages
+
+# 示例：使用lerna添加依赖
+lerna-add:
+  - name: smash-middleware-shell
+    commands:
+      - lerna add webpack --scope=smash-template-revealjs --dev # 为指定的包添加依赖添加dev依赖
+      - lerna add fs-extra # 为所有包，添加fs-extra依赖
+
+# 示例：使用lerna创建子包
+lerna-create:
+  - name: smash-middleware-shell
+    commands:
+      # 在packagesHelper目录下创建子包
+      - lerna create smash-helper-logger packagesHelper
+
+# 使用lerna发布
+lerna-publish:
+  - name: smash-middleware-shell
+    commands:
+      - lerna publish

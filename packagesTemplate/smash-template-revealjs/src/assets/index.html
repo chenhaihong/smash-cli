@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>smash-template-reveal.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/white.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/lib/css/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>reveal.js Template</h1>
+          </section>
+          <section data-background-image="images/bg.jpg">
+            <h2 style="color:white;">背景图</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>列表</h2>
+            <ul>
+              <li>第1项——111</li>
+              <li class="fragment">第2项——点击在加载</li>
+            </ul>
+          </section>
+          <section scrollable="hairball" step="clusters" class="scroll">
+            <h3>图片</h3>
+            <img src="images/cat.gif" alt="Puss in boots hairball" />
+          </section>
+        </section>
+        <section>
+          <section class="scroll">
+            <h3>代码</h3>
+            <pre><code data-trim data-noescape>
+            const a = 100;
+            function b() {}
+            </code></pre>
+          </section>
+          <section class="scroll">
+            <h3>Markdown</h3>
+            <div data-markdown>
+              <textarea data-template>
+                ### Page title
+                A paragraph with some text and a [link](http://tiiit.cn).
+
+                Note:
+                This will only display in the notes window.
+              </textarea>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>表格</h2>
+            <table class="networkCube">
+              <tdata>
+                <tr>
+                  <td>
+                    <img src="images/head.jpg" title="Paola Llerena Valdivia" />
+                  </td>
+                  <td>
+                    <img src="images/head.jpg" title="Paola Llerena Valdivia" />
+                  </td>
+                </tr>
+              </tdata>
+            </table>
+          </section>
+        </section>
+        <section>
+          <h1 class="demo">Thank you!</h1>
+        </section>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/js/reveal.js"></script>
+  </body>
+</html>

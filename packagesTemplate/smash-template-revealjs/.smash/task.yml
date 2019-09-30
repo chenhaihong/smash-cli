@@ -1,0 +1,17 @@
+install:
+  - name: smash-middleware-shell
+    commands:
+      - npm install
+
+dev:
+  - name: smash-middleware-shell
+    commands:
+      - npx webpack-dev-server --config config/webpack.dev.js
+
+build:
+  - name: smash-middleware-clean
+    dirs:
+      - ./dist
+  - name: smash-middleware-shell
+    commands:
+      - npx webpack --config config/webpack.prod.js
