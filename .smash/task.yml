@@ -47,3 +47,4 @@ lerna-publish:
     commands:
       - nrm use npm
       - lerna publish
+      - nrm use taobao
