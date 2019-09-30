@@ -45,4 +45,5 @@ lerna-create:
 lerna-publish:
   - name: smash-middleware-shell
     commands:
+      - nrm use npm
       - lerna publish
