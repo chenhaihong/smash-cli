@@ -2,15 +2,13 @@
 
 ## 1 安装依赖
 
-```bash
-# 安装yarn，使用淘宝源
-$ npm i -g yarn yrm
-$ yrm use taobao
+安装 lerna yarn，使用淘宝镜像。
 
-$ yarn install
+```bash
+$ smash run smash-cli-install
 ```
 
-## 2 测试
+## 2 开发与测试
 
 ```bash
 # 测试所有main和helper包

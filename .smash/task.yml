@@ -1,46 +1,46 @@
-# install docusaurus dependencies
-install-docusaurus:
+##################################################################
+# samsh-cli
+##################################################################
+smash-cli-install:
+  - name: smash-middleware-shell
+    commands:
+      - npm i -g yarn yrm nrm --registry=https://registry.npm.taobao.org
+      - nrm use taobao
+      - yrm use taobao
+      - yarn install
+
+##################################################################
+# docusaurus
+##################################################################
+# docusaurus: install dependencies
+docusaurus-install:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website
       - yarn install
-
-# start docusaurus
-start:
+# docusaurus: start local web-server
+docusaurus-start:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website
       - yarn start
-
-# build docusaurus
-build:
+# docusaurus: build static files
+docusaurus-build:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website
       - yarn build
-
 # publish docusaurus to gh-pages
-gh-pages:
+docusaurus-gh-pages:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website
       - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run
         publish-gh-pages
 
-# 示例：使用lerna添加依赖
-lerna-add:
-  - name: smash-middleware-shell
-    commands:
-      - lerna add webpack --scope=smash-template-revealjs --dev # 为指定的包添加依赖添加dev依赖
-      - lerna add fs-extra # 为所有包，添加fs-extra依赖
-
-# 示例：使用lerna创建子包
-lerna-create:
-  - name: smash-middleware-shell
-    commands:
-      # 在packagesHelper目录下创建子包
-      - lerna create smash-helper-logger packagesHelper
-
+##################################################################
+# lerna
+##################################################################
 # 使用lerna发布
 lerna-publish:
   - name: smash-middleware-shell
@@ -48,3 +48,15 @@ lerna-publish:
       - nrm use npm
       - lerna publish
       - nrm use taobao
+# 示例：使用lerna添加依赖
+lerna-add:
+  - name: smash-middleware-shell
+    commands:
+      - lerna add webpack --scope=smash-template-revealjs --dev # 为指定的包添加依赖添加dev依赖
+      - lerna add fs-extra # 为所有包，添加fs-extra依赖
+# 示例：使用lerna创建子包
+lerna-create:
+  - name: smash-middleware-shell
+    commands:
+      # 在packagesHelper目录下创建子包
+      - lerna create smash-helper-logger packagesHelper
