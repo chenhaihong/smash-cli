@@ -16,7 +16,8 @@
     ],
     "Templates": [
       "documentation/templates/smash-template-react",
-      "documentation/templates/smash-template-react-component"
+      "documentation/templates/smash-template-react-component",
+      "documentation/templates/smash-template-revealjs"
     ],
     "Programmatic APIs": [
       "documentation/apis/smash-cli",

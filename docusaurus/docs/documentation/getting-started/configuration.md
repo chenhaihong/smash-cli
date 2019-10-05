@@ -8,9 +8,6 @@ sidebar_label: Configuration
 ```bash
 $ mkdir demo && cd demo
 $ smash init
-
-# or
-$ smash i
 ```
 
 ## Add a task
@@ -29,9 +26,6 @@ It defines a task named `helloworld`.
 
 ```bash
 $ smash run helloworld
-
-# or
-$ smash r helloworld
 ```
 
 It uses `smash-middleware-helloworld` middleware to output `Hello world` to the

@@ -7,7 +7,7 @@ React@16+ template.
 
 ## Installation
 
-```terminal
+```bash
 $ mkdir demo && cd demo
 $ smash i smash-template-react
 ```
