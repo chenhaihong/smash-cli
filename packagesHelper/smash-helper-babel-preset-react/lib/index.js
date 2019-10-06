@@ -3,8 +3,7 @@
 module.exports = smashHelperBabelPresetReact;
 
 function smashHelperBabelPresetReact(context, opts = {}) {
-  // const nodeEnv = process.env.NODE_ENV;
-  // TODO react可能需要移除prop-types
+  const nodeEnv = process.env.NODE_ENV;
 
   /**
    * 获取babel stage0、1、2、3的所有插件
@@ -46,6 +45,7 @@ function smashHelperBabelPresetReact(context, opts = {}) {
     require.resolve('@babel/plugin-transform-runtime'),
   ];
   if (nodeEnv === 'production') {
+    // react项目生产模式需要移除prop-types
     // https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types
     plugins.push(require.resolve('babel-plugin-transform-react-remove-prop-types'));
   }
