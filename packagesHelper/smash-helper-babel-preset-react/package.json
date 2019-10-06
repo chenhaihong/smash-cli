@@ -1,0 +1,20 @@
+{
+  "name": "smash-helper-babel-preset-react",
+  "version": "0.0.15",
+  "description": "Babel preset react for smash middleware.",
+  "keywords": [
+    "smash-helper"
+  ],
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://www.smash-cli.com/",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesHelper/smash-helper-babel-preset-react"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  }
+}

@@ -52,7 +52,7 @@ lerna-publish:
 lerna-add:
   - name: smash-middleware-shell
     commands:
-      - lerna add webpack --scope=smash-template-revealjs --dev # 为指定的包添加依赖添加dev依赖
+      - lerna add webpack --scope=smash-helper-babel-preset-react --dev # 为指定的包添加依赖添加dev依赖
       - lerna add fs-extra # 为所有包，添加fs-extra依赖
 # 示例：使用lerna创建子包
 lerna-create:
