@@ -8,6 +8,9 @@ smash-cli-install:
       - nrm use taobao
       - yrm use taobao
       - yarn install
+      # Allow husky to be used within the scripts of the root package.json
+      # https://yarnpkg.com/en/docs/cli/add#toc-yarn-add-ignore-workspace-root-check-w
+      - yarn add husky --dev -W
 
 ##################################################################
 # docusaurus
@@ -48,15 +51,16 @@ lerna-publish:
       - nrm use npm
       - lerna publish
       - nrm use taobao
-# 示例：使用lerna添加依赖
-lerna-add:
-  - name: smash-middleware-shell
-    commands:
-      - lerna add webpack --scope=smash-helper-babel-preset-react --dev # 为指定的包添加依赖添加dev依赖
-      - lerna add fs-extra # 为所有包，添加fs-extra依赖
 # 示例：使用lerna创建子包
 lerna-create:
   - name: smash-middleware-shell
     commands:
       # 在packagesHelper目录下创建子包
       - lerna create smash-helper-logger packagesHelper
+# 示例：使用lerna一次性添加多个依赖
+lerna-add:
+  - name: smash-middleware-shell
+    commands:
+      # - lerna add fs-extra # 为所有包，添加fs-extra依赖
+      # - lerna add webpack --scope=smash-helper-babel-preset-react --dev # 为指定的包添加依赖添加dev依赖
+      # - lerna add @babel/preset-env --scope=smash-helper-babel-preset-react # 为指定的包添加依赖添加依赖
