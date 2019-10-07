@@ -24,5 +24,6 @@
     "exec-sh": "0.3.2",
     "jest": "24.9.0",
     "smash-helper-logger": "0.0.18"
-  }
+  },
+  "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"
 }

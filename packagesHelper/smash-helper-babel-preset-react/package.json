@@ -40,5 +40,6 @@
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.6.2",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24"
-  }
+  },
+  "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"
 }

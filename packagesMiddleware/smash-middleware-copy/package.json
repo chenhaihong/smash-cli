@@ -25,5 +25,6 @@
     "handlebars": "4.1.2",
     "is-glob": "4.0.1",
     "smash-helper-logger": "0.0.18"
-  }
+  },
+  "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"
 }
