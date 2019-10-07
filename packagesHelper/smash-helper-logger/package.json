@@ -1,6 +1,6 @@
 {
   "name": "smash-helper-logger",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Logger helper for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesHelper/smash-helper-logger#readme",
