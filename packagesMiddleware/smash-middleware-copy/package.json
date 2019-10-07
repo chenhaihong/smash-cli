@@ -1,6 +1,6 @@
 {
   "name": "smash-middleware-copy",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A copy middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-copy#readme",
@@ -24,6 +24,6 @@
     "glob": "7.1.4",
     "handlebars": "4.1.2",
     "is-glob": "4.0.1",
-    "smash-helper-logger": "0.0.17"
+    "smash-helper-logger": "0.0.18"
   }
 }

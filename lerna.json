@@ -1,12 +1,7 @@
 {
   "useWorkspaces": true,
   "npmClient": "yarn",
-  "packages": [
-    "packagesHelper/*",
-    "packagesMain/*",
-    "packagesMiddleware/*",
-    "packagesTemplate/*"
-  ],
+  "packages": ["packagesHelper/*", "packagesMain/*", "packagesMiddleware/*", "packagesTemplate/*"],
   "command": {
     "create": {
       "homepage": "https://www.smash-cli.com/",
@@ -30,5 +25,5 @@
   "bootstrapConfig": {
     "ignore": []
   },
-  "version": "0.0.17"
+  "version": "0.0.18"
 }
