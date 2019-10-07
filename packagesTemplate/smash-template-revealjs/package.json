@@ -13,6 +13,11 @@
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
+  "keywords": [
+    "smash",
+    "smash-cli",
+    "smash template"
+  ],
   "devDependencies": {
     "babel-loader": "8.0.6",
     "copy-webpack-plugin": "5.0.4",
