@@ -3,7 +3,6 @@
  */
 
 const { resolve } = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const constants = require('./constants');
 
 module.exports = function() {
@@ -40,33 +39,16 @@ module.exports = function() {
     // https://webpack.docschina.org/configuration/module/
     module: {
       rules: [
-        { resource: { test: /\.html$/ }, use: ['html-loader'] },
+        {
+          resource: { test: /\.html$/ },
+          use: [
+            {
+              loader: 'html-loader',
+              options: { attrs: false },
+            },
+          ],
+        },
         { resource: { test: /\.json$/ }, use: ['json-loader'] },
-        {
-          resource: { test: /\.css$/ },
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: process.env.NODE_ENV === 'development',
-              },
-            },
-            'css-loader',
-          ],
-        },
-        {
-          resource: { test: /\.less$/ },
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: process.env.NODE_ENV === 'development',
-              },
-            },
-            'css-loader',
-            'less-loader',
-          ],
-        },
         {
           resource: {
             test: /\.jsx?$/,
@@ -83,22 +65,12 @@ module.exports = function() {
       ],
     },
 
-    // 剥离样式的插件
-    plugins: [
-      new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // all options are optional
-        // https://www.npmjs.com/package/mini-css-extract-plugin#minimal-example
-        filename: '[name].[hash:6].css',
-        chunkFilename: '[id].[hash:6].css',
-        ignoreOrder: false, // Enable to remove warnings about conflicting order
-      }),
-    ],
+    plugins: [],
 
     // 设置模块如何被解析
     // https://webpack.docschina.org/configuration/resolve/
     resolve: {
-      extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '*'],
+      extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.vue', '.less', '*'],
       // 模块的解析路径：从以下两个位置读取
       modules: [resolve(__dirname, '../node_modules'), 'node_modules'],
     },

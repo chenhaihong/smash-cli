@@ -7,7 +7,7 @@ const constants = require('./constants');
 module.exports = () => {
   return {
     mode: 'development', // 设为开发模式，可显著提升构建速度
-    devtool: 'eval-source-map', // 开发模式下使用这个模式，可原始源代码，并且重新构建速度较快
+    devtool: 'eval-source-map', // 开发模式下使用这个模式，不仅可阅读原始源代码，同时重新构建速度也较快
     devServer: getDevServer(),
     plugins: [new webpack.HotModuleReplacementPlugin()], // 启用hot(Only)后，需要追加此插件，才能生效页面自动刷新
   };
@@ -58,9 +58,7 @@ function addMocks(app) {
       return next();
     }
 
-    typeof result === 'function'
-      ? res.json(await result(req, res, next))
-      : res.json(result);
+    typeof result === 'function' ? res.json(await result(req, res, next)) : res.json(result);
   });
 }
 

@@ -10,6 +10,7 @@ module.exports = {
    */
   getDefaultConfig(type) {
     const _base = require('./webpack.base'); // 通用配置
+    const _style = require('./webpack.style'); // 通用配置
     const _htmlEntry = require('./webpack.htmlEntry'); // web网页类型-生产模式
     const _devServer = require('./webpack.devServer'); // web网页类型-包含webpack-dev-server的配置
     const _watch = require('./webpack.watch'); // web网页类型-监听模式
@@ -19,16 +20,16 @@ module.exports = {
     let defaultConfig = {};
     switch (type) {
       case 'dev-server':
-        defaultConfig = merge(_base(), _htmlEntry(), _devServer());
+        defaultConfig = merge(_base(), _style(false), _htmlEntry(), _devServer());
         break;
       case 'watch':
-        defaultConfig = merge(_base(), _htmlEntry(), _watch());
+        defaultConfig = merge(_base(), _style(false), _htmlEntry(), _watch());
         break;
       case 'build':
-        defaultConfig = merge(_base(), _htmlEntry(), _minify());
+        defaultConfig = merge(_base(), _style(true), _htmlEntry(), _minify());
         break;
       case 'lib':
-        defaultConfig = merge(_base(), _lib(), _minify());
+        defaultConfig = merge(_base(), _style(true), _lib(), _minify());
         break;
     }
     return defaultConfig;

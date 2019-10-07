@@ -1,6 +1,6 @@
 module.exports = ({ webpack, defaultWebpackConfig }) => {
   return {
-    // devtool: 'source-map',
+    devtool: 'source-map',
     externals: {
       axios: 'axios',
       jquery: 'jQuery',
@@ -14,7 +14,7 @@ module.exports = ({ webpack, defaultWebpackConfig }) => {
     devServer: {
       ...defaultWebpackConfig.devServer,
       hot: true,
-      // hotOnly: true, // 只启用页面无刷新替换
+      hotOnly: false, // 只启用页面无刷新替换
       // port: 8080,
     },
   };
