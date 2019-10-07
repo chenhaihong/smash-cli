@@ -7,21 +7,21 @@ function sleep(delay) {
 }
 
 module.exports = {
-  '/user/profile': {
-    // 请求类型
+  '/list': {
     method: 'get',
     result: {
       success: true,
-      name: 'erye',
+      list: [{ name: 'smash run server' }, { name: 'smash run watch' }, { name: 'smash run build' }],
     },
   },
-  '/user/login': {
+  '/user/profile': {
     method: 'post',
-    // 支持纯函数类型，返回结果为纯函数执行结果
+    // 支持异步函数
     async result(req, res, next) {
       await sleep(300);
       return {
-        success: Math.random() > 0.5,
+        success: true,
+        name: 'erye',
       };
     },
   },
