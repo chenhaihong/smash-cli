@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "smash-middleware-webpack-v5",
   "version": "0.0.20",
   "description": "A webpack@5.0.0+ middleware for smash-cli.",
