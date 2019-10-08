@@ -41,8 +41,8 @@
     "postcss-loader": "3.0.0",
     "smash-helper-babel-preset-react": "0.0.20",
     "terser-webpack-plugin": "2.1.0",
-    "webpack": "4.40.2",
-    "webpack-dev-server": "3.1.14",
+    "webpack": "4.41.0",
+    "webpack-dev-server": "3.8.2",
     "webpack-merge": "4.2.2"
   },
   "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"

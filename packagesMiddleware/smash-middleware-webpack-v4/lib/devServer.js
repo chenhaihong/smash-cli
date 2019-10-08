@@ -1,199 +1,33 @@
+/**
+ * 文件内容来源：webpack-dev-server@3.8.2
+ *              https://github.com/webpack/webpack-dev-server/blob/v3.8.2/bin/webpack-dev-server.js
+ */
+
 const fs = require('fs');
 const net = require('net');
-const path = require('path');
-
-const fse = require('fs-extra');
-const portfinder = require('portfinder');
 const webpack = require('webpack');
 
-const DEFAULT_PORT = 8080;
-
-const {
-  colors,
-  status,
-  version,
-  bonjour,
-  defaultTo,
-} = require('webpack-dev-server/bin/utils');
-
-const Server = require('webpack-dev-server');
-
-const addEntries = require('webpack-dev-server/lib/utils/addEntries');
-const createDomain = require('webpack-dev-server/lib/utils/createDomain');
+// webpack-dev-server
+const Server = require('webpack-dev-server/lib/Server');
+const setupExitSignals = require('webpack-dev-server/lib/utils/setupExitSignals');
+const colors = require('webpack-dev-server/lib/utils/colors');
+const processOptions = require('webpack-dev-server/lib/utils/processOptions');
 const createLogger = require('webpack-dev-server/lib/utils/createLogger');
+const getVersions = require('webpack-dev-server/lib/utils/getVersions');
+const options = require('webpack-dev-server/bin/options');
 
 let server;
-
-const signals = ['SIGINT', 'SIGTERM'];
-
-signals.forEach((signal) => {
-  process.on(signal, () => {
-    if (server) {
-      server.close(() => {
-        // eslint-disable-next-line no-process-exit
-        process.exit();
-      });
-    } else {
-      // eslint-disable-next-line no-process-exit
-      process.exit();
-    }
-  });
-});
-
-function processOptions(config) {
-  // processOptions {Promise}
-  if (typeof config.then === 'function') {
-    config.then(processOptions).catch((err) => {
-      console.error(err.stack || err);
-      // eslint-disable-next-line no-process-exit
-      process.exit();
-    });
-
-    return;
-  }
-
-  const firstWpOpt = Array.isArray(config) ? config[0] : config;
-
-  const options = config.devServer || {};
-
-  if (!options.host) {
-    options.host = 'localhost';
-  }
-
-  if (!options.publicPath) {
-    // eslint-disable-next-line
-    options.publicPath =
-      (firstWpOpt.output && firstWpOpt.output.publicPath) || '';
-
-    if (
-      !/^(https?:)?\/\//.test(options.publicPath) &&
-      options.publicPath[0] !== '/'
-    ) {
-      options.publicPath = `/${options.publicPath}`;
-    }
-  }
-
-  if (!options.filename) {
-    options.filename = firstWpOpt.output && firstWpOpt.output.filename;
-  }
-
-  if (!options.watchOptions) {
-    options.watchOptions = firstWpOpt.watchOptions;
-  }
-
-  if (options.stdin) {
-    process.stdin.on('end', () => {
-      // eslint-disable-next-line no-process-exit
-      process.exit(0);
-    });
-
-    process.stdin.resume();
-  }
-
-  if (!options.hot) {
-    options.hot = false;
-  }
-
-  if (!options.hotOnly) {
-    options.hotOnly = false;
-  }
-
-  if (!options.clientLogLevel) {
-    options.clientLogLevel = 'info';
-  }
-
-  if (options.contentBase === undefined) {
-    if (options.contentBase) {
-      if (Array.isArray(options.contentBase)) {
-        options.contentBase = options.contentBase.map((p) => path.resolve(p));
-      } else if (/^[0-9]$/.test(options.contentBase)) {
-        options.contentBase = +options.contentBase;
-      } else if (!/^(https?:)?\/\//.test(options.contentBase)) {
-        options.contentBase = path.resolve(options.contentBase);
-      }
-      // It is possible to disable the contentBase by using
-      // `--no-content-base`, which results in arg["content-base"] = false
-    } else if (options.contentBase === false) {
-      options.contentBase = false;
-    }
-  }
-
-  if (options.cert) {
-    options.cert = fs.readFileSync(path.resolve(options.cert));
-  }
-
-  if (options.key) {
-    options.key = fs.readFileSync(path.resolve(options.key));
-  }
-
-  if (options.cacert) {
-    options.ca = fs.readFileSync(path.resolve(options.cacert));
-  }
-
-  if (options.pfx) {
-    options.pfx = fs.readFileSync(path.resolve(options.pfx));
-  }
-
-  if (options.openPage) {
-    options.open = true;
-  }
-
-  if (typeof options.open !== 'undefined') {
-    options.open = options.open !== '' ? options.open : true;
-  }
-
-  if (options.open && !options.openPage) {
-    options.openPage = '';
-  }
-
-  if (options.port != null) {
-    startDevServer(config, options);
-
-    return;
-  }
-
-  portfinder.basePort = DEFAULT_PORT;
-  portfinder.getPort((err, port) => {
-    if (err) {
-      throw err;
-    }
-    options.port = port;
-    startDevServer(config, options);
-  });
-}
-
-function processCustomedOptions(config) {
-  let options = config.devServer;
-  if (!options || !(typeof options === 'object')) {
-    options = {};
-    config.devServer = options;
-  }
-
-  // const oldBefore = options.before;
-  // options.before = (app) => {
-  //   app.use((req, res, next) => {
-  //     console.log(`[${req.method}] ${req.url}`);
-  //     next();
-  //   });
-
-  //   oldBefore && oldBefore(app);
-
-  //   addMocks(app);
-  // };
-
-  if (!options.stats) {
-    options.stats = {
-      cached: false,
-      cachedAssets: false,
-      colors: true,
-    };
-  }
-}
+const serverData = {
+  server: null,
+};
+// we must pass an object that contains the server object as a property so that
+// we can update this server property later, and setupExitSignals will be able to
+// recognize that the server has been instantiated, because we will set
+// serverData.server to the new server object.
+setupExitSignals(serverData);
 
 function startDevServer(config, options) {
   const log = createLogger(options);
-
-  addEntries(config, options);
 
   let compiler;
 
@@ -209,19 +43,9 @@ function startDevServer(config, options) {
     throw err;
   }
 
-  if (options.progress) {
-    new webpack.ProgressPlugin({
-      profile: options.profile,
-    }).apply(compiler);
-  }
-
-  const suffix =
-    options.inline !== false || options.lazy === true
-      ? '/'
-      : '/webpack-dev-server/';
-
   try {
     server = new Server(compiler, options, log);
+    serverData.server = server;
   } catch (err) {
     if (err.name === 'ValidationError') {
       log.error(colors.error(options.stats.colors, err.message));
@@ -260,6 +84,7 @@ function startDevServer(config, options) {
       if (err) {
         throw err;
       }
+
       // chmod 666 (rw rw rw)
       const READ_WRITE = 438;
 
@@ -267,10 +92,6 @@ function startDevServer(config, options) {
         if (err) {
           throw err;
         }
-
-        const uri = createDomain(options, server.listeningApp) + suffix;
-
-        status(uri, options, log, options.color);
       });
     });
   } else {
@@ -278,44 +99,13 @@ function startDevServer(config, options) {
       if (err) {
         throw err;
       }
-
-      if (options.bonjour) {
-        bonjour(options);
-      }
-
-      const uri = createDomain(options, server.listeningApp) + suffix;
-
-      status(uri, options, log, options.color);
     });
   }
 }
 
-// function addMocks(app) {
-//   let mocks = {};
-//   const dir = path.resolve(process.cwd(), './mock');
-//   fse.ensureDirSync(dir);
-//   const files = fs.readdirSync(dir);
-//   for (const file of files) {
-//     const filePath = `${dir}/${file}`;
-//     if (/\.js$/.test(file) && fs.statSync(filePath).isFile()) {
-//       mocks = { ...mocks, ...require(filePath) };
-//     }
-//   }
-
-//   for (const path in mocks) {
-//     if (!mocks.hasOwnProperty(path)) continue;
-//     let { method, result } = mocks[path];
-//     app[method](path, function (req, res) {
-//       typeof result === 'function'
-//         ? res.json(result())
-//         : res.json(result);
-//     });
-//   }
-// }
-
 module.exports = (config) => {
-  // 自定义处理逻辑
-  processCustomedOptions(config);
-  // webpack-dev-server 处理逻辑
-  processOptions(config);
+  // 启动webpack-dev-server
+  processOptions(config, {}, (config, options) => {
+    startDevServer(config, options);
+  });
 };
