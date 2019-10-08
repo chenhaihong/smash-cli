@@ -3,7 +3,7 @@
   "version": "0.0.20",
   "description": "A webpack@4.0.0+ middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
-  "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMiddleware/smash-middleware-webpack-v4#readme",
+  "homepage": "https://www.smash-cli.com/",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
@@ -14,7 +14,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMiddleware/smash-middleware-webpack-v4"
   },
   "scripts": {
     "testReact": "node ./__fixtures__/reactV16.test.js",
