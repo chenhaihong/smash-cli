@@ -1,6 +1,6 @@
 {
   "name": "smash-middleware-webpack-v4",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A webpack@4.0.0+ middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/",
@@ -39,7 +39,7 @@
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "portfinder": "1.0.24",
     "postcss-loader": "3.0.0",
-    "smash-helper-babel-preset-react": "0.0.20",
+    "smash-helper-babel-preset-react": "0.0.21",
     "terser-webpack-plugin": "2.1.0",
     "webpack": "4.41.0",
     "webpack-dev-server": "3.8.2",
