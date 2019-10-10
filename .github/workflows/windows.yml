@@ -3,7 +3,7 @@ name: Node CI - windows-latest
 on: [push]
 
 jobs:
-  Test main and helper:
+  test-main-and-helper:
     strategy:
       matrix:
         # os: [windows-latest, macOS-latest, ubuntu-latest]
