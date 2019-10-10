@@ -22,8 +22,13 @@ jobs:
       - run: yarn install
       - run: node scripts/test-main.js
       - name: Upload a report to codecov
+        # About context and expressions https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#about-context-and-expressions
+        # Operators                     https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#operators
+        # Job status check functions    https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#job-status-check-functions
+        if: matrix.node-version == 10 && success()
         # https://codecov.io/gh/chenhaihong/smash-cli
-        # if: ${{ matrix.node-version }} == 10
         run: bash <(curl -s https://codecov.io/bash)
+        # Creating and using secrets (encrypted variables)
+        # https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
