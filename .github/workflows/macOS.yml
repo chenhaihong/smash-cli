@@ -1,0 +1,23 @@
+name: Node CI - macOS-latest
+
+on: [push]
+
+jobs:
+  test-main-and-helper:
+    strategy:
+      matrix:
+        os: [macOS-latest]
+        node-version: [8, 10, 11, 12]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+          os: ${{ matrix.os }}
+      - run: npm i -g yarn
+      - run: yarn install
+      - run: node scripts/test-main.js
