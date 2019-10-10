@@ -18,7 +18,7 @@ module.exports = {
   coveragePathIgnorePatterns: [
     // 忽略覆盖
     '/node_modules/',
-    '/packagesHelper/',
+    // '/packagesHelper/',
     '/packagesMiddleware/',
     '/packagesTemplate/',
   ],
@@ -29,7 +29,7 @@ module.exports = {
   testPathIgnorePatterns: [
     // 忽略测试路径
     '/node_modules/',
-    '/packagesHelper/',
+    // '/packagesHelper/',
     '/packagesMiddleware/',
     '/packagesTemplate/',
   ],
