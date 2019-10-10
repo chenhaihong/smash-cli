@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/smash-cli)](https://www.npmjs.com/package/smash-cli)
 [![npm](https://img.shields.io/npm/dm/smash-cli)](https://www.npmjs.com/package/smash-cli)
+[![codecov](https://codecov.io/gh/chenhaihong/smash-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/chenhaihong/smash-cli)
+![workflows](https://github.com/chenhaihong/smash-cli/workflows/macOS/badge.svg)
 
 [Document and examples](https://www.smash-cli.com).
 

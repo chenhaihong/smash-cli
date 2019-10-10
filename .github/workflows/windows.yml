@@ -1,4 +1,4 @@
-name: Node CI - windows-latest
+name: windows
 
 on: [push]
 
@@ -6,9 +6,8 @@ jobs:
   test-main-and-helper:
     strategy:
       matrix:
-        # os: [windows-latest, macOS-latest, ubuntu-latest]
-        os: [windows-latest]
         node-version: [8, 10, 11, 12]
+        os: [windows-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -21,5 +20,4 @@ jobs:
           os: ${{ matrix.os }}
       - run: npm i -g yarn
       - run: yarn install
-      # - run: yarn config set ignore-engines true
       - run: node scripts/test-main.js
