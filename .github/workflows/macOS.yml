@@ -22,5 +22,5 @@ jobs:
       - run: yarn install
       - run: node scripts/test-main.js
       - name: Upload a report to codecov
-        if: ${{ matrix.node-version }} == 10
+        # if: ${{ matrix.node-version }} == 10
         run: bash <(curl -s https://codecov.io/bash)
