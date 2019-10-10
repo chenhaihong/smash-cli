@@ -1,7 +1,7 @@
 # smash-cli
 
 [![npm](https://img.shields.io/npm/v/smash-cli)](https://www.npmjs.com/package/smash-cli)
-![npm](https://img.shields.io/npm/dm/smash-cli)
+[![npm](https://img.shields.io/npm/dm/smash-cli)](https://www.npmjs.com/package/smash-cli)
 
 [Document and examples](https://www.smash-cli.com).
 
