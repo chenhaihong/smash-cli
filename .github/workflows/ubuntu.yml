@@ -21,3 +21,4 @@ jobs:
       - run: npm i -g yarn
       - run: yarn install
       - run: node scripts/test-main.js
+      - run: bash <(curl -s https://codecov.io/bash)
