@@ -12,6 +12,16 @@ smash-cli-install:
       # https://yarnpkg.com/en/docs/cli/add#toc-yarn-add-ignore-workspace-root-check-w
       - yarn add husky --dev -W
 
+test-main-and-helper:
+  - name: smash-middleware-shell
+    commands:
+      - node scripts/test-main.js
+
+test-smash-cli:
+  - name: smash-middleware-shell
+    commands:
+      - node scripts/test-main.js --package=packagesMain/smash-cli
+
 ##################################################################
 # docusaurus
 ##################################################################
@@ -38,8 +48,7 @@ docusaurus-gh-pages:
   - name: smash-middleware-shell
     commands:
       - cd docusaurus/website
-      - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run
-        publish-gh-pages
+      - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
 
 ##################################################################
 # lerna
