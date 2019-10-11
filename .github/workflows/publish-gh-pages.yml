@@ -1,0 +1,25 @@
+name: publish-gh-pages
+
+on: [push]
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        node-version: [10]
+        os: [macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+          os: ${{ matrix.os }}
+      # - run: git config --global user.name "chenhaihong"
+      # - run: git config --global user.email "erye@tiiit.cn"
+      # - run: node scripts/test-main.js
+      - run: npm i -g yarn
+      - run: cd website && yarn install && GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
