@@ -60,6 +60,11 @@ lerna-publish:
       - nrm use npm
       - lerna publish
       - nrm use taobao
+# 使用lerna发布tag
+lerna-version:
+  - name: smash-middleware-shell
+    commands:
+      - lerna version
 # 示例：使用lerna创建子包
 lerna-create:
   - name: smash-middleware-shell
