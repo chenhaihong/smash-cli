@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "smash-helper-babel-preset-env",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Babel preset env for smash middleware.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/",
