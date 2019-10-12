@@ -27,38 +27,14 @@ class Footer extends React.Component {
     return (
       <div>
         <h5>Documentation</h5>
-        <a
-          href={this.docUrl(
-            'documentation/getting-started/what-is-smash-cli.html',
-            this.props.language
-          )}
-        >
+        <a href={this.docUrl('documentation/getting-started/what-is-smash-cli.html', this.props.language)}>
           Getting Started
         </a>
-        <a
-          href={this.docUrl(
-            'documentation/middlewares/smash-middleware-helloworld.html',
-            this.props.language
-          )}
-        >
+        <a href={this.docUrl('documentation/middlewares/smash-middleware-helloworld.html', this.props.language)}>
           Middlewares
         </a>
-        <a
-          href={this.docUrl(
-            'documentation/templates/smash-template-react.html',
-            this.props.language
-          )}
-        >
-          Templates
-        </a>
-        <a
-          href={this.docUrl(
-            'documentation/apis/smash-cli.html',
-            this.props.language
-          )}
-        >
-          Programmatic APIs
-        </a>
+        <a href={this.docUrl('documentation/templates/smash-template-react.html', this.props.language)}>Templates</a>
+        <a href={this.docUrl('documentation/apis/smash-cli.html', this.props.language)}>Programmatic APIs</a>
       </div>
     );
   }
@@ -67,22 +43,8 @@ class Footer extends React.Component {
     return (
       <div>
         <h5>Examples</h5>
-        <a
-          href={this.docUrl(
-            'examples/usage/using-a-template.html',
-            this.props.language
-          )}
-        >
-          Usage
-        </a>
-        <a
-          href={this.docUrl(
-            'examples/contribute/writing-a-template.html',
-            this.props.language
-          )}
-        >
-          Contribute
-        </a>
+        <a href={this.docUrl('examples/usage/using-a-template.html', this.props.language)}>Usage</a>
+        <a href={this.docUrl('examples/contribute/writing-a-template.html', this.props.language)}>Contribute</a>
       </div>
     );
   }
@@ -92,21 +54,11 @@ class Footer extends React.Component {
       <div>
         <h5>Community</h5>
         <a href={this.pageUrl('help.html', this.props.language)}>Help</a>
-        <a href={this.pageUrl('users.html', this.props.language)}>
-          User Showcase
-        </a>
-        <a
-          rel='noreferrer noopener'
-          href={`https://github.com/chenhaihong/smash-cli/issues`}
-          target='_blank'
-        >
+        <a href={this.pageUrl('users.html', this.props.language)}>User Showcase</a>
+        <a rel='noreferrer noopener' href={`https://github.com/chenhaihong/smash-cli/issues`} target='_blank'>
           Issues
         </a>
-        <a
-          rel='noreferrer noopener'
-          href={'https://www.yuque.com/smash-cli'}
-          target='_blank'
-        >
+        <a rel='noreferrer noopener' href={'https://www.yuque.com/smash-cli'} target='_blank'>
           Yuque
         </a>
       </div>
@@ -122,19 +74,14 @@ class Footer extends React.Component {
           className='github-button'
           href={this.props.config.repoUrl}
           data-icon='octicon-star'
-          data-count-href='/facebook/docusaurus/stargazers'
-          data-show-count='true'
-          data-count-aria-label='# stargazers on GitHub'
+          data-show-count='https://github.com/chenhaihong/smash-cli'
           aria-label='Star this project on GitHub'
         >
           Star
         </a>
         {this.props.config.twitterUsername && (
           <div className='social'>
-            <a
-              href={`https://twitter.com/${this.props.config.twitterUsername}`}
-              className='twitter-follow-button'
-            >
+            <a href={`https://twitter.com/${this.props.config.twitterUsername}`} className='twitter-follow-button'>
               Follow @{this.props.config.twitterUsername}
             </a>
           </div>
@@ -187,9 +134,17 @@ class Footer extends React.Component {
         <section className='copyright'>
           <span>{this.props.config.copyright}</span>
           <br />
-          <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow">粤ICP备18035177号-2</a>
+          <a href='http://www.beian.miit.gov.cn/' target='_blank' rel='nofollow'>
+            粤ICP备18035177号-2
+          </a>
           <span> | </span>
-          <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011302002170" target="_blank" rel="nofollow">粤公网安备 44011302002170号</a>
+          <a
+            href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011302002170'
+            target='_blank'
+            rel='nofollow'
+          >
+            粤公网安备 44011302002170号
+          </a>
         </section>
       </footer>
     );

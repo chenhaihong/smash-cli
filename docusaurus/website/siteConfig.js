@@ -103,7 +103,11 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    // 来自这个库 https://github.com/ntkme/github-buttons
+    // 移除 'https://buttons.github.io/buttons.js'，使用 jsdelivr 的文件  https://cdn.jsdelivr.net/gh/ntkme/github-buttons/
+    'https://cdn.jsdelivr.net/gh/ntkme/github-buttons@2.3.6/dist/buttons.min.js',
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -129,9 +133,8 @@ const siteConfig = {
   repoUrl: 'https://github.com/chenhaihong/smash-cli',
 
   // disableTitleTagline: true,
-  docsSideNavCollapsible: true,
-  editUrl:
-    'https://github.com/chenhaihong/smash-cli/edit/master/docusaurus/docs/',
+  // docsSideNavCollapsible: true,
+  editUrl: 'https://github.com/chenhaihong/smash-cli/edit/master/docusaurus/docs/',
   scrollToTop: true,
   useEnglishUrl: false,
 };
