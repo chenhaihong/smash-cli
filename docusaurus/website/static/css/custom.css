@@ -32,10 +32,17 @@
 }
 
 /* 侧边栏，高亮样式 */
+.toc .toggleNav ul li a {
+  margin-left: -8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 .toc .toggleNav ul li a:hover,
 .toc .toggleNav ul li.navListItemActive a {
   color: #cc9933;
   text-decoration: none;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .homeContainer {
