@@ -1,0 +1,25 @@
+install:
+  - name: smash-middleware-shell
+    commands:
+      - npm i -g yarn yrm nrm --registry=https://registry.npm.taobao.org
+      - nrm use taobao
+      - yrm use taobao
+      - yarn install
+
+dev:
+  - name: smash-middleware-copy
+    files:
+      - src/assets/images -> /dist/images
+  - name: smash-middleware-webpack-v4
+    type: dev-server
+
+build:
+  - name: smash-middleware-clean
+    remove: true
+    dirs:
+      - ./dist
+  - name: smash-middleware-copy
+    files:
+      - src/assets/images -> /dist/images
+  - name: smash-middleware-webpack-v4
+    type: build

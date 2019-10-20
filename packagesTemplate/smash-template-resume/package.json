@@ -1,0 +1,20 @@
+{
+  "name": "smash-template-resume",
+  "version": "0.0.22",
+  "description": "A simple resume template.",
+  "keywords": [
+    "smash-template",
+    "smash-cli"
+  ],
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://www.smash-cli.com/",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  }
+}

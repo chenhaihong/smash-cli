@@ -1,0 +1,43 @@
+.hero {
+  padding: 3rem 0;
+  text-align: center;
+  color: #fff;
+  background-color: #20232a;
+}
+
+.avatar {
+  margin: 0 auto 1.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+
+  & > figure {
+    position: relative;
+    margin: 0;
+    padding-bottom: 100%;
+    display: block;
+    height: 0;
+    overflow: hidden;
+
+    & > img {
+      object-fit: cover;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.name {
+  margin: 0 auto 1rem;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+.desc {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
