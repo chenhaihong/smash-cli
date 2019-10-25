@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "smash-template-resume",
   "version": "0.0.22",
   "description": "A simple resume template.",
