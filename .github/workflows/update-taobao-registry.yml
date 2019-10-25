@@ -1,0 +1,20 @@
+# 同步淘宝镜像
+# 最近发现，淘宝镜像上的包出现不同步，添加自动同步ci
+name: update-taobao-registry
+
+on: [push]
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        node-version: [10]
+        os: [macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - run: curl https://npm.taobao.org/sync/smash-cli
+      - run: curl https://npm.taobao.org/sync/smash-init
+      - run: curl https://npm.taobao.org/sync/smash-install
+      - run: curl https://npm.taobao.org/sync/smash-run
