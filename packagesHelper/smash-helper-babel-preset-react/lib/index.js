@@ -19,9 +19,34 @@ function smashHelperBabelPresetReact(context, opts = {}) {
     require.resolve('@babel/plugin-proposal-function-bind'),
 
     // Stage 1
+    /**
+     * Old:
+     *   import {v} from "mod";
+     *   export {v};
+     * Now:
+     *   export {v} from "mod";
+     */
     require.resolve('@babel/plugin-proposal-export-default-from'),
+    // Old: a || (a = b);   a && (a = b);
+    // Now: a ||= b;        a &&= b;
     require.resolve('@babel/plugin-proposal-logical-assignment-operators'),
+    // Old: var street = user.address && user.address.street;
+    // Now: var street = user.address?.street;
     [require.resolve('@babel/plugin-proposal-optional-chaining'), { loose: false }],
+    /**
+     * let score=25;
+     * function double (x) { return x + x; }
+     * function add (x, y) { return x + y; }
+     * function boundScore (min, max, score) {
+     *   return Math.max(min, Math.min(max, score));
+     * }
+     *
+     * Old: let newScore = boundScore(60, 90, add(double(score), 10))
+     * Now: let newScore = score
+     *        |> double
+     *        |> (_ => add(_, 10))
+     *        |> (_ => boundScore(60, 90, _))
+     */
     [require.resolve('@babel/plugin-proposal-pipeline-operator'), { proposal: 'minimal' }],
     [require.resolve('@babel/plugin-proposal-nullish-coalescing-operator'), { loose: false }],
     require.resolve('@babel/plugin-proposal-do-expressions'),
