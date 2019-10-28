@@ -16,6 +16,12 @@ function smashHelperBabelPresetReact(context, opts = {}) {
    */
   const plugins = [
     // Stage 0
+    /**
+     * const { map, filter } = Array.prototype;
+     *
+     * Old: let urls = document.querySelectorAll('a')::map(node => node.href)
+     * Now: let urls = map.call(document.querySelectorAll('a'), node => node.href)
+     */
     require.resolve('@babel/plugin-proposal-function-bind'),
 
     // Stage 1
