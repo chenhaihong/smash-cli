@@ -60,7 +60,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/chenhaihong/smash-cli/edit/master/docusaurus/docs/documentation/middlewares/smash-middleware-webpack-v4.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">smash-middleware-webpack-v4</h1></header><article><div><span><p>A webpack 4 middleware for smash-cli. 该中间件已经内置了
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/chenhaihong/smash-cli/edit/master/docusaurus/docs/documentation/middlewares/smash-middleware-webpack-v4.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">smash-middleware-webpack-v4</h1></header><article><div><span><p>A webpack 4 middleware for smash-cli. 该中间件已经内置了
 <a href="https://www.npmjs.com/package/webpack-dev-server">webpack-dev-server</a>。</p>
 <ul>
 <li>支持 mock</li>
@@ -81,20 +81,20 @@
 <p>
 在 <code>.smash/task.yml</code> 文件中加入配置：
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">dev-server:</span>
-<span class="hljs-attr">  - name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
-<span class="hljs-attr">    type:</span> <span class="hljs-string">dev-server</span> <span class="hljs-comment"># 浏览器网页应用，启用webpack-dev-server</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">dev-server</span> <span class="hljs-comment"># 浏览器网页应用，启用webpack-dev-server</span>
 
 <span class="hljs-attr">watch:</span>
-<span class="hljs-attr">  - name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
-<span class="hljs-attr">    type:</span> <span class="hljs-string">watch</span> <span class="hljs-comment"># 浏览器网页应用，开启watch模式</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">watch</span> <span class="hljs-comment"># 浏览器网页应用，开启watch模式</span>
 
 <span class="hljs-attr">build:</span>
-<span class="hljs-attr">  - name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
-<span class="hljs-attr">    type:</span> <span class="hljs-string">build</span> <span class="hljs-comment"># 浏览器网页应用，生产环境</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">build</span> <span class="hljs-comment"># 浏览器网页应用，生产环境</span>
 
 <span class="hljs-attr">buildLib:</span>
-<span class="hljs-attr">  - name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
-<span class="hljs-attr">    type:</span> <span class="hljs-string">lib</span> <span class="hljs-comment"># js lib类型应用，生产环境</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">smash-middleware-webpack-v4</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">lib</span> <span class="hljs-comment"># js lib类型应用，生产环境</span>
 </code></pre>
 <p>参数的配置规则如下：</p>
 <ul>
@@ -130,7 +130,7 @@
       ...defaultWebpackConfig.devServer,
       <span class="hljs-attr">hot</span>: <span class="hljs-literal">true</span>,
       <span class="hljs-comment">// hotOnly: true, // 只启用页面无刷新替换</span>
-      port: <span class="hljs-number">8080</span>,
+      <span class="hljs-attr">port</span>: <span class="hljs-number">8080</span>,
       <span class="hljs-attr">proxy</span>: {
         <span class="hljs-comment">// 代理配置</span>
         <span class="hljs-string">'/api'</span>: <span class="hljs-string">'http://localhost:3000'</span>,
@@ -168,4 +168,4 @@ $ smash run buildLib
 <ul>
 <li><a href="https://webpack.docschina.org/loaders/">webpack loaders [zh]</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/documentation/middlewares/smash-middleware-shell.html"><span class="arrow-prev">← </span><span>smash-middleware-shell</span></a><a class="docs-next button" href="/docs/documentation/templates/smash-template-react.html"><span>smash-template-react</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#examples">Examples</a></li><li><a href="#links">Links</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon-white.ico" alt="smash-cli" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/documentation/getting-started/what-is-smash-cli.html">Getting Started</a><a href="/docs/documentation/middlewares/smash-middleware-helloworld.html">Middlewares</a><a href="/docs/documentation/templates/smash-template-react.html">Templates</a><a href="/docs/documentation/apis/smash-cli.html">Programmatic APIs</a></div><div><h5>Examples</h5><a href="/docs/examples/usage/using-a-template.html">Usage</a><a href="/docs/examples/contribute/writing-a-template.html">Contribute</a></div><div><h5>Community</h5><a href="/help.html">Help</a><a href="/users.html">User Showcase</a><a rel="noreferrer noopener" href="https://github.com/chenhaihong/smash-cli/issues" target="_blank">Issues</a><a rel="noreferrer noopener" href="https://www.yuque.com/smash-cli" target="_blank">Yuque</a></div><div><h5>More</h5><a href="/blog">Blog</a><a class="github-button" href="https://github.com/chenhaihong/smash-cli" data-icon="octicon-star" data-show-count="https://github.com/chenhaihong/smash-cli" aria-label="Star this project on GitHub">Star</a></div></section><a target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/favicon-white.ico" alt="Facebook Open Source" width="100" height="100"/></a><section class="copyright"><span>Copyright © 2019 www.smash-cli.com</span><br/><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow">粤ICP备18035177号-2</a><span> | </span><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011302002170" target="_blank" rel="nofollow">粤公网安备 44011302002170号</a></section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/documentation/middlewares/smash-middleware-shell.html"><span class="arrow-prev">← </span><span>smash-middleware-shell</span></a><a class="docs-next button" href="/docs/documentation/templates/smash-template-react.html"><span>smash-template-react</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#examples">Examples</a></li><li><a href="#links">Links</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon-white.ico" alt="smash-cli" width="66" height="58"/></a><div><h5>Documentation</h5><a href="/docs/documentation/getting-started/what-is-smash-cli.html">Getting Started</a><a href="/docs/documentation/middlewares/smash-middleware-helloworld.html">Middlewares</a><a href="/docs/documentation/templates/smash-template-react.html">Templates</a><a href="/docs/documentation/apis/smash-cli.html">Programmatic APIs</a></div><div><h5>Examples</h5><a href="/docs/examples/usage/using-a-template.html">Usage</a><a href="/docs/examples/contribute/writing-a-template.html">Contribute</a></div><div><h5>Community</h5><a href="/help.html">Help</a><a href="/users.html">User Showcase</a><a rel="noreferrer noopener" href="https://github.com/chenhaihong/smash-cli/issues" target="_blank">Issues</a><a rel="noreferrer noopener" href="https://www.yuque.com/smash-cli" target="_blank">Yuque</a></div><div><h5>More</h5><a href="/blog">Blog</a><a class="github-button" href="https://github.com/chenhaihong/smash-cli" data-icon="octicon-star" data-show-count="https://github.com/chenhaihong/smash-cli" aria-label="Star this project on GitHub">Star</a></div></section><a target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/favicon-white.ico" alt="Facebook Open Source" width="100" height="100"/></a><section class="copyright"><span>Copyright © 2020 www.smash-cli.com</span><br/><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow">粤ICP备18035177号-2</a><span> | </span><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011302002170" target="_blank" rel="nofollow">粤公网安备 44011302002170号</a></section></footer></div></body></html>

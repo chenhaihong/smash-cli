@@ -2,35 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.smash-cli.com/blog</id>
     <title>smash-cli Blog</title>
-    <updated>2019-09-18T06:00:00Z</updated>
-    <generator>Feed for Node.js</generator>
+    <updated>2019-09-18T06:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.smash-cli.com/blog"/>
     <subtitle>The best place to stay up-to-date with the latest smash-cli news and events.</subtitle>
     <logo>https://www.smash-cli.com/img/favicon-white.ico</logo>
-    <rights>Copyright © 2019 www.smash-cli.com</rights>
+    <rights>Copyright © 2020 www.smash-cli.com</rights>
     <entry>
         <title type="html"><![CDATA[v0.0.11 coming now!]]></title>
         <id>https://www.smash-cli.com/blog/2019/09/18/v0.0.11-coming.html</id>
-        <link href="https://www.smash-cli.com/blog/2019/09/18/v0.0.11-coming.html">
-        </link>
-        <updated>2019-09-18T06:00:00Z</updated>
+        <link href="https://www.smash-cli.com/blog/2019/09/18/v0.0.11-coming.html"/>
+        <updated>2019-09-18T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>smash-cli v0.0.11 coming now!</p>
 ]]></summary>
         <author>
             <name>erye</name>
+            <email/>
             <uri>https://www.tiiit.cn/</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[v0.0.9 coming now!]]></title>
         <id>https://www.smash-cli.com/blog/2019/08/21/v0.0.9-coming.html</id>
-        <link href="https://www.smash-cli.com/blog/2019/08/21/v0.0.9-coming.html">
-        </link>
-        <updated>2019-08-21T06:00:00Z</updated>
+        <link href="https://www.smash-cli.com/blog/2019/08/21/v0.0.9-coming.html"/>
+        <updated>2019-08-21T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>smash-cli v0.0.9 coming now!</p>
 ]]></summary>
         <author>
             <name>erye</name>
+            <email/>
             <uri>https://www.tiiit.cn/</uri>
         </author>
     </entry>
