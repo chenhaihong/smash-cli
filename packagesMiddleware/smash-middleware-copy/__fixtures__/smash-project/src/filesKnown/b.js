@@ -1,1 +1,0 @@
-var author = '{{name}}';
