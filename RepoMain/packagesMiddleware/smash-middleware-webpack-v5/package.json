@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "smash-middleware-webpack-v5",
+  "version": "0.0.22",
+  "description": "A webpack@5.0.0+ middleware for smash-cli.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://www.smash-cli.com/",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "smash",
+    "smash-cli",
+    "smash middleware",
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMiddleware/smash-middleware-webpack-v5"
+  },
+  "scripts": {
+    "testReact": "node ./__fixtures__/reactV16.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  }
+}

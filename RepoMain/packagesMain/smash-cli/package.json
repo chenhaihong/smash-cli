@@ -1,0 +1,36 @@
+{
+  "name": "smash-cli",
+  "version": "0.0.22",
+  "description": "A tiny task manager for modern JavaScript projects.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://www.smash-cli.com/",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "bin": {
+    "smash": "lib/bin"
+  },
+  "keywords": [
+    "smash",
+    "smash-cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMain/smash-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "commander": "2.20.0",
+    "smash-init": "0.0.22",
+    "smash-install": "0.0.22",
+    "smash-run": "0.0.22",
+    "update-notifier": "3.0.1"
+  },
+  "devDependencies": {
+    "exec-sh": "0.3.2",
+    "fs-extra": "8.1.0"
+  },
+  "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"
+}
