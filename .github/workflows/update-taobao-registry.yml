@@ -2,7 +2,10 @@
 # 最近发现，淘宝镜像上的包出现不同步，添加自动同步ci
 name: update-taobao-registry
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   publish:
