@@ -6,7 +6,7 @@ module.exports = {
   verbose: true,
   setupFiles: [
     resolve(ROOT, 'scripts/setup-empty-coverage.js'),
-    resolve(ROOT, 'scripts/setup-empty-repo.js'),
+    resolve(ROOT, 'scripts/setup-empty-storage-repo.js'),
     resolve(ROOT, 'scripts/setup-unit-test-timeout.js'),
   ],
   collectCoverage: true, // 收集测试时的覆盖率信息
