@@ -4,7 +4,7 @@ const fse = require('fs-extra');
 
 const ROOT = resolve(__dirname, '..'); // 该包的根目录
 const TEMP = resolve(ROOT, '__temp__');
-const smashBin = resolve(ROOT, 'lib/bin');
+const smashBin = resolve(ROOT, 'lib/smash');
 const bin = (cwd) => (command) => execShPromise(`node ${smashBin} ${command}`, { cwd, stdio: null });
 
 jest.setTimeout(100e3);

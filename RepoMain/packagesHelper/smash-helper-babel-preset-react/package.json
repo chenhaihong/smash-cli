@@ -1,7 +1,7 @@
 {
   "name": "smash-helper-babel-preset-react",
   "version": "0.0.22",
-  "description": "Babel preset react for smash middleware.",
+  "description": "Babel preset react env.",
   "keywords": [
     "smash-helper"
   ],
