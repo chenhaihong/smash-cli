@@ -1,25 +1,19 @@
+const { join } = require('path');
+
+const cwd = process.cwd();
+
 module.exports = {
-  ////////////////////////////////////////
-  // webpack.base.js
-  // webpack.build.js
-  // webpack.devServer.js
-  ////////////////////////////////////////
   // entry
-  entryJsDir: './src',
-  entryHtmlDir: './src/assets',
+  entryJsDir: join(cwd, 'src'),
+  entryLibDir: join(cwd, 'lib'),
+  entryHtmlDir: join(cwd, 'src/assets'),
 
   // output
-  outputDir: './dist',
+  outputDir: join(cwd, 'dist'),
 
   // mock
-  mockDir: './mock',
+  mockDir: join(cwd, 'mock'),
 
   // proxy
-  proxyFile: './proxy.js',
-
-  ////////////////////////////////////////
-  // webpack.lib.js
-  ////////////////////////////////////////
-  // lib
-  entryLibDir: './lib',
+  proxyFile: join(cwd, 'proxy.js'),
 };

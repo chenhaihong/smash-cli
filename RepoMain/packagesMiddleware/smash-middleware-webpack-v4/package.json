@@ -17,10 +17,6 @@
     "url": "git+https://github.com/chenhaihong/smash-cli.git",
     "directory": "packagesMiddleware/smash-middleware-webpack-v4"
   },
-  "scripts": {
-    "testReact": "node ./__fixtures__/reactV16.test.js",
-    "testLib": "node ./__fixtures__/reactLib.test.js"
-  },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
@@ -39,8 +35,11 @@
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "portfinder": "1.0.24",
     "postcss-loader": "3.0.0",
+    "smash-helper-babel-preset-env": "0.0.22",
     "smash-helper-babel-preset-react": "0.0.22",
     "terser-webpack-plugin": "2.1.0",
+    "vue-loader": "15.8.3",
+    "vue-template-compiler": "2.6.11",
     "webpack": "4.41.0",
     "webpack-dev-server": "3.8.2",
     "webpack-merge": "4.2.2"

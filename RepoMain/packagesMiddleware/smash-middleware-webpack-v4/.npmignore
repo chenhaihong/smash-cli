@@ -1,4 +1,5 @@
-/.smash
+.smash
 .vscode
 node_modules
 test
+__fixtures__

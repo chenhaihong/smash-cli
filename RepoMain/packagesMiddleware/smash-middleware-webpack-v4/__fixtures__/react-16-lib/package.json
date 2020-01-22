@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "react-v16-lib",
+  "version": "0.0.1",
+  "description": "react 16 lib",
+  "main": "./dist/index.dist.js",
+  "devDependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}

@@ -9,9 +9,10 @@ const _reactJSX = require('./cell/webpack.react.jsx.js');
 const _vue = require('./cell/webpack.vue.js');
 
 const _jsHtmlEntry = require('./cell/webpack.jsHtmlEntry'); // js入口、html模板入口
+const _minify = require('./cell/webpack.minify');
 
 module.exports = function(isProd = true) {
-  return megre(_common(), _html(), _style(isProd), _js(), _json(), _reactJSX(), _vue(), _jsHtmlEntry(), {
+  return megre(_common(), _html(), _style(isProd), _js(), _json(), _reactJSX(), _vue(), _jsHtmlEntry(), _minify(), {
     // 设为开发模式，可显著提升构建速度
     mode: 'development',
 

@@ -5,9 +5,9 @@ function smashMiddlewareWebpackV4(ctx, ymlConfig, next) {
     type = 'build', // 枚举类型: server watch build lib
   } = ymlConfig;
 
-  const cg = require('../conf');
-  const defaultConfig = cg.getDefaultConfig(type);
-  const customedConfig = cg.getCustomedConfig(defaultConfig);
+  const conf = require('../conf');
+  const defaultConfig = conf.getDefaultConfig(type);
+  const customedConfig = conf.getCustomedConfig(defaultConfig);
   const webpackConfig = { ...defaultConfig, ...customedConfig };
 
   switch (type) {
