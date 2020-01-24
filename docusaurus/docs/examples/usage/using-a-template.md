@@ -3,7 +3,7 @@ title: Using a template
 sidebar_label: Using a template
 ---
 
-We are going to download `smash-template-react` and run the `server` task on it.
+We are going to download `smash-template-react` and run the `dev-server` task on it.
 
 > Make sure you have the smash-cli installed.
 
@@ -25,14 +25,14 @@ Open the `.smash/task.yml`. Here we found a task named `server`.
 
 ```yaml
 # Start webpack-dev-server
-server:
+dev-server:
   - name: smash-middleware-webpack-v4
-    type: server
+    type: dev-server
 ```
 
 ### Run a task
 
-Now, run the `server` task by executing the following command:
+Now, run the `dev-server` task:
 
 ```bash
 $ smash run server

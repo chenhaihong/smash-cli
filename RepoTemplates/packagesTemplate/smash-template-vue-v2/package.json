@@ -2,18 +2,11 @@
   "private": true,
   "name": "smash-template-vue-v2",
   "version": "0.0.22",
-  "description": "vue@2 template.",
+  "description": "vue 2 template.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/",
   "license": "MIT",
   "main": "lib/smash-template-vue-v2.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git"

@@ -34,7 +34,6 @@ module.exports = {
     '/node_modules/',
     '/packagesHelper/',
     '/packagesMain/',
-    '/packagesTemplate/',
     '/__fixtures__/',
   ],
   coverageThreshold: {

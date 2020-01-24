@@ -9,8 +9,10 @@
   [dynamic import](https://webpack.docschina.org/guides/code-splitting/#%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5-dynamic-imports-)
 - 支持以下类型的文件
   - html
-  - js(x)：添加了 stage-0、1、2、3 的支持
-  - css、less
+  - js
+  - react 支持，使用 .jsx 文件后缀
+  - vue 2 支持，（不支持 JSX、CSS Modules）
+  - css、less，（`.m.css` 和 `.m.less` 将启用 CSS Modules）
 
 # 使用
 
@@ -21,13 +23,13 @@
 在 <code>.smash/task.yml</code> 文件中加入配置：
 
 ```yaml
-server:
+dev-server:
   - name: smash-middleware-webpack-v4
-    type: server # 浏览器网页应用，启用webpack-dev-server
+    type: dev-server # 浏览器网页应用，开发模式，启用webpack-dev-server
 
 watch:
   - name: smash-middleware-webpack-v4
-    type: watch # 浏览器网页应用，开启watch模式
+    type: watch # 浏览器网页应用，开发模式，开启watch模式
 
 build:
   - name: smash-middleware-webpack-v4
@@ -41,8 +43,8 @@ buildLib:
 参数的配置规则如下：
 
 - `type`：默认为 `build`
-  - `server`：浏览器网页应用，启用 webpack-dev-server
-  - `watch`：浏览器网页应用，开启 watch 模式
+  - `dev-server`：浏览器网页应用，开发模式，启用 webpack-dev-server
+  - `watch`：浏览器网页应用，开发模式，开启 watch 模式
   - `build`：浏览器网页应用，生产环境
   - `lib`：js 库类型应用，生产环境
     </p>
@@ -64,6 +66,7 @@ module.exports = ({ webpack, defaultWebpackConfig }) => {
       jquery: 'jQuery',
       react: 'React',
       'react-dom': 'ReactDOM',
+      vue: 'Vue',
     },
     resolve: {
       ...defaultWebpackConfig.resolve,
@@ -93,7 +96,7 @@ module.exports = ({ webpack, defaultWebpackConfig }) => {
 
 ```bash
 # 启动 webpack-dev-server
-$ smash run server
+$ smash run dev-server
 
 # 开启 watch 模式
 $ smash run watch

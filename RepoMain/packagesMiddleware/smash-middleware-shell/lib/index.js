@@ -4,7 +4,7 @@
 
 const { join } = require('path');
 const execSh = require('exec-sh');
-const kill = require('tree-kill');
+const treeKill = require('tree-kill');
 const SmashLogger = require('smash-helper-logger');
 
 const execShPromise = execSh.promise;
@@ -40,16 +40,17 @@ async function SmashShell(ctx, config, next) {
       command = command.trim();
       if (/^cd\s+/.test(command)) {
         execTimes++;
-        // 如果包含cd字符，需要更新工作空间
-        // 这个追加工作目录的逻辑参考了exeq的代码逻辑
+        // 如果包含cd字符，需要更新工作目录。
+        // 这个更新工作目录的逻辑参考了exeq的代码逻辑。
         lastCwd = join(lastCwd, command.replace(/^cd\s+/, ''));
+        // TODO 添加验证工作目录是否存在的逻辑
         continue;
       }
 
       if (parallel) {
         execSh(command, { cwd: lastCwd }, function(err) {
           if (err) {
-            return kill(process.pid, function() {
+            return treeKill(process.pid, function() {
               process.exit();
             });
           }
@@ -87,7 +88,7 @@ function formatCommands(commands) {
 function onExitSignal() {
   ['SIGINT', 'SIGTERM'].forEach((signal) => {
     process.on(signal, () => {
-      kill(process.pid, function() {
+      treeKill(process.pid, function() {
         process.exit();
       });
     });

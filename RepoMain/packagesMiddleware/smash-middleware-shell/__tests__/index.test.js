@@ -15,7 +15,7 @@ beforeEach(() => {
 describe('smash-middleware-shell', () => {
   it('should run well without anything', async (done) => {
     await SmashShell(ctx, {}, mockNext);
-    expect(ctx).toEqual({});
+    expect(ctx).toEqual({}); // ctx not modified.
     expect(mockNext).toBeCalled();
 
     const instance = autoMockSmashLogger.mock.instances[0];

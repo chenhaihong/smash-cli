@@ -31,7 +31,6 @@ module.exports = {
     '/node_modules/',
     // '/packagesHelper/',
     '/packagesMiddleware/',
-    '/packagesTemplate/',
   ],
   coverageThreshold: {
     // 配置测试最低阈值
