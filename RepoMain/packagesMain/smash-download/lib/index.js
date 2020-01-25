@@ -1,5 +1,5 @@
 /**
- * smash-cli工具的中间件安装器。
+ * smash-cli工具的模板安装器。
  */
 
 const os = require('os');
@@ -9,18 +9,18 @@ const SmashLogger = require('smash-helper-logger');
 const pacote = require('pacote');
 const tar = require('tar');
 
-// 本机存放smash中间件的仓库
-const REPO = resolve(os.homedir(), '.smash-cli/middleware');
+// 本机存放smash模板的仓库
+const REPO = resolve(os.homedir(), '.smash-cli/template');
 
-module.exports = smashInstall;
+module.exports = smashDownload;
 
 /**
  * 安装模板到工作目录，然后拷贝里面的文件到工作目录。
  * @param {String} tplName 模板名，比如：smash-template-react@^16.0.0
  * @returns {void}
  */
-async function smashInstall(tplName) {
-  const logger = new SmashLogger('smash-install');
+async function smashDownload(tplName) {
+  const logger = new SmashLogger('smash-download');
   try {
     // （1）获取包信息，检出包名、版本号。如果不存在，会抛出错误。
     const { name, version } = await pacote.manifest(tplName);

@@ -22,20 +22,29 @@ program
     programmaticSmash.init();
   });
 
-// 注册安装命令：该命令会在工作目录下安装模板项目
+// 注册安装模板命令：该命令会在工作目录下安装模板项目
 program
-  .command('install <template>')
-  .alias('i')
+  .command('download <template>')
+  .alias('d')
   .description('Download <template>')
   .action(function(templateName) {
-    programmaticSmash.install(templateName);
+    programmaticSmash.download(templateName);
+  });
+
+// 注册安装中间件命令：该命令会将中间件安装到home目录下的中间件目录
+program
+  .command('install')
+  .alias('i')
+  .description('Install middlewares')
+  .action(function() {
+    programmaticSmash.install();
   });
 
 // 注册run命令：该命令会执行任务里的中间件。
 program
   .command('run <task>')
   .alias('r')
-  .description('Execute <task>')
+  .description('Run <task>')
   .action(function(taskName) {
     programmaticSmash.run(taskName);
   });
@@ -44,7 +53,8 @@ program.on('--help', function() {
   console.log('');
   console.log('Examples:');
   console.log('  $ smash init');
-  console.log('  $ smash install smash-template-react');
+  console.log('  $ smash download smash-template-react');
+  console.log('  $ smash install');
   console.log('  $ smash run helloworld');
 });
 
