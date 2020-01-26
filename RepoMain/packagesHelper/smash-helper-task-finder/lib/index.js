@@ -3,7 +3,7 @@
  */
 
 const fse = require('fs-extra');
-const { join, resolve } = require('path');
+const { resolve } = require('path');
 const yaml = require('yaml'); // 使用yaml包来解析yaml配置
 
 module.exports = class TaskFinder {
@@ -18,7 +18,7 @@ module.exports = class TaskFinder {
     fse.ensureDirSync(dir);
     const files = fse.readdirSync(dir);
     for (const file of files) {
-      const filePath = join(dir, file);
+      const filePath = resolve(dir, file);
       if (/\.ya?ml$/.test(file) && fse.statSync(filePath).isFile()) {
         const str = fse.readFileSync(filePath, 'utf8');
         const obj = yaml.parse(str);

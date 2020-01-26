@@ -23,6 +23,7 @@ afterAll(() => {
 });
 
 describe('cli', () => {
+  // 测试帮助命令
   describe('should print help info', () => {
     it('without any option or command', async (done) => {
       const { stdout, stderr } = await bin(null)('');
@@ -55,6 +56,7 @@ describe('cli', () => {
     });
   });
 
+  // 测试初始化命令
   describe('init', () => {
     const cwd = resolve(TEMP, 'dir_for_init');
 
@@ -74,6 +76,7 @@ describe('cli', () => {
     });
   });
 
+  // TODO 测试安装中间件命令
   describe('install', () => {
     it('should run smash-install with "install" command', async (done) => {
       const cwd = resolve(TEMP, 'dir_for_install');
@@ -94,6 +97,7 @@ describe('cli', () => {
     });
   });
 
+  // 测试运行任务命令
   describe('run', () => {
     const cwd = resolve(ROOT, '__fixtures__/smash-project');
 
