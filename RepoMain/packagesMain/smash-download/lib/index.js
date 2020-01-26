@@ -27,7 +27,7 @@ async function smashDownload(tplName) {
 
     // （2）组装模板包的存放路径。将源码压缩包下载到本地仓库下。
     const fileTgz = resolve(REPO, `${name}@${version}.tgz`);
-    await pacote.tarball.toFile(tplName, fileTgz);
+    await pacote.tarball.file(tplName, fileTgz);
 
     // （3）解压源码。
     const dirTarball = resolve(REPO, `${name}@${version}`);

@@ -54,7 +54,7 @@ describe('smash-install', () => {
     done();
   });
 
-  it('should not install unknown package well', async (done) => {
+  it('should not install unknown package', async (done) => {
     expect.assertions(3);
 
     const tplName = 'smsah-waremiddle-worldhello';
