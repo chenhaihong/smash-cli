@@ -1,0 +1,4 @@
+helloworld:
+  - name: 'smash-middleware-helloworld'
+    paramA: 'param a'
+    paramB: 'param b'

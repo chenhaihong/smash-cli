@@ -11,15 +11,11 @@ const mockInstall = jest.fn(smashInstall);
 const spyCopySync = jest.spyOn(fse, 'copySync');
 
 const lastCwd = process.cwd();
-const ROOT = resolve(__dirname, '..'); // 该包的根目录
-const TEMP = resolve(ROOT, '__temp__');
+const REPO_MIDDLEWARE = resolve(os.homedir(), '.smash-cli', 'middleware');
+const ROOT = resolve(__dirname, '..'); // 包的根目录
 
 beforeAll(() => {
-  fse.emptyDirSync(TEMP);
-
-  // TODO 突然出现，切换工作空间无效的问题。
-  // 将工作空间临时迁到这个目录
-  process.chdir(TEMP);
+  fse.emptyDirSync(REPO_MIDDLEWARE);
 });
 
 afterEach(() => {
@@ -28,40 +24,58 @@ afterEach(() => {
 
 afterAll(() => {
   process.chdir(lastCwd); // 重置工作空间
-  fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用
 });
 
 describe('smash-install', () => {
-  it('should install known template successfully', async (done) => {
-    expect.assertions(4);
+  it('should install middlewares successfully', async (done) => {
+    expect.assertions(5);
 
-    // 因为要覆盖到拷贝冗余文件的逻辑，
-    // 所以选这个包
-    const tplName = 'smash-template-react';
-    await mockInstall(tplName);
+    // 将工作空间临时迁到这个目录
+    const DIR_FIXTURE_DEMO = resolve(ROOT, '__fixture__/demo-right');
+    process.chdir(DIR_FIXTURE_DEMO);
 
-    // 顺利调用安装函数
-    expect(mockInstall).toBeCalled();
-    expect(mockInstall.mock.calls[0][0]).toBe(tplName);
+    {
+      // 首次安装
+      await mockInstall();
+      // 顺利调用安装函数
+      expect(mockInstall).toBeCalled();
 
-    // 顺利拷贝模板
-    expect(spyCopySync).toBeCalled();
+      const instance = autoMockSmashLogger.mock.instances[0];
+      // 顺利输出安装中
+      const mockInfo = instance.info;
+      expect(mockInfo.mock.calls[0][0]).toMatch(/Installing\.\.\./);
+      // 顺利输出安装成功
+      const mockSuccess = instance.success;
+      expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed\./);
+    }
 
-    // 顺利输出“提示成功信息”
-    const instance = autoMockSmashLogger.mock.instances[0];
-    const mockSuccess = instance.success;
-    expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed/);
+    jest.clearAllMocks();
+
+    {
+      // 再次次安装
+      await mockInstall();
+      // 顺利调用安装函数
+      expect(mockInstall).toBeCalled();
+
+      // 顺利输出已经安装过
+      const instance = autoMockSmashLogger.mock.instances[0];
+      // 顺利输出安装成功
+      const mockSuccess = instance.success;
+      expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed\./);
+    }
+
     done();
   });
 
-  it('should not install unknown package well', async (done) => {
-    expect.assertions(3);
+  it('should have errors while installing un-known middlewares', async (done) => {
+    expect.assertions(2);
 
-    const tplName = 'smsah-waremiddle-worldhello';
-    await mockInstall(tplName);
+    // 将工作空间临时迁到这个目录
+    const DIR_FIXTURE_DEMO = resolve(ROOT, '__fixture__/demo-wrong');
+    process.chdir(DIR_FIXTURE_DEMO);
 
+    await mockInstall();
     expect(mockInstall).toBeCalled();
-    expect(mockInstall.mock.calls[0][0]).toBe(tplName);
 
     // 输出“失败信息”
     const instance = autoMockSmashLogger.mock.instances[0];
@@ -70,7 +84,4 @@ describe('smash-install', () => {
 
     done();
   });
-
-  // TODO 缺少断网环境下的测试用例
-  // it('should not install well without network', async (done) => {});
 });

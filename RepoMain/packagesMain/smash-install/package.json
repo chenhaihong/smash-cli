@@ -23,8 +23,7 @@
     "fs-extra": "8.1.0",
     "pacote": "10.3.0",
     "smash-helper-logger": "0.0.22",
-    "smash-helper-task-finder": "0.0.22",
-    "tar": "5.0.5"
+    "smash-helper-task-finder": "0.0.22"
   },
   "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"
 }

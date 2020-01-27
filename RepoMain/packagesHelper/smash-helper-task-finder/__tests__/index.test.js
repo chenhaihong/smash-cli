@@ -40,9 +40,9 @@ describe('smash-helper-task-finder', () => {
     });
   });
 
-  it('should get all un-repeated middleware-names well', () => {
+  it('should get all un-repeated middleware-specifiers well', () => {
     expect.assertions(1);
-    const middlewares = TaskFinder.getMiddlewareNames();
+    const middlewares = TaskFinder.getMiddlewareSpecifiers();
     const expected = ['smash-middleware-helloworld', 'smash-middleware-dlrowolleh'];
     expect(middlewares).toEqual(expected);
   });
