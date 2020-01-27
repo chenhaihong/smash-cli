@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-const fse = require('fs-extra');
 const autoMockSmashLogger = require('smash-helper-logger');
 const smashInstall = require('../lib');
 
@@ -7,16 +6,11 @@ const smashInstall = require('../lib');
 jest.mock('smash-helper-logger');
 // mock SmashInstall
 const mockInstall = jest.fn(smashInstall);
-// spy on fs-extra
-const spyCopySync = jest.spyOn(fse, 'copySync');
 
 const lastCwd = process.cwd();
-const REPO_MIDDLEWARE = resolve(os.homedir(), '.smash-cli', 'middleware');
 const ROOT = resolve(__dirname, '..'); // 包的根目录
 
-beforeAll(() => {
-  fse.emptyDirSync(REPO_MIDDLEWARE);
-});
+beforeAll(() => {});
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -28,8 +22,6 @@ afterAll(() => {
 
 describe('smash-install', () => {
   it('should install middlewares successfully', async (done) => {
-    expect.assertions(5);
-
     // 将工作空间临时迁到这个目录
     const DIR_FIXTURE_DEMO = resolve(ROOT, '__fixture__/demo-right');
     process.chdir(DIR_FIXTURE_DEMO);
@@ -49,27 +41,23 @@ describe('smash-install', () => {
       expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed\./);
     }
 
-    jest.clearAllMocks();
-
     {
-      // 再次次安装
+      // 再次安装
       await mockInstall();
       // 顺利调用安装函数
       expect(mockInstall).toBeCalled();
 
       // 顺利输出已经安装过
-      const instance = autoMockSmashLogger.mock.instances[0];
+      const instance = autoMockSmashLogger.mock.instances[1];
       // 顺利输出安装成功
-      const mockSuccess = instance.success;
-      expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed\./);
+      const mockInfo = instance.info;
+      expect(mockInfo.mock.calls[0][0]).toMatch(/Already installed\./);
     }
 
     done();
   });
 
   it('should have errors while installing un-known middlewares', async (done) => {
-    expect.assertions(2);
-
     // 将工作空间临时迁到这个目录
     const DIR_FIXTURE_DEMO = resolve(ROOT, '__fixture__/demo-wrong');
     process.chdir(DIR_FIXTURE_DEMO);

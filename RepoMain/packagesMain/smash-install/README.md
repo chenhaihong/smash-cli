@@ -1,19 +1,15 @@
 # smash-install
 
-Template downloader for smash-cli.
+Middlewares downloader for smash-cli.
 
 ## Usage
 
 ```javascript
 const smashInstall = require('smash-install');
 
-// Download and decompress the tarball into the working directory.
-smashInstall('smash-template-react');
+// Download middlewares.
+smashInstall();
 ```
-
-## Tip
-
-The `.backup` suffix string in the file name will be removed.
 
 ## Links
 

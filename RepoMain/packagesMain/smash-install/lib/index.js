@@ -29,7 +29,6 @@ async function smashInstall() {
       // （1）获取包的信息，检出包名、版本号。如果不存在，会抛出错误，
       //      因为在最外层已经写了捕获异常的逻辑，所以这里不用写这个逻辑。
       const { name, version } = await pacote.manifest(specifier);
-
       if (hasInstalled(name, version)) {
         // （2.1）已经安装过了
         logger.info(`[${name}@${version}] Already installed.`);
@@ -53,7 +52,7 @@ async function smashInstall() {
  * @param {String} version package version
  * @returns {Boolean} 是否已经安装
  */
-async function hasInstalled(name, version) {
+function hasInstalled(name, version) {
   const dir = resolve(REPO_MIDDLEWARE, name, version);
   // 未提取包
   if (!fse.existsSync(dir)) {
@@ -63,8 +62,8 @@ async function hasInstalled(name, version) {
   // smashInstallStatus
   // 通过增加状态值来验证是否安装完：提取包完成1=>安装完依赖2
   const file = resolve(dir, 'package.json');
-  const { smashInstallStatus } = require(file);
-  return smashInstallStatus < 2;
+  const { smashInstallStatus } = fse.readJSONSync(file);
+  return smashInstallStatus >= 2;
 }
 
 /**
@@ -78,8 +77,8 @@ async function install(specifier, destination) {
   await pacote.extract(specifier, destination);
   const file = resolve(destination, 'package.json');
   {
-    const pkg = require(file);
-    fse.writeJsonSync(file, { ...pkg, smashInstallStatus: 1 });
+    const pkg = fse.readJSONSync(file);
+    fse.writeJsonSync(file, { ...pkg, smashInstallStatus: 1 }, { spaces: 2 });
   }
 
   // 安装当前中间件的依赖
@@ -88,7 +87,7 @@ async function install(specifier, destination) {
   // 这个问题还没修复，所以这里不使用yarn安装依赖
   execSync('npm i', { cwd: destination });
   {
-    const pkg = require(file);
-    fse.writeJsonSync(file, { ...pkg, smashInstallStatus: 2 });
+    const pkg = fse.readJSONSync(file);
+    fse.writeJsonSync(file, { ...pkg, smashInstallStatus: 2 }, { spaces: 2 });
   }
 }
