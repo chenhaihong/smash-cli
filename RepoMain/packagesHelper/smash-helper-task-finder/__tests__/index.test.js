@@ -26,10 +26,24 @@ describe('smash-helper-task-finder', () => {
   });
 
   it('should get middlewareQueue by task name well', () => {
-    expect.assertions(3);
+    expect.assertions(2);
     const middlewareQueue = TaskFinder.getMiddlewareQueue('helloworld');
-    expect(middlewareQueue[0]).toHaveProperty('name');
-    expect(middlewareQueue[0]).toHaveProperty('paramA');
-    expect(middlewareQueue[0]).toHaveProperty('paramB');
+    expect(middlewareQueue[0]).toEqual({
+      name: 'smash-middleware-helloworld',
+      paramA: 'param a',
+      paramB: 'param b',
+    });
+    expect(middlewareQueue[1]).toEqual({
+      name: 'smash-middleware-helloworld',
+      paramA: 'param a',
+      paramB: 'param b',
+    });
+  });
+
+  it('should get all un-repeated middleware-names well', () => {
+    expect.assertions(1);
+    const middlewares = TaskFinder.getMiddlewareNames();
+    const expected = ['smash-middleware-helloworld', 'smash-middleware-dlrowolleh'];
+    expect(middlewares).toEqual(expected);
   });
 });

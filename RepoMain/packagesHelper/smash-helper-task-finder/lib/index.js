@@ -38,4 +38,22 @@ module.exports = class TaskFinder {
     const tasks = this.getTasks();
     return tasks[taskName]; // 每个任务都是一个中间件队列
   }
+
+  /**
+   * 拿到任务中所有的非重复的中间件
+   * @returns {Array} 一个装载中间件的数组
+   */
+  static getMiddlewareNames() {
+    const middlewares = [];
+    const tasks = Object.values(this.getTasks());
+    tasks.forEach((currentTask) => {
+      currentTask.forEach((config) => {
+        const { name } = config;
+        if (!middlewares.includes(name)) {
+          middlewares.push(name);
+        }
+      });
+    });
+    return middlewares;
+  }
 };
