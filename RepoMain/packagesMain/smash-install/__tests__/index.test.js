@@ -1,4 +1,6 @@
+const os = require('os');
 const { resolve } = require('path');
+const fse = require('fs-extra');
 const autoMockSmashLogger = require('smash-helper-logger');
 const smashInstall = require('../lib');
 
@@ -8,9 +10,13 @@ jest.mock('smash-helper-logger');
 const mockInstall = jest.fn(smashInstall);
 
 const lastCwd = process.cwd();
+const REPO_MIDDLEWARE = resolve(os.homedir(), '.smash-cli', 'middleware');
 const ROOT = resolve(__dirname, '..'); // 包的根目录
 
-beforeAll(() => {});
+jest.setTimeout(100e3);
+beforeAll(() => {
+  fse.emptyDirSync(REPO_MIDDLEWARE);
+});
 
 afterEach(() => {
   jest.clearAllMocks();
