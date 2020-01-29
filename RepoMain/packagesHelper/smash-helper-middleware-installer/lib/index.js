@@ -2,9 +2,9 @@
  * 辅助：中间安装器。
  */
 
-const { execSync } = require('child_process');
+const cp = require('child_process');
 const os = require('os');
-const { resolve } = require('path');
+const { normalize, resolve } = require('path');
 const fse = require('fs-extra');
 const pacote = require('pacote');
 
@@ -34,6 +34,16 @@ module.exports = class SmashHelperMiddlewareInstaller {
   }
 
   /**
+   * 指定版本的包的安装路径。
+   * @param {String} name 包名
+   * @param {String} version 包的版本号
+   * @returns {Object} 包的清单信息
+   */
+  static resolveInstallationPath(name, version) {
+    return normalize(resolve(REPO_MIDDLEWARE, name, version));
+  }
+
+  /**
    * 获取包的清单信息。
    * 如果不存在包，会抛出错误。
    * @param {String} specifier 包的标识符
@@ -41,16 +51,6 @@ module.exports = class SmashHelperMiddlewareInstaller {
    */
   static async manifest(specifier) {
     return await pacote.manifest(specifier);
-  }
-
-  /**
-   * 指定版本的包的安装路径。
-   * @param {String} name 包名
-   * @param {String} version 包的版本号
-   * @returns {Object} 包的清单信息
-   */
-  static resolveInstallationPath(name, version) {
-    return resolve(REPO_MIDDLEWARE, name, version);
   }
 
   /**
@@ -69,7 +69,7 @@ module.exports = class SmashHelperMiddlewareInstaller {
     // smashInstallStatus
     // 通过增加状态值来验证是否安装完：提取包完成1=>安装完依赖2
     const file = resolve(destination, 'package.json');
-    const { smashInstallStatus } = fse.readJSONSync(file);
+    const { smashInstallStatus } = fse.readJsonSync(file);
     return smashInstallStatus >= 2;
   }
 
@@ -86,7 +86,7 @@ module.exports = class SmashHelperMiddlewareInstaller {
     await pacote.extract(specifier, destination);
     const file = resolve(destination, 'package.json');
     {
-      const pkg = fse.readJSONSync(file);
+      const pkg = fse.readJsonSync(file);
       fse.writeJsonSync(file, { ...pkg, smashInstallStatus: 1 }, { spaces: 2 });
     }
 
@@ -94,9 +94,9 @@ module.exports = class SmashHelperMiddlewareInstaller {
     // yarn在安装依赖时，存在无法正确执行postinstall的问题，
     // https://www.yuque.com/docs/share/5003aa73-d8c4-444b-b134-257cda25d006
     // 这个问题还没修复，所以这里不使用yarn安装依赖
-    execSync('npm i', { cwd: destination });
+    cp.execSync('npm i', { cwd: destination });
     {
-      const pkg = fse.readJSONSync(file);
+      const pkg = fse.readJsonSync(file);
       fse.writeJsonSync(file, { ...pkg, smashInstallStatus: 2 }, { spaces: 2 });
     }
   }

@@ -1,13 +1,13 @@
 {
   "name": "smash-install",
   "version": "0.0.22",
-  "description": "Template downloader for smash-cli.",
+  "description": "Middleware installer for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-install#readme",
   "keywords": [
     "smash",
     "smash-cli",
-    "template downloader"
+    "middleware installer"
   ],
   "license": "MIT",
   "main": "lib/index.js",
@@ -20,6 +20,7 @@
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
+    "fs-extra": "8.1.0",
     "smash-helper-logger": "0.0.22",
     "smash-helper-middleware-installer": "0.0.22",
     "smash-helper-task-finder": "0.0.22"
