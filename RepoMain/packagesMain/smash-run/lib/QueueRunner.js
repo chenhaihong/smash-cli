@@ -12,7 +12,7 @@ const context = Object.create(null);
 module.exports = class QueueRunner {
   /**
    * 递归执行中间件队列
-   * @param {Array} middlewareQueue
+   * @param {Array} middlewareQueue 中间件队列
    * @param {Array} installedPaths 中间件的本地安装路径
    * @returns {void}
    */
