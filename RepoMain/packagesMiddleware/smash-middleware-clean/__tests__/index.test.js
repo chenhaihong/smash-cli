@@ -25,6 +25,17 @@ beforeAll(() => {
 beforeEach(() => {
   setupFixture();
   jest.clearAllMocks();
+
+  /**
+   * 搭建用来测试删除功能的文件
+   */
+  function setupFixture() {
+    const src = resolve(DIR_FIXTURE, 'src');
+    dirsKnown.forEach((dir) => {
+      const dest = join(DIR_FIXTURE, dir);
+      fse.copySync(src, dest);
+    });
+  }
 });
 
 afterAll(() => {
@@ -84,14 +95,3 @@ describe('smash-middleware-clean', () => {
     });
   });
 });
-
-/**
- * 搭建用来测试删除功能的文件
- */
-function setupFixture() {
-  const src = resolve(DIR_FIXTURE, 'src');
-  dirsKnown.forEach((dir) => {
-    const dest = join(DIR_FIXTURE, dir);
-    fse.copySync(src, dest);
-  });
-}

@@ -20,7 +20,6 @@ module.exports = {
     '/node_modules/',
     // '/packagesHelper/',
     '/packagesMiddleware/',
-    '/packagesTemplate/',
   ],
   testMatch: [
     // 测试文件匹配规则
@@ -29,7 +28,6 @@ module.exports = {
   testPathIgnorePatterns: [
     // 忽略测试路径
     '/node_modules/',
-    // '/packagesHelper/',
     '/packagesMiddleware/',
   ],
   coverageThreshold: {

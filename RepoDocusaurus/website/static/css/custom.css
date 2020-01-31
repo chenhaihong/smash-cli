@@ -1,0 +1,102 @@
+/* your custom css */
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+  /* 顶部导航 */
+  .navigationSlider .slidingNav ul li a {
+    margin: 0 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+  }
+  .navigationSlider .slidingNav ul li.siteNavGroupActive a,
+  .navigationSlider .slidingNav ul li.siteNavItemActive a {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+/* 侧边栏*/
+.docsNavContainer {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 侧边栏，高亮样式 */
+.toc .toggleNav ul li a {
+  margin-left: -8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.toc .toggleNav ul li a:hover,
+.toc .toggleNav ul li.navListItemActive a {
+  color: #cc9933;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.homeContainer {
+  padding: 80px 0;
+}
+
+.homeContainer + .mainContainer {
+  padding: 0;
+}
+
+.nav-footer .fbOpenSource {
+  text-align: center;
+}
+
+a {
+  color: #cc9933;
+  text-decoration: none;
+}
+
+.post a:hover {
+  color: #cc9933;
+  text-decoration: none;
+}
+
+.copyright a {
+  color: hsla(0, 0%, 100%, 0.4);
+}
+
+.copyright a:hover {
+  color: #c93;
+}
+
+.showcaseSection .friendsImg,
+.productShowcaseSection .friendsImg {
+  margin: 8px;
+  width: 110px;
+  height: 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 30%;
+}
+
+.showcaseSection .logos {
+  margin-bottom: 20px;
+}
+
+/* 文章内容 */
+.link-npm-version,
+.link-npm-version img {
+  display: inline-block;
+}
+
+/* 右侧边栏，文章导航 */
+.onPageNav .toc-headings > li > a {
+  word-break: break-all;
+}

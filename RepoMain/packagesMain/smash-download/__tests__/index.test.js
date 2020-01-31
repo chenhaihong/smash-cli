@@ -31,8 +31,8 @@ afterAll(() => {
   fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用
 });
 
-describe('smash-install', () => {
-  it('should install known template successfully', async (done) => {
+describe('smash-download', () => {
+  it('should download known template successfully', async (done) => {
     expect.assertions(4);
 
     // 因为要覆盖到拷贝冗余文件的逻辑，
@@ -50,11 +50,11 @@ describe('smash-install', () => {
     // 顺利输出“提示成功信息”
     const instance = autoMockSmashLogger.mock.instances[0];
     const mockSuccess = instance.success;
-    expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully installed/);
+    expect(mockSuccess.mock.calls[0][0]).toMatch(/Successfully downloaded/);
     done();
   });
 
-  it('should not install unknown package', async (done) => {
+  it('should not download unknown package', async (done) => {
     expect.assertions(3);
 
     const tplName = 'smsah-waremiddle-worldhello';

@@ -46,25 +46,25 @@ templates-install:
 docusaurus-install:
   - name: smash-middleware-shell
     commands:
-      - cd docusaurus/website
+      - cd RepoDocusaurus/website
       - yarn install
 # docusaurus: start local web-server
 docusaurus-start:
   - name: smash-middleware-shell
     commands:
-      - cd docusaurus/website
+      - cd RepoDocusaurus/website
       - yarn start
 # docusaurus: build static files
 docusaurus-build:
   - name: smash-middleware-shell
     commands:
-      - cd docusaurus/website
+      - cd RepoDocusaurus/website
       - yarn build
 # publish docusaurus to gh-pages
 docusaurus-gh-pages:
   - name: smash-middleware-shell
     commands:
-      - cd docusaurus/website
+      - cd RepoDocusaurus/website
       - npx cross-env GIT_USER=chenhaihong CURRENT_BRANCH=master npm run publish-gh-pages
 
 ##################################################################

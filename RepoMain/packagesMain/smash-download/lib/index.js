@@ -54,7 +54,7 @@ async function smashDownload(tplName) {
       },
     });
 
-    logger.success(`Successfully installed ${name}@${version}.`);
+    logger.success(`Successfully downloaded ${name}@${version}.`);
   } catch (error) {
     logger.fail(error.message);
   }

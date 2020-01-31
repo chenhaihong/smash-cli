@@ -21,7 +21,6 @@ module.exports = {
     '/node_modules/',
     '/packagesHelper/',
     '/packagesMain/',
-    '/packagesTemplate/',
     '/__tests__/',
     '/__fixtures__/',
   ],
