@@ -9,7 +9,7 @@ jobs:
   test-main-and-helper:
     strategy:
       matrix:
-        node-version: [8, 10, 11, 12]
+        node-version: [10, 11, 12]
         os: [macOS-latest]
 
     runs-on: ${{ matrix.os }}
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           os: ${{ matrix.os }}
-      - run: npm i -g yarn
+      # - run: npm i -g yarn
       - run: cd RepoMain && yarn install && node scripts/test-main.js
       - name: Upload a report to codecov
         # About context and expressions https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#about-context-and-expressions
