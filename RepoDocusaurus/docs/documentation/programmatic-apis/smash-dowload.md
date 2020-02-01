@@ -9,6 +9,8 @@ sidebar_label: smash-dowload
 
 Template downloader for smash-cli.
 
+> `smash-download` is not allowed, so I rename it to `smash-dowload`.
+
 ## Installation
 
 ```bash

@@ -1,0 +1,31 @@
+##################################################################
+# RepoMain
+##################################################################
+install-yarn:
+  - name: smash-middleware-shell
+    commands:
+      - npm i -g yarn yrm nrm --registry=https://registry.npm.taobao.org
+      - nrm use taobao
+      - yrm use taobao
+
+main-install:
+  - name: smash-middleware-shell
+    commands:
+      - cd RepoMain
+      - yarn install
+      # Allow husky to be used within the scripts of the root package.json
+      # https://yarnpkg.com/en/docs/cli/add#toc-yarn-add-ignore-workspace-root-check-w
+      # - yarn add husky --dev -W
+
+test-main-and-helper:
+  - name: smash-middleware-shell
+    commands:
+      - cd RepoMain
+      - node scripts/test-main.js
+
+test-smash-cli:
+  - name: smash-middleware-shell
+    commands:
+      - cd RepoMain
+      - node scripts/test-main.js --package=packagesMain/smash-cli
+      # - node scripts/test-main.js --package=packagesHelper/smash-helper-babel-preset-env

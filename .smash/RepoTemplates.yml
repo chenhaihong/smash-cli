@@ -1,0 +1,8 @@
+##################################################################
+# RepoTemplates
+##################################################################
+templates-install:
+  - name: smash-middleware-shell
+    commands:
+      - cd RepoTemplates
+      - yarn install
