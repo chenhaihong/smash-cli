@@ -22,7 +22,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           os: ${{ matrix.os }}
       # - run: npm i -g yarn
-      - run: cd RepoMain && yarn install && node scripts/test-main.js
+      - run: |
+          cd RepoMain
+          yarn install
+          node scripts/test-main.js
       - name: Upload a report to codecov
         # About context and expressions https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#about-context-and-expressions
         # Operators                     https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#operators
@@ -30,7 +33,9 @@ jobs:
         if: matrix.node-version == 10 && success()
         # https://codecov.io/gh/chenhaihong/smash-cli
         # 因为github action的工作流命令不会记录工作空间的变动，所以要重新进入RepoMain目录
-        run: cd RepoMain && bash <(curl -s https://codecov.io/bash)
+        run: |
+          cd RepoMain
+          bash <(curl -s https://codecov.io/bash)
         # Creating and using secrets (encrypted variables)
         # https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables
         env:

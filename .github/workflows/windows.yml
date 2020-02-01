@@ -25,4 +25,7 @@ jobs:
           os: ${{ matrix.os }}
       # File exists: C:\npm\prefix\yarn.cmd
       # - run: npm i -g yarn
-      - run: cd RepoMain && yarn install && node scripts/test-main.js
+      - run: |
+          cd RepoMain
+          yarn install
+          node scripts/test-main.js
