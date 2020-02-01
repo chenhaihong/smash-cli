@@ -1,6 +1,6 @@
 {
   "name": "smash-cli",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "A tiny task manager for modern JavaScript projects.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/",
@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "commander": "2.20.0",
-    "smash-dowload": "0.0.24",
-    "smash-init": "0.0.24",
-    "smash-install": "0.0.24",
-    "smash-run": "0.0.24",
+    "smash-dowload": "0.0.25",
+    "smash-init": "0.0.25",
+    "smash-install": "0.0.25",
+    "smash-run": "0.0.25",
     "update-notifier": "3.0.1"
   },
   "devDependencies": {

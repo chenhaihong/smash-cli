@@ -1,6 +1,6 @@
 {
   "name": "smash-install",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Middleware installer for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-install#readme",
@@ -21,9 +21,9 @@
   },
   "dependencies": {
     "fs-extra": "8.1.0",
-    "smash-helper-logger": "0.0.24",
-    "smash-helper-middleware-installer": "0.0.24",
-    "smash-helper-task-finder": "0.0.24"
+    "smash-helper-logger": "0.0.25",
+    "smash-helper-middleware-installer": "0.0.25",
+    "smash-helper-task-finder": "0.0.25"
   },
   "gitHead": "2fb49732708330f8a3eb9ac4137073a0dd998342"
 }
