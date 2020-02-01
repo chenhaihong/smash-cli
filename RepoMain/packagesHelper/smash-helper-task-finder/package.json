@@ -1,6 +1,6 @@
 {
   "name": "smash-helper-task-finder",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Task finder for smash-cli",
   "keywords": [
     "smash-cli"

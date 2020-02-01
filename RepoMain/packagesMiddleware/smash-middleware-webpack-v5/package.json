@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "smash-middleware-webpack-v5",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "A webpack@5.0.0+ middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/",
