@@ -1,5 +1,5 @@
 const smashInit = require('smash-init');
-const smashDownload = require('smash-download');
+const smashDownload = require('smash-dowload');
 const smashInstall = require('smash-install');
 const smashRun = require('smash-run');
 

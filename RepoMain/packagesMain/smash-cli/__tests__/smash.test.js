@@ -83,7 +83,7 @@ describe('smash', () => {
 
   // 测试下载模板包命令
   describe('download', () => {
-    it('should run smash-download with "download" command', async (done) => {
+    it('should run smash-dowload with "download" command', async (done) => {
       const cwd = resolve(TEMP, 'dir_for_download');
       fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('download smash-template-react');
@@ -92,7 +92,7 @@ describe('smash', () => {
       done();
     });
 
-    it('should run smash-download with "d" command', async (done) => {
+    it('should run smash-dowload with "d" command', async (done) => {
       const cwd = resolve(TEMP, 'dir_for_d');
       fse.ensureDirSync(cwd);
       const { stdout, stderr } = await bin(cwd)('d smash-template-react');

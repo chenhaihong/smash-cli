@@ -17,5 +17,6 @@
   "dependencies": {
     "fs-extra": "8.1.0",
     "pacote": "10.3.1"
-  }
+  },
+  "gitHead": "2fb49732708330f8a3eb9ac4137073a0dd998342"
 }

@@ -22,7 +22,7 @@
     "Programmatic APIs": [
       "documentation/programmatic-apis/smash-cli",
       "documentation/programmatic-apis/smash-init",
-      "documentation/programmatic-apis/smash-download",
+      "documentation/programmatic-apis/smash-dowload",
       "documentation/programmatic-apis/smash-install",
       "documentation/programmatic-apis/smash-run",
       "documentation/programmatic-apis/smash-helper-logger",

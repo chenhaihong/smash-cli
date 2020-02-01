@@ -1,5 +1,5 @@
 {
-  "name": "smash-download",
+  "name": "smash-dowload",
   "version": "0.0.23",
   "description": "Template downloader for smash-cli.",
   "keywords": [
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenhaihong/smash-cli.git",
-    "directory": "packagesMain/smash-download"
+    "directory": "packagesMain/smash-dowload"
   },
   "bugs": {
     "url": "https://github.com/chenhaihong/smash-cli/issues"
@@ -24,5 +24,6 @@
     "pacote": "10.3.0",
     "smash-helper-logger": "0.0.23",
     "tar": "5.0.5"
-  }
+  },
+  "gitHead": "2fb49732708330f8a3eb9ac4137073a0dd998342"
 }

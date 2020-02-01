@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "commander": "2.20.0",
-    "smash-download": "0.0.23",
+    "smash-dowload": "0.0.23",
     "smash-init": "0.0.23",
     "smash-install": "0.0.23",
     "smash-run": "0.0.23",
@@ -33,5 +33,5 @@
     "exec-sh": "0.3.2",
     "fs-extra": "8.1.0"
   },
-  "gitHead": "a3921c83bcaee5e46bb0778321a5305798179a85"
+  "gitHead": "2fb49732708330f8a3eb9ac4137073a0dd998342"
 }

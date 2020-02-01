@@ -31,7 +31,7 @@ afterAll(() => {
   fse.removeSync(TEMP); // 重置工作空间后，才能解除对temp目录的占用
 });
 
-describe('smash-download', () => {
+describe('smash-dowload', () => {
   it('should download known template successfully', async (done) => {
     expect.assertions(4);
 

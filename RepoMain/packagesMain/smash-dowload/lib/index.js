@@ -20,7 +20,7 @@ module.exports = smashDownload;
  * @returns {void}
  */
 async function smashDownload(tplName) {
-  const logger = new SmashLogger('smash-download');
+  const logger = new SmashLogger('smash-dowload');
   try {
     // （1）获取包信息，检出包名、版本号。如果不存在，会抛出错误。
     const { name, version } = await pacote.manifest(tplName);
