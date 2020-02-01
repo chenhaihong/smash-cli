@@ -1,0 +1,23 @@
+# 测试 react
+react:
+  - name: smash-middleware-shell
+    commands:
+      - node ./__fixtures__/react16.test.js
+
+# 测试 react lib
+react-lib:
+  - name: smash-middleware-shell
+    commands:
+      - node ./__fixtures__/react16Lib.test.js
+
+# 测试 vue 2
+vue:
+  - name: smash-middleware-shell
+    commands:
+      - node ./__fixtures__/vue2.test.js
+
+# 测试 vue 2 lib
+vue-lib:
+  - name: smash-middleware-shell
+    commands:
+      - node ./__fixtures__/vue2Lib.test.js

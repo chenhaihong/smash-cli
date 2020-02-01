@@ -1,0 +1,17 @@
+test-series:
+  - name: smash-middleware-shell
+    commands:
+      - cd __fixtures__
+      - node test-series.js
+
+test-parallel:
+  - name: smash-middleware-shell
+    commands:
+      - cd __fixtures__
+      - node test-parallel.js
+
+parallel:
+  - name: smash-middleware-shell
+    commands:
+      - cd __fixtures__
+      - node demo-parallel.js

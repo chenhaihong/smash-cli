@@ -1,0 +1,21 @@
+{
+  "name": "smash-helper-middleware-installer",
+  "version": "0.0.22",
+  "description": "Middleware installer helper.",
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://www.smash-cli.com/",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesHelper/helper-middleware-installer"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "fs-extra": "8.1.0",
+    "pacote": "10.3.1"
+  }
+}

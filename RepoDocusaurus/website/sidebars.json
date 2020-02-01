@@ -1,0 +1,37 @@
+{
+  "documentation": {
+    "Getting Started": [
+      "documentation/getting-started/what-is-smash-cli",
+      "documentation/getting-started/installation",
+      "documentation/getting-started/command-line-usage"
+    ],
+    "Middlewares": [
+      "documentation/middlewares/smash-middleware-clean",
+      "documentation/middlewares/smash-middleware-copy",
+      "documentation/middlewares/smash-middleware-eslint",
+      "documentation/middlewares/smash-middleware-helloworld",
+      "documentation/middlewares/smash-middleware-jest",
+      "documentation/middlewares/smash-middleware-shell",
+      "documentation/middlewares/smash-middleware-webpack-v4"
+    ],
+    "Templates": [
+      "documentation/templates/smash-template-react",
+      "documentation/templates/smash-template-react-component",
+      "documentation/templates/smash-template-revealjs"
+    ],
+    "Programmatic APIs": [
+      "documentation/programmatic-apis/smash-cli",
+      "documentation/programmatic-apis/smash-init",
+      "documentation/programmatic-apis/smash-download",
+      "documentation/programmatic-apis/smash-install",
+      "documentation/programmatic-apis/smash-run",
+      "documentation/programmatic-apis/smash-helper-logger",
+      "documentation/programmatic-apis/smash-helper-task-finder",
+      "documentation/programmatic-apis/smash-helper-middleware-installer"
+    ]
+  },
+  "examples": {
+    "Usage": ["examples/usage/using-a-template", "examples/usage/using-a-middleware"],
+    "Contribute": ["examples/contribute/writing-a-template", "examples/contribute/writing-a-middleware"]
+  }
+}

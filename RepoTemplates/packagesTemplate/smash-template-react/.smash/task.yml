@@ -1,0 +1,16 @@
+dev-server:
+  - name: smash-middleware-webpack-v4
+    type: dev-server # 浏览器网页应用，启用webpack-dev-server
+
+watch:
+  - name: smash-middleware-webpack-v4
+    type: watch # 浏览器网页应用，开启watch模式
+
+build:
+  - name: smash-middleware-clean
+    remove: true
+    dirs:
+      - ./dist
+  - name: smash-middleware-webpack-v4
+    type: build # 浏览器网页应用，生产环境
+

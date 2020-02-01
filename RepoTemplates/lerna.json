@@ -1,0 +1,29 @@
+{
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "packages": ["packagesTemplate/*"],
+  "command": {
+    "create": {
+      "homepage": "https://www.smash-cli.com/",
+      "license": "MIT",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "version": {
+      "exact": true
+    },
+    "add": {
+      "exact": true
+    },
+    "publish": {
+      "ignoreChanges": ["*.md"],
+      "message": ":sparkles: chore(release): publish"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bootstrapConfig": {
+    "ignore": []
+  },
+  "version": "independent"
+}

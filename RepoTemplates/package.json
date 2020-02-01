@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "workspaces": [
+    "packagesTemplate/*"
+  ],
+  "name": "repo-templates",
+  "version": "0.0.1",
+  "license": "MIT"
+}

@@ -1,25 +1,14 @@
 {
   "private": true,
-  "workspaces": [
-    "packagesHelper/*",
-    "packagesMain/*",
-    "packagesMiddleware/*",
-    "packagesTemplate/*"
-  ],
-  "name": "smash-cli-monorepo",
+  "name": "smash-cli-multrepo",
   "scripts": {
-    "eslint": "eslint --ext .js ./",
     "prettier": "prettier --check --write ./**/*.js"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-plugin-jsdoc": "^15.8.0",
-    "fs-extra": "^8.1.0",
-    "husky": "^3.0.8",
-    "jest": "^24.8.0",
-    "minimist": "^1.2.0",
-    "prettier": "1.18.2",
-    "pretty-quick": "^1.11.1"
+    "husky": "^4.2.1",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   },
   "husky": {
     "hooks": {

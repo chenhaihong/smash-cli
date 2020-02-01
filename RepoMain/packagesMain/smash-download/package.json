@@ -1,0 +1,28 @@
+{
+  "name": "smash-download",
+  "version": "0.0.22",
+  "description": "Template downloader for smash-cli.",
+  "keywords": [
+    "smash-cli",
+    "Template downloader",
+    "smash template"
+  ],
+  "author": "erye <erye@tiiit.cn>",
+  "homepage": "https://www.smash-cli.com/",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenhaihong/smash-cli.git",
+    "directory": "packagesMain/smash-download"
+  },
+  "bugs": {
+    "url": "https://github.com/chenhaihong/smash-cli/issues"
+  },
+  "dependencies": {
+    "fs-extra": "8.1.0",
+    "pacote": "10.3.0",
+    "smash-helper-logger": "0.0.22",
+    "tar": "5.0.5"
+  }
+}

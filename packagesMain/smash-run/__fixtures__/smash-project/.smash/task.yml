@@ -1,8 +1,0 @@
-helloworld:
-  - name: 'smash-middleware-helloworld' # 中间件名称
-    paramA: 'param a' # 传递给这个中间件的参数 paramA
-    paramB: 'param b' # 传递给这个中间件的参数 paramB
-
-task-with-unknown-middleware: # 运行这个任务时，会报错
-  - name: 'smash-middleware-dlrowolleh' # 中间件名称，不存在这个中间件
-    paramA: 'param a'

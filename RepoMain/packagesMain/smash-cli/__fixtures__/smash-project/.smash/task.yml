@@ -1,0 +1,4 @@
+helloworld:
+  - name: 'smash-middleware-helloworld' # 中间件名称
+    paramA: 'param a' # 传递给这个中间件的参数 paramA
+    paramB: 'param b' # 传递给这个中间件的参数 paramB

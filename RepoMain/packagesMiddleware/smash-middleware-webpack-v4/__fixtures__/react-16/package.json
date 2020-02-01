@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "react-v16",
+  "version": "0.0.1",
+  "description": "react 16",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
