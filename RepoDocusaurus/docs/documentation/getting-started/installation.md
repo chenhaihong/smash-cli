@@ -3,15 +3,15 @@ title: Installation
 sidebar_label: Installation
 ---
 
-> You have to be on Node >= 8.x.
+> Node >= 8.
 
-Execute the following command to install smash-cli in global:
+Run the command below to install smash-cli:
 
 ```shell
-$ npm i -g smash-cli
+$ npm install -g smash-cli
 ```
 
-You can Execute the following command check it:
+检查是否安装成功：
 
 ```shell
 $ smash -v

@@ -1,22 +1,5 @@
 # smash-template-revealjs
 
-A reveal.js template.
+Reveal.js template.
 
-## Install
-
-```bash
-$ mkdir HelloRevealJs && cd HelloRevealJs
-$ smash install smash-template-revealjs
-```
-
-## Development
-
-```bash
-$ smash run dev
-```
-
-## Build
-
-```bash
-$ smash run build
-```
+See our website [smash-template-revealjs](https://www.smash-cli.com/docs/documentation/templates/smash-template-revealjs.html) for more information.

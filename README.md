@@ -7,9 +7,8 @@
 ![workflows-windows](https://github.com/chenhaihong/smash-cli/workflows/windows/badge.svg)
 ![workflows-ubuntu](https://github.com/chenhaihong/smash-cli/workflows/ubuntu/badge.svg)
 
-[Document and examples](https://www.smash-cli.com).
-
-A tiny task manager for modern JavaScript projects.
+A tiny task manager for modern JavaScript projects. Browse
+<a href="https://www.smash-cli.com" target="_blank" title="smash-cli">document and examples</a> to learn more.
 
 - Easy to get started.
 - Reuse middlewares without repeated downloads.
@@ -28,7 +27,10 @@ $ npm i -g smash-cli
 $ smash init
 
 # Download a template package
-$ smash install smash-template-react
+$ smash download smash-template-react
+
+# Install middlewares
+$ smash install
 
 # Run a task.
 $ smash run helloworld

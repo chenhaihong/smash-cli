@@ -25,16 +25,16 @@ helloworld:
 
 Just run this.
 
-It will find out all the middlewares used in the tasks.<br>And then check if the middlewares have been installed. If
-not, it will install them.
-
 ```bash
 $ smash install
 ```
 
+It will find out all the middlewares used in the tasks.<br>And then it checks if the middlewares have been installed. If
+not, it will install them.
+
 ## 3 How to run a task?
 
-The command below can
+Just run this.
 
 ```bash
 $ smash run helloworld
@@ -43,6 +43,7 @@ $ smash run helloworld
 ## 4 How to download a template package?
 
 ```bash
-$ mkdir demo && cd demo
-$ smash run helloworld
+$ smash download smash-template-react
 ```
+
+Browse [**examples**](examples/usage/using-a-template.md) to get more.

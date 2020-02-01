@@ -3,11 +3,15 @@ title: smash-middleware-shell
 sidebar_label: smash-middleware-shell
 ---
 
-A shell executor middleware for smash-cli.
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-middleware-shell" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-middleware-shell" alt="npm"/>
+</a>
+
+Simple shell runner.
 
 ## Usage
 
-Add the following configuration to the `.smash/task.yml` file:
+添加配置到 `.smash/task.yml` 里：
 
 ```yaml
 # 串行
@@ -32,7 +36,7 @@ parallel-task:
       - npx webpack-dev-server # 并行执行
 ```
 
-Then, you can run the `series-task` task by executing the following command:
+运行任务：
 
 ```bash
 $ smash run series-task

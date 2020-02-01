@@ -3,29 +3,36 @@ title: smash-middleware-copy
 sidebar_label: smash-middleware-copy
 ---
 
-A copy middleware for smash-cli.
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-middleware-copy" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-middleware-copy" alt="npm"/>
+</a>
+
+Copies files or directories.
 
 ## Usage
 
-Add the following configuration to the `.smash/task.yml` file:
+添加配置到 `.smash/task.yml` 里：
 
 ```yaml
-copy:
+copy-files:
   - name: smash-middleware-copy
     files:
-      - /*.js      -> /dist/javascript
-      - /index.css -> /dist/index.css
+      - /*.js -> /dist/javascript
     tplData:
-      name: helloworld # turn {{name}} into helloworld
+      name: helloworld # Replace {{name}} with 'helloworld'
+
+copy-directories:
   - name: smash-middleware-copy
     files:
       - /images -> /dist/images
 ```
 
-Then, run the `copy` task by executing the following command:
+运行任务：
 
 ```bash
-$ smash run copy
+$ smash run copy-files
+
+$ smash run copy-directories
 ```
 
 ## Links

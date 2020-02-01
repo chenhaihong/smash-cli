@@ -1,16 +1,6 @@
 # smash-install
 
-Middlewares downloader for smash-cli.
+Middleware extracter.
 
-## Usage
-
-```javascript
-const smashInstall = require('smash-install');
-
-// Download middlewares.
-smashInstall();
-```
-
-## Links
-
-- [smash-cli](https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-cli)
+See our website [smash-install](https://www.smash-cli.com/docs/documentation/programmatic-apis/smash-install.html) for
+more information

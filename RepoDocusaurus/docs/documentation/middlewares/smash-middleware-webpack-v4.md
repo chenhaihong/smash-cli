@@ -1,4 +1,11 @@
-# smash-middleware-webpack-v4
+---
+title: smash-middleware-webpack-v4
+sidebar_label: smash-middleware-webpack-v4
+---
+
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-middleware-webpack-v4" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-middleware-webpack-v4" alt="npm"/>
+</a>
 
 使用 [smash-cli 中间件规范](https://www.smash-cli.com/) 开发的 webpack 中间件，该中间件已经内置了
 [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server)。

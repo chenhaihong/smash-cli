@@ -3,11 +3,15 @@ title: smash-middleware-jest
 sidebar_label: smash-middleware-jest
 ---
 
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-middleware-jest" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-middleware-jest" alt="npm"/>
+</a>
+
 A jest middleware for smash-cli.
 
 ## Usage
 
-Add the following configuration to the `.smash/task.yml` file:
+添加配置到 `.smash/task.yml` 里：
 
 ```yaml
 jest:
@@ -15,7 +19,7 @@ jest:
     options: ./test --coverage
 ```
 
-Then, run the `jest` task by executing the following command:
+运行任务：
 
 ```bash
 $ smash run jest

@@ -1,11 +1,6 @@
-# `smash-download`
+# smash-download
 
-> TODO: description
+Template downloader.
 
-## Usage
-
-```
-const smashDownload = require('smash-download');
-
-// TODO: DEMONSTRATE API
-```
+See our website [smash-download](https://www.smash-cli.com/docs/documentation/programmatic-apis/smash-download.html) for
+more information

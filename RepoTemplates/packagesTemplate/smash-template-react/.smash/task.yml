@@ -1,4 +1,4 @@
-server:
+dev-server:
   - name: smash-middleware-webpack-v4
     type: dev-server # 浏览器网页应用，启用webpack-dev-server
 

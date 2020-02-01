@@ -1,15 +1,6 @@
-# `smash-init`
+# smash-init
 
-Generate a `.smash/task.yml` file in the current work dirctory.
+Template downloader.
 
-## Usage
-
-```javascript
-const smashInit = require('smash-init');
-
-smashInit();
-```
-
-# Links
-
-- [smash-cli](https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-cli)
+See our website [smash-init](https://www.smash-cli.com/docs/documentation/programmatic-apis/smash-init.html) for more
+information

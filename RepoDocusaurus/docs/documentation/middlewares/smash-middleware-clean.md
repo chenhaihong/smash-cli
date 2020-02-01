@@ -3,11 +3,15 @@ title: smash-middleware-clean
 sidebar_label: smash-middleware-clean
 ---
 
-A directory cleaner middleware for smash-cli.
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-middleware-clean" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-middleware-clean" alt="npm"/>
+</a>
+
+Directory cleaner.
 
 ## Usage
 
-Add the following configuration to the `.smash/task.yml` file:
+Add the following configuration to `.smash/task.yml` :
 
 ```yaml
 empty:
@@ -23,12 +27,12 @@ remove:
       - ./build
 ```
 
-Then, run the `empty` or `remove` task by executing the following command:
+Run the tasks:
 
 ```bash
-# empty dist and build
+# empty directory dist and build
 $ smash run empty
 
-# remove dist and build
+# remove directory dist and build
 $ smash run remove
 ```

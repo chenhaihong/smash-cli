@@ -3,29 +3,39 @@ title: smash-template-react-component
 sidebar_label: smash-template-react-component
 ---
 
-React component template.
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-template-react-component" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-template-react-component" alt="npm"/>
+</a>
 
-## Installation
+React 16 component template.
+
+## 安装
 
 ```bash
+# 步骤 1 下载模板
 $ mkdir demo && cd demo
-$ smash i smash-template-react-component
+$ smash download smash-template-react-component
+
+# 步骤 2 安装项目依赖
+$ npm install
+
+# 步骤 3 安装中间件
+$ smash install
 ```
 
-## Development
+## 开发
 
 ```bash
-$ npm i
-$ smash run server # Start webpack-dev-server
+$ smash run dev-server # Start webpack-dev-server
 ```
 
-## Build
+## 构建
 
 ```bash
 $ smash run lib
 ```
 
-## Structure
+## 目录结构
 
 ```
 ├── .smash            # smash-cli 工具的配置文件目录
@@ -35,7 +45,3 @@ $ smash run lib
 ├── src               # 本地测试开发的文件存放的目录
 └── webpack.config.js
 ```
-
-## Tip
-
-- It will cost you a few minutes to install `smash-middleware-webpack-v4` middleware at the first time.

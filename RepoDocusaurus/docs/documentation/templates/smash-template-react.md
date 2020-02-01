@@ -3,35 +3,49 @@ title: smash-template-react
 sidebar_label: smash-template-react
 ---
 
-React@16+ template.
+<a class="link-npm-version" href="https://www.npmjs.com/package/smash-template-react" target="_blank" title="npm">
+    <img src="https://img.shields.io/npm/v/smash-template-react" alt="npm"/>
+</a>
 
-## Installation
+React 16 template.
+
+## 安装
+
+创建一个 `demo` 目录，然后在里面下载本模板，
 
 ```bash
+# 步骤 1 下载模板
 $ mkdir demo && cd demo
-$ smash i smash-template-react
+$ smash download smash-template-react
+
+# 步骤 2 安装项目依赖
+$ npm install
+
+# 步骤 3 安装中间件
+$ smash install
 ```
 
-## Development
+## 开发
 
-> It will cost you several minutes to install `smash-middleware-webpack-v4` middleware at the first time.
+开启 `webpack-dev-server`，
 
 ```bash
-$ npm i
-$ smash run server # start webpack-dev-server
-
-# or
-$ npm i
-$ smash run watch
+$ smash run dev-server
 ```
 
-## Build
+或者只开启监听模式，
+
+```bash
+$ smash run watch # 监听文件变化，立即执行构建
+```
+
+## 构建
 
 ```bash
 $ smash run build
 ```
 
-## structure
+## 目录结构
 
 ```
 ├─ .smash/          # smash-cli配置目录
