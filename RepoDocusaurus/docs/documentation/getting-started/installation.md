@@ -3,7 +3,7 @@ title: Installation
 sidebar_label: Installation
 ---
 
-> Node >= 8.
+> Node >= 10.
 
 Run the command below to install smash-cli:
 
