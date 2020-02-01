@@ -4,7 +4,7 @@
         <title>smash-cli Blog</title>
         <link>https://www.smash-cli.com/blog</link>
         <description>The best place to stay up-to-date with the latest smash-cli news and events.</description>
-        <lastBuildDate>Wed, 18 Sep 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Feb 2020 06:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -14,19 +14,11 @@
         </image>
         <copyright>Copyright © 2020 www.smash-cli.com</copyright>
         <item>
-            <title><![CDATA[v0.0.11 coming now!]]></title>
-            <link>https://www.smash-cli.com/blog/2019/09/18/v0.0.11-coming.html</link>
-            <guid>https://www.smash-cli.com/blog/2019/09/18/v0.0.11-coming.html</guid>
-            <pubDate>Wed, 18 Sep 2019 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>smash-cli v0.0.11 coming now!</p>
-]]></description>
-        </item>
-        <item>
-            <title><![CDATA[v0.0.9 coming now!]]></title>
-            <link>https://www.smash-cli.com/blog/2019/08/21/v0.0.9-coming.html</link>
-            <guid>https://www.smash-cli.com/blog/2019/08/21/v0.0.9-coming.html</guid>
-            <pubDate>Wed, 21 Aug 2019 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>smash-cli v0.0.9 coming now!</p>
+            <title><![CDATA[一起来！]]></title>
+            <link>https://www.smash-cli.com/blog/2020/02/01/v0.0.9-coming.html</link>
+            <guid>https://www.smash-cli.com/blog/2020/02/01/v0.0.9-coming.html</guid>
+            <pubDate>Sat, 01 Feb 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>希望你能一起参与进来！</p>
 ]]></description>
         </item>
     </channel>
