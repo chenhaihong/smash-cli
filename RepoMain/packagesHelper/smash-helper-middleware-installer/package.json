@@ -1,6 +1,6 @@
 {
   "name": "smash-helper-middleware-installer",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Middleware installer helper.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/",

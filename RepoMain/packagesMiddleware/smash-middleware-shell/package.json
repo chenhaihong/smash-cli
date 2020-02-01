@@ -1,6 +1,6 @@
 {
   "name": "smash-middleware-shell",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "A shell executor middleware for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://www.smash-cli.com/docs/documentation/middlewares/smash-middleware-shell.html",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "exec-sh": "0.3.2",
-    "smash-helper-logger": "0.0.23",
+    "smash-helper-logger": "0.0.24",
     "tree-kill": "1.2.2"
   },
   "gitHead": "2fb49732708330f8a3eb9ac4137073a0dd998342"

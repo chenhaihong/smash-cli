@@ -1,6 +1,6 @@
 {
   "name": "smash-run",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Task executing function for smash-cli.",
   "author": "erye <erye@tiiit.cn>",
   "homepage": "https://github.com/chenhaihong/smash-cli/tree/master/packagesMain/smash-run#readme",
@@ -20,9 +20,9 @@
     "url": "https://github.com/chenhaihong/smash-cli/issues"
   },
   "dependencies": {
-    "smash-helper-logger": "0.0.23",
-    "smash-helper-middleware-installer": "0.0.23",
-    "smash-helper-task-finder": "0.0.23"
+    "smash-helper-logger": "0.0.24",
+    "smash-helper-middleware-installer": "0.0.24",
+    "smash-helper-task-finder": "0.0.24"
   },
   "gitHead": "2fb49732708330f8a3eb9ac4137073a0dd998342"
 }
