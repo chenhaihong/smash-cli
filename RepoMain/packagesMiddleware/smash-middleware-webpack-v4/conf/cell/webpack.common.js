@@ -48,12 +48,12 @@ module.exports = function() {
     resolve: {
       extensions: ['.js', '.json', '.jsx', '.vue', '.less', '*'],
       // 模块的解析路径：从以下两个位置读取
-      modules: [resolve(__dirname, '../node_modules'), 'node_modules'],
+      modules: [resolve(__dirname, '../../node_modules'), 'node_modules'],
     },
 
     // loader的解析路径：从以下两个位置读取
     resolveLoader: {
-      modules: [resolve(__dirname, '../node_modules'), 'node_modules'],
+      modules: [resolve(__dirname, '../../node_modules'), 'node_modules'],
     },
 
     stats: {
